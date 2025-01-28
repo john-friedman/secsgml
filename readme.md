@@ -1,4 +1,4 @@
-# SEC SGML (Not ready for use yet - still refactoring the data)
+# SEC SGML (Not ready for use yet)
 
 A python library to parse Securities and Exchange Commission [Standardized Generalized Markup Language](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language).
 

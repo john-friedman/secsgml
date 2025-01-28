@@ -3,7 +3,84 @@ import uu
 from io import BytesIO
 from itertools import dropwhile
 
-# oh. we also need to handle document metadata
+def detect_submission_type(first_line):
+    if first_line.startswith('<SUBMISSION>'):
+        return 'dashed-default'
+    elif first_line.startswith('-----BEGIN PRIVACY-ENHANCED MESSAGE-----'):
+        return 'tab-privacy'
+    elif first_line.startswith('<SEC-DOCUMENT>'):
+        return 'tab-default'
+    else:
+        raise ValueError('Unknown submission type')
+    
+# WIP, test, then implement other types
+def parse_header_metadata(lines, submission_type):
+    """We pass in first line to line before first <DOCUMENT> tag"""
+    header_metadata = {}
+    
+    if submission_type == 'dashed-default':
+        current_dict = header_metadata
+        stack = [(header_metadata, None)]  # (dict, tag) pairs
+        i = 0
+        
+        while i < len(lines):
+            line = lines[i]
+            # get 0 to first '>'
+            tag, text = line.split('>')
+            tag = tag[1:].lower()  # Remove '<' and convert to lowercase
+            text = text.strip()
+            
+            # Handle closing tags
+            if tag.startswith('/'):
+                tag = tag[1:]  # Remove the '/'
+                if stack and stack[-1][1] == tag:
+                    stack.pop()
+                    current_dict = stack[-1][0] if stack else header_metadata
+                i += 1
+                continue
+            
+            # Look ahead for matching closing tag
+            is_paired = False
+            for j in range(i + 1, len(lines)):
+                if lines[j].strip().lower().startswith(f'</{tag.lower()}>'):
+                    is_paired = True
+                    break
+            
+            if is_paired:
+                # This is a paired tag - create nested structure
+                nested_dict = {}
+                
+                # Handle key collision for nested structures
+                if tag in current_dict:
+                    if isinstance(current_dict[tag], list):
+                        current_dict[tag].append(nested_dict)
+                    else:
+                        current_dict[tag] = [current_dict[tag], nested_dict]
+                else:
+                    current_dict[tag] = nested_dict
+                
+                # Update stack and current_dict
+                stack.append((nested_dict, tag))
+                current_dict = nested_dict
+                
+            else:
+                # Only add unpaired tags if they have non-empty text
+                if text != '':
+                    # This is an unpaired tag - handle normally
+                    if tag in current_dict:
+                        if isinstance(current_dict[tag], list):
+                            current_dict[tag].append(text)
+                        else:
+                            current_dict[tag] = [current_dict[tag], text]
+                    else:
+                        current_dict[tag] = text
+            
+            i += 1
+                
+    
+    return header_metadata
+
+        
 
 def detect_uu(first_line):
     """Detect if the document is uuencoded"""
@@ -74,15 +151,7 @@ def get_documents(lines):
             
     return documents
 
-def detect_submission_type(first_line):
-    if first_line.startswith('<SUBMISSION>'):
-        return 'dashed-default'
-    elif first_line.startswith('-----BEGIN PRIVACY-ENHANCED MESSAGE-----'):
-        return 'tab-privacy'
-    elif first_line.startswith('<SEC-DOCUMENT>'):
-        return 'tab-default'
-    else:
-        raise ValueError('Unknown submission type')
+
     
 
 def parse_sgml_submission(content = None, filepath = None,output_dir = None):
