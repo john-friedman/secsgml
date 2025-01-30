@@ -2,6 +2,7 @@ import os
 import uu
 from io import BytesIO
 from itertools import dropwhile
+import json
 
 def detect_submission_type(first_line):
     if first_line.startswith('<SUBMISSION>'):
@@ -103,7 +104,12 @@ def parse_header_metadata(lines, submission_type):
                 continue
             
             indent = len(line) - len(line.lstrip())
-            tag, text = line.split(':')
+            try:
+                tag, text = line.split(':')
+            except:
+                # handle mixed <TAGS>
+                tag, text = line.split('>')
+                tag = tag[1:].strip().lower()
             
             # Clean up tag and text
             tag = tag.strip()
@@ -197,8 +203,6 @@ def parse_text_tag_contents(lines, output_path):
         with open(output_path, 'w', encoding='utf-8') as f:
             f.writelines(lines)
 
-# LOOK HERE AND REWRITE
-
 def get_documents(lines):
     documents = []
     current_doc = []
@@ -219,16 +223,24 @@ def get_documents(lines):
             
     return documents
 
+def parse_document_metadata(lines):
+    # parse metadata between first line and first <TEXT> tag
+    document_metadata = {}
+    for line in lines:
+        tag,text = line.split('>')
+        tag = tag[1:].lower()
+        text = text.strip()
+        document_metadata[tag] = text
 
-    
+    return document_metadata
+
+
 
 def parse_sgml_submission(content = None, filepath = None,output_dir = None):
     if not filepath and not content:
         raise ValueError("Either filepath or content must be provided")
     
     os.makedirs(output_dir, exist_ok=True)
-
-    # we will read the accension number, remove the dashes and use it to create the folder
 
     # If content not provided, read from file
     if content is None:
@@ -238,12 +250,51 @@ def parse_sgml_submission(content = None, filepath = None,output_dir = None):
     # Split into Lines
     lines = content.splitlines(keepends=True)
 
-    # Split lines into header and documents
-    header_start = lines.index('<DOCUMENT>')
-    header = lines[:header_start]
-    
-    # documents
-    documents = get_documents(lines[header_start:])
+    # Detect submission type
+    submission_type = detect_submission_type(lines[0])
 
+    # grab header metadata lines
+    first_document_idx = next(i for i, line in enumerate(lines) if line.strip() == '<DOCUMENT>')
+    header_lines = lines[:first_document_idx]
+    lines = lines[first_document_idx:]
 
-            
+    # Parse header metadata
+    header_metadata = parse_header_metadata(header_lines, submission_type)
+
+    # we will read the accession_number, remove the dashes and use it to create the folder
+    if submission_type == 'dashed-default':
+        accession_number = header_metadata['accession-number'].replace('-','')
+    elif submission_type == 'tab-default' or submission_type == 'tab-privacy':
+        accession_number = header_metadata['accession number'].replace('-','')
+
+    os.makedirs(os.path.join(output_dir, accession_number), exist_ok=True)
+
+    # we now process the documents, by grabbing text between <DOCUMENT> tags
+
+    # declare documents key for header metadata
+    metadata = header_metadata
+    metadata['documents'] = []
+    documents = get_documents(lines)
+    for document in documents:
+        # get lines before first <TEXT> tag
+        text_tag_idx = next(i for i, line in enumerate(document.splitlines()) if line.strip() == '<TEXT>')
+        document_metadata_lines = document.splitlines()[:text_tag_idx]
+
+        # detect next <TEXT> tag
+        text_tag_end_idx = next(i for i, line in enumerate(document.splitlines()) if line.strip() == '</TEXT>')
+        document_lines = document.splitlines()[text_tag_idx+1:text_tag_end_idx]
+
+        # parse document metadata
+        document_metadata = parse_document_metadata(document_metadata_lines)
+
+        # add metadata to header metadata
+        metadata['documents'].append(document_metadata)
+
+        # define output path as output dir, accession number and document 'filename' use 'sequence' if no filename
+        document_path = os.path.join(output_dir, accession_number, document_metadata.get('filename', document_metadata['sequence']))
+        parse_text_tag_contents(document_lines,document_path)
+
+    # write metadata to output dir/accession_number/metadata.json
+    metadata_path = os.path.join(output_dir, accession_number, 'metadata.json')
+    with open(metadata_path, 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, indent=4)
