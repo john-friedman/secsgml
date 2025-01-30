@@ -291,7 +291,7 @@ def parse_sgml_submission(content = None, filepath = None,output_dir = None):
         metadata['documents'].append(document_metadata)
 
         # define output path as output dir, accession number and document 'filename' use 'sequence' if no filename
-        document_path = os.path.join(output_dir, accession_number, document_metadata.get('filename', document_metadata['sequence']))
+        document_path = os.path.join(output_dir, accession_number, document_metadata.get('filename', document_metadata['sequence']+'.txt'))
         parse_text_tag_contents(document_lines,document_path)
 
     # write metadata to output dir/accession_number/metadata.json
