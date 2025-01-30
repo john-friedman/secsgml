@@ -1,6 +1,6 @@
 {
-    "sec-document": "20220207",
-    "sec-header": "20220207",
+    "sec-document": "0000950170-22-000796.txt : 20220207",
+    "sec-header": "0000950170-22-000796.hdr.sgml : 20220207",
     "acceptance-datetime": "20220204201127",
     "accession number": "0000950170-22-000796",
     "conformed submission type": "10-K",
@@ -41,7 +41,6 @@
             "date of name change": "20050222"
         }
     },
-    "/sec-header": {},
     "documents": [
         {
             "type": "10-K",

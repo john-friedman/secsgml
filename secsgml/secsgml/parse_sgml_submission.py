@@ -105,18 +105,17 @@ def parse_header_metadata(lines, submission_type):
             
             indent = len(line) - len(line.lstrip())
             try:
-                tag, text = line.split(':')
+                tag,text = line.split('>')
+                tag = tag[1:].lower().strip()
+
+                # if end tag skip
+                if tag.startswith('/'):
+                    continue
+
             except:
-                # handle mixed <TAGS>
-                tag, text = line.split('>')
-                tag = tag[1:].strip().lower()
+                tag,text = line.split(':')
+                tag = tag.strip().lower()
             
-            # Clean up tag and text
-            tag = tag.strip()
-            if '>' in tag:
-                tag = tag[tag.find('<')+1:tag.find('>')].lower()
-            else:
-                tag = tag.lower()
             text = text.strip()
             
             # Pop stack while at same or lower indent level

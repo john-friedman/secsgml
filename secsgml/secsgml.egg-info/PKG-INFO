@@ -1,3 +1,9 @@
+Metadata-Version: 2.1
+Name: secsgml
+Version: 0.0.1
+Summary: Parse Securities and Exchange Commission Standard Generalized Markup Language (SEC SGML) files
+Description-Content-Type: text/markdown
+
 # SEC SGML
 
 A python library to parse Securities and Exchange Commission [Standardized Generalized Markup Language](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language). Used to power the open-source [datamule](https://github.com/john-friedman/datamule-python) project.

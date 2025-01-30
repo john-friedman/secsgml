@@ -1,0 +1,7 @@
+setup.py
+secsgml/__init__.py
+secsgml/parse_sgml_submission.py
+secsgml.egg-info/PKG-INFO
+secsgml.egg-info/SOURCES.txt
+secsgml.egg-info/dependency_links.txt
+secsgml.egg-info/top_level.txt

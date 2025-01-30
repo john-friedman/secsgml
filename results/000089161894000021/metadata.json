@@ -1,7 +1,7 @@
 {
     "privacy-enhanced-message": "Proc-Type: 2001,MIC-CLEAR\nOriginator-Name: keymaster@town.hall.org\nOriginator-Key-Asymmetric:\nMFkwCgYEVQgBAQICAgADSwAwSAJBALeWW4xDV4i7+b6+UyPn5RtObb1cJ7VkACDq\npKb9/DClgTKIm08lCfoilvi9Wl4SODbR1+1waHhiGmeZO8OdgLUCAwEAAQ==\nMIC-Info: RSA-MD5,RSA,\nnclsNnfsBu4ZFboZyOmngs/wYm8RUcUtT8oITKGIB4az0EBE9Xplz27JmHjfkQhw\nxinfDWpNmQnGnzhhfp+8Cw==",
-    "ims-document": "19940128",
-    "ims-header": "19940128",
+    "ims-document": "0000891618-94-000021.txt : 19940128",
+    "ims-header": "0000891618-94-000021.hdr.sgml : 19940128",
     "accession number": "0000891618-94-000021",
     "conformed submission type": "424B5",
     "public document count": "1",
@@ -29,7 +29,6 @@
             "business phone": "4089961010"
         }
     },
-    "/ims-header": {},
     "documents": [
         {
             "type": "424B5",
