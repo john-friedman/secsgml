@@ -6,8 +6,12 @@ Currently parses two types of files:
 1. [Daily Archives](https://www.sec.gov/Archives/edgar/Feed/)
 2. [Submissions](https://www.sec.gov/Archives/edgar/data/1318605/000095017022000796/0000950170-22-000796.txt)
 
+Benchmarks: 
+*Current goal: 5ms/form4.
+
 Will be expanded to also parse:
 1. [SGML Tables](https://www.sec.gov/Archives/edgar/data/320193/000089161894000021/0000891618-94-000021.txt)
 
 ![table](sgmltable.png)
+
 

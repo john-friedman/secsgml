@@ -13,7 +13,6 @@ def detect_submission_type(first_line):
     else:
         raise ValueError('Unknown submission type')
     
-# WIP, test, then implement other types
 def parse_header_metadata(lines, submission_type):
     """We pass in first line to line before first <DOCUMENT> tag"""
     header_metadata = {}
@@ -76,7 +75,76 @@ def parse_header_metadata(lines, submission_type):
                         current_dict[tag] = text
             
             i += 1
+    elif submission_type == 'tab-default' or submission_type == 'tab-privacy':
+        current_dict = header_metadata
+        stack = [(0, header_metadata)]  # (indent_level, dict) pairs
+
+        if submission_type == 'tab-privacy':
+            privacy_message = []
+            i = 0
+            for i, line in enumerate(lines):
+                if line.strip() == '-----BEGIN PRIVACY-ENHANCED MESSAGE-----':
+                    # Capture everything until we hit a blank line or any tag (< followed by uppercase)
+                    j = i + 1
+                    while j < len(lines):
+                        line = lines[j]
+                        if (line.strip() == '' or 
+                            ('<' in line and any(c.isupper() for c in line[line.find('<')+1:]))):
+                            break
+                        privacy_message.append(line.strip())
+                        j += 1
+                    header_metadata['privacy-enhanced-message'] = '\n'.join(privacy_message)
+                    lines = lines[j:]  # Continue processing from after privacy section
+                    break
+        
+        for line in lines:
+            # ignore empty lines
+            if line.strip() == '':
+                continue
+            
+            indent = len(line) - len(line.lstrip())
+            tag, text = line.split(':')
+            
+            # Clean up tag and text
+            tag = tag.strip()
+            if '>' in tag:
+                tag = tag[tag.find('<')+1:tag.find('>')].lower()
+            else:
+                tag = tag.lower()
+            text = text.strip()
+            
+            # Pop stack while at same or lower indent level
+            while len(stack) > 1 and stack[-1][0] >= indent:
+                stack.pop()
+            
+            current_dict = stack[-1][1]
+            
+            # Only add if text is not empty
+            if text:
+                if tag in current_dict:
+                    if isinstance(current_dict[tag], list):
+                        current_dict[tag].append(text)
+                    else:
+                        current_dict[tag] = [current_dict[tag], text]
+                else:
+                    current_dict[tag] = text
+            else:
+                # This is a parent node 
+                # First pop any existing stack levels at same indent
+                while len(stack) > 1 and stack[-1][0] == indent:
+                    stack.pop()
                 
+                nested_dict = {}
+                if tag in current_dict:
+                    if isinstance(current_dict[tag], list):
+                        current_dict[tag].append(nested_dict)
+                    else:
+                        current_dict[tag] = [current_dict[tag], nested_dict]
+                else:
+                    current_dict[tag] = nested_dict
+                
+                stack.append((indent, nested_dict))
+                current_dict = nested_dict
     
     return header_metadata
 
