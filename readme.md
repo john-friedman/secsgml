@@ -16,6 +16,7 @@ pip install secsgml
 ```
 ## Quickstart
 ```
+from secsgml import parse_sgml_submission
 # from file
 parse_sgml_submission(filepath='samples/0000891618-94-000021.txt',output_dir='results')
 
