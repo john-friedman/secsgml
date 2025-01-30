@@ -1,5 +1,0 @@
-1. Process headers (lookup good name for 2 kinds)
-2. process bodies normally -> look into <PDF> <XBRL> stuff, we may need to look at bulk data for doc types with attachments
-3. standardize headers? Not sure how to go about this.
-- Let's do this on download side. save data as is, when downloaded, do a mapping
-- in case we need to change mapping

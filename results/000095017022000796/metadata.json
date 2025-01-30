@@ -1,0 +1,851 @@
+{
+    "sec-document": "20220207",
+    "sec-header": "20220207",
+    "acceptance-datetime": "20220204201127",
+    "accession number": "0000950170-22-000796",
+    "conformed submission type": "10-K",
+    "public document count": "134",
+    "conformed period of report": "20211231",
+    "filed as of date": "20220207",
+    "date as of change": "20220204",
+    "filer": {
+        "company data": {
+            "company conformed name": "Tesla, Inc.",
+            "central index key": "0001318605",
+            "standard industrial classification": "MOTOR VEHICLES & PASSENGER CAR BODIES [3711]",
+            "irs number": "912197729",
+            "state of incorporation": "DE",
+            "fiscal year end": "1231"
+        },
+        "filing values": {
+            "form type": "10-K",
+            "sec act": "1934 Act",
+            "sec file number": "001-34756",
+            "film number": "22595227"
+        },
+        "business address": {
+            "street 1": "3500 DEER CREEK RD",
+            "city": "PALO ALTO",
+            "state": "CA",
+            "zip": "94304",
+            "business phone": "650-681-5000"
+        },
+        "mail address": {
+            "street 1": "3500 DEER CREEK RD",
+            "city": "PALO ALTO",
+            "state": "CA",
+            "zip": "94304"
+        },
+        "former company": {
+            "former conformed name": "TESLA MOTORS INC",
+            "date of name change": "20050222"
+        }
+    },
+    "/sec-header": {},
+    "documents": [
+        {
+            "type": "10-K",
+            "sequence": "1",
+            "filename": "tsla-20211231.htm",
+            "description": "10-K"
+        },
+        {
+            "type": "EX-21.1",
+            "sequence": "2",
+            "filename": "tsla-ex21_1.htm",
+            "description": "EX-21.1"
+        },
+        {
+            "type": "EX-23.1",
+            "sequence": "3",
+            "filename": "tsla-ex23_1.htm",
+            "description": "EX-23.1"
+        },
+        {
+            "type": "EX-31.1",
+            "sequence": "4",
+            "filename": "tsla-ex31_1.htm",
+            "description": "EX-31.1"
+        },
+        {
+            "type": "EX-31.2",
+            "sequence": "5",
+            "filename": "tsla-ex31_2.htm",
+            "description": "EX-31.2"
+        },
+        {
+            "type": "EX-32.1",
+            "sequence": "6",
+            "filename": "tsla-ex32_1.htm",
+            "description": "EX-32.1"
+        },
+        {
+            "type": "GRAPHIC",
+            "sequence": "7",
+            "filename": "img96779317_0.jpg",
+            "description": "GRAPHIC"
+        },
+        {
+            "type": "EX-101.DEF",
+            "sequence": "8",
+            "filename": "tsla-20211231_def.xml",
+            "description": "XBRL TAXONOMY EXTENSION DEFINITION LINKBASE DOCUMENT"
+        },
+        {
+            "type": "EX-101.PRE",
+            "sequence": "9",
+            "filename": "tsla-20211231_pre.xml",
+            "description": "XBRL TAXONOMY EXTENSION PRESENTATION LINKBASE DOCUMENT"
+        },
+        {
+            "type": "EX-101.LAB",
+            "sequence": "10",
+            "filename": "tsla-20211231_lab.xml",
+            "description": "XBRL TAXONOMY EXTENSION LABEL LINKBASE DOCUMENT"
+        },
+        {
+            "type": "EX-101.SCH",
+            "sequence": "11",
+            "filename": "tsla-20211231.xsd",
+            "description": "XBRL TAXONOMY EXTENSION SCHEMA DOCUMENT"
+        },
+        {
+            "type": "EX-101.CAL",
+            "sequence": "12",
+            "filename": "tsla-20211231_cal.xml",
+            "description": "XBRL TAXONOMY EXTENSION CALCULATION LINKBASE DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "13",
+            "filename": "R1.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "14",
+            "filename": "R2.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "15",
+            "filename": "R3.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "16",
+            "filename": "R4.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "17",
+            "filename": "R5.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "18",
+            "filename": "R6.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "19",
+            "filename": "R7.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "20",
+            "filename": "R8.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "21",
+            "filename": "R9.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "22",
+            "filename": "R10.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "23",
+            "filename": "R11.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "24",
+            "filename": "R12.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "25",
+            "filename": "R13.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "26",
+            "filename": "R14.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "27",
+            "filename": "R15.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "28",
+            "filename": "R16.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "29",
+            "filename": "R17.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "30",
+            "filename": "R18.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "31",
+            "filename": "R19.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "32",
+            "filename": "R20.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "33",
+            "filename": "R21.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "34",
+            "filename": "R22.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "35",
+            "filename": "R23.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "36",
+            "filename": "R24.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "37",
+            "filename": "R25.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "38",
+            "filename": "R26.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "39",
+            "filename": "R27.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "40",
+            "filename": "R28.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "41",
+            "filename": "R29.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "42",
+            "filename": "R30.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "43",
+            "filename": "R31.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "44",
+            "filename": "R32.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "45",
+            "filename": "R33.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "46",
+            "filename": "R34.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "47",
+            "filename": "R35.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "48",
+            "filename": "R36.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "49",
+            "filename": "R37.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "50",
+            "filename": "R38.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "51",
+            "filename": "R39.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "52",
+            "filename": "R40.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "53",
+            "filename": "R41.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "54",
+            "filename": "R42.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "55",
+            "filename": "R43.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "56",
+            "filename": "R44.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "57",
+            "filename": "R45.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "58",
+            "filename": "R46.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "59",
+            "filename": "R47.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "60",
+            "filename": "R48.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "61",
+            "filename": "R49.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "62",
+            "filename": "R50.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "63",
+            "filename": "R51.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "64",
+            "filename": "R52.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "65",
+            "filename": "R53.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "66",
+            "filename": "R54.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "67",
+            "filename": "R55.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "68",
+            "filename": "R56.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "69",
+            "filename": "R57.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "70",
+            "filename": "R58.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "71",
+            "filename": "R59.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "72",
+            "filename": "R60.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "73",
+            "filename": "R61.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "74",
+            "filename": "R62.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "75",
+            "filename": "R63.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "76",
+            "filename": "R64.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "77",
+            "filename": "R65.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "78",
+            "filename": "R66.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "79",
+            "filename": "R67.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "80",
+            "filename": "R68.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "81",
+            "filename": "R69.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "82",
+            "filename": "R70.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "83",
+            "filename": "R71.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "84",
+            "filename": "R72.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "85",
+            "filename": "R73.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "86",
+            "filename": "R74.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "87",
+            "filename": "R75.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "88",
+            "filename": "R76.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "89",
+            "filename": "R77.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "90",
+            "filename": "R78.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "91",
+            "filename": "R79.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "92",
+            "filename": "R80.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "93",
+            "filename": "R81.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "94",
+            "filename": "R82.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "95",
+            "filename": "R83.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "96",
+            "filename": "R84.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "97",
+            "filename": "R85.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "98",
+            "filename": "R86.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "99",
+            "filename": "R87.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "100",
+            "filename": "R88.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "101",
+            "filename": "R89.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "102",
+            "filename": "R90.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "103",
+            "filename": "R91.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "104",
+            "filename": "R92.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "105",
+            "filename": "R93.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "106",
+            "filename": "R94.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "107",
+            "filename": "R95.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "108",
+            "filename": "R96.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "109",
+            "filename": "R97.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "110",
+            "filename": "R98.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "111",
+            "filename": "R99.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "112",
+            "filename": "R100.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "113",
+            "filename": "R101.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "114",
+            "filename": "R102.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "115",
+            "filename": "R103.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "116",
+            "filename": "R104.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "117",
+            "filename": "R105.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "118",
+            "filename": "R106.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "119",
+            "filename": "R107.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "120",
+            "filename": "R108.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "121",
+            "filename": "R109.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "122",
+            "filename": "R110.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "123",
+            "filename": "R111.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "124",
+            "filename": "R112.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "125",
+            "filename": "R113.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "126",
+            "filename": "R114.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "127",
+            "filename": "R115.htm",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "128",
+            "filename": "tsla-20211231_htm.xml",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "EXCEL",
+            "sequence": "129",
+            "filename": "Financial_Report.xlsx",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "130",
+            "filename": "Show.js",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "131",
+            "filename": "report.css",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "XML",
+            "sequence": "132",
+            "filename": "FilingSummary.xml",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "JSON",
+            "sequence": "135",
+            "filename": "MetaLinks.json",
+            "description": "IDEA: XBRL DOCUMENT"
+        },
+        {
+            "type": "ZIP",
+            "sequence": "136",
+            "filename": "0000950170-22-000796-xbrl.zip",
+            "description": "IDEA: XBRL DOCUMENT"
+        }
+    ]
+}

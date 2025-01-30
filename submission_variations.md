@@ -93,3 +93,36 @@ FILER:
 		FISCAL YEAR END:			1231
 ...
 ```
+
+# Misc
+
+## Tables
+```
+<TABLE>
+<CAPTION>
+                                                                    DECEMBER 31, 1993
+                                                                -------------------------
+                                                                                   AS
+                                                                  ACTUAL        ADJUSTED
+                                                                ----------     ----------
+                                                                 (DOLLARS IN THOUSANDS)
+    <S>                                                         <C>            <C>
+    Short-term debt...........................................  $  752,257     $  454,707
+                                                                ----------     ----------
+                                                                ----------     ----------
+    Long-term debt............................................  $       --     $  300,000
+                                                                ----------     ----------
+    Shareholders' equity:
+      Common Stock, no par value; 320,000,000 shares
+         authorized; 116,495,476 shares issued and
+         outstanding..........................................     211,108        211,108
+      Retained earnings.......................................   1,868,660      1,868,660
+      Accumulated translation adjustment......................     (26,509)       (26,509)
+                                                                ----------     ----------
+         Total shareholders' equity...........................   2,053,259      2,053,259
+                                                                ----------     ----------
+              Total capitalization............................  $2,053,259     $2,353,259
+                                                                ----------     ----------
+                                                                ----------     ----------
+</TABLE>
+```
