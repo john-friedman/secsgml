@@ -1,0 +1,36 @@
+name: Build and Upload to PyPI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      working-directory: ./secsgml    # Added this
+      run: |
+        python -m pip install --upgrade pip
+        pip install setuptools wheel twine
+    
+    - name: Build package
+      working-directory: ./secsgml    # Added this
+      run: |
+        python setup.py sdist bdist_wheel
+    
+    - name: Upload to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      working-directory: ./secsgml    # Added this
+      run: |
+        twine upload dist/*

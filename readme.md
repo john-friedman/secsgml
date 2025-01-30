@@ -1,4 +1,4 @@
-# SEC SGML (Not ready for use yet)
+# SEC SGML
 
 A python library to parse Securities and Exchange Commission [Standardized Generalized Markup Language](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language). Used to power the open-source [datamule](https://github.com/john-friedman/datamule-python) project.
 
@@ -16,7 +16,11 @@ pip install secsgml
 ```
 ## Quickstart
 ```
+# from file
 parse_sgml_submission(filepath='samples/0000891618-94-000021.txt',output_dir='results')
+
+# from content
+parse_sgml_submission(content=sgml_content,output_dir='results')
 ```
 
 ## Future
