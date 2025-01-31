@@ -4,15 +4,17 @@ from io import BytesIO
 from itertools import dropwhile
 import json
 
+SUBMISSION_TYPES = {
+    '<SUBMISSION>': 'dashed-default',
+    '-----BEGIN PRIVACY-ENHANCED MESSAGE-----': 'tab-privacy', 
+    '<SEC-DOCUMENT>': 'tab-default'
+}
+
 def detect_submission_type(first_line):
-    if first_line.startswith('<SUBMISSION>'):
-        return 'dashed-default'
-    elif first_line.startswith('-----BEGIN PRIVACY-ENHANCED MESSAGE-----'):
-        return 'tab-privacy'
-    elif first_line.startswith('<SEC-DOCUMENT>'):
-        return 'tab-default'
-    else:
-        raise ValueError('Unknown submission type')
+    for marker, type_ in SUBMISSION_TYPES.items():
+        if first_line.startswith(marker):
+            return type_
+    raise ValueError('Unknown submission type')
     
 def parse_header_metadata(lines, submission_type):
     """We pass in first line to line before first <DOCUMENT> tag"""
@@ -21,11 +23,8 @@ def parse_header_metadata(lines, submission_type):
     if submission_type == 'dashed-default':
         current_dict = header_metadata
         stack = [(header_metadata, None)]  # (dict, tag) pairs
-        i = 0
         
-        while i < len(lines):
-            line = lines[i]
-            # get 0 to first '>'
+        for i, line in enumerate(lines):
             tag, text = line.split('>')
             tag = tag[1:].lower()  # Remove '<' and convert to lowercase
             text = text.strip()
@@ -36,21 +35,14 @@ def parse_header_metadata(lines, submission_type):
                 if stack and stack[-1][1] == tag:
                     stack.pop()
                     current_dict = stack[-1][0] if stack else header_metadata
-                i += 1
                 continue
-            
-            # Look ahead for matching closing tag
-            is_paired = False
-            for j in range(i + 1, len(lines)):
-                if lines[j].strip().lower().startswith(f'</{tag.lower()}>'):
-                    is_paired = True
-                    break
+                
+            # Look ahead to check if this tag has a closing tag
+            next_lines = lines[i+1:]
+            is_paired = any(l.strip().lower().startswith(f'</{tag}>') for l in next_lines)
             
             if is_paired:
-                # This is a paired tag - create nested structure
                 nested_dict = {}
-                
-                # Handle key collision for nested structures
                 if tag in current_dict:
                     if isinstance(current_dict[tag], list):
                         current_dict[tag].append(nested_dict)
@@ -58,73 +50,56 @@ def parse_header_metadata(lines, submission_type):
                         current_dict[tag] = [current_dict[tag], nested_dict]
                 else:
                     current_dict[tag] = nested_dict
-                
-                # Update stack and current_dict
                 stack.append((nested_dict, tag))
                 current_dict = nested_dict
-                
-            else:
-                # Only add unpaired tags if they have non-empty text
-                if text != '':
-                    # This is an unpaired tag - handle normally
-                    if tag in current_dict:
-                        if isinstance(current_dict[tag], list):
-                            current_dict[tag].append(text)
-                        else:
-                            current_dict[tag] = [current_dict[tag], text]
+            elif text:
+                if tag in current_dict:
+                    if isinstance(current_dict[tag], list):
+                        current_dict[tag].append(text)
                     else:
-                        current_dict[tag] = text
-            
-            i += 1
-    elif submission_type == 'tab-default' or submission_type == 'tab-privacy':
+                        current_dict[tag] = [current_dict[tag], text]
+                else:
+                    current_dict[tag] = text
+
+    else:  # tab-default or tab-privacy
         current_dict = header_metadata
-        stack = [(0, header_metadata)]  # (indent_level, dict) pairs
+        stack = [(0, header_metadata)]
 
         if submission_type == 'tab-privacy':
-            privacy_message = []
-            i = 0
+            privacy_msg = []
             for i, line in enumerate(lines):
                 if line.strip() == '-----BEGIN PRIVACY-ENHANCED MESSAGE-----':
-                    # Capture everything until we hit a blank line or any tag (< followed by uppercase)
                     j = i + 1
-                    while j < len(lines):
-                        line = lines[j]
-                        if (line.strip() == '' or 
-                            ('<' in line and any(c.isupper() for c in line[line.find('<')+1:]))):
-                            break
-                        privacy_message.append(line.strip())
+                    while j < len(lines) and not (lines[j].strip() == '' or 
+                          ('<' in lines[j] and any(c.isupper() for c in lines[j][lines[j].find('<')+1:]))):
+                        privacy_msg.append(lines[j].strip())
                         j += 1
-                    header_metadata['privacy-enhanced-message'] = '\n'.join(privacy_message)
-                    lines = lines[j:]  # Continue processing from after privacy section
+                    header_metadata['privacy-enhanced-message'] = '\n'.join(privacy_msg)
+                    lines = lines[j:]
                     break
-        
-        for line in lines:
-            # ignore empty lines
-            if line.strip() == '':
-                continue
-            
-            indent = len(line) - len(line.lstrip())
-            try:
-                tag,text = line.split('>')
-                tag = tag[1:].lower().strip()
 
-                # if end tag skip
+        for line in lines:
+            if not line.strip():
+                continue
+                
+            indent = len(line) - len(line.lstrip())
+            
+            try:
+                tag, text = line.split('>')
+                tag = tag[1:].lower().strip()
                 if tag.startswith('/'):
                     continue
-
             except:
-                tag,text = line.split(':')
+                tag, text = line.split(':')
                 tag = tag.strip().lower()
             
             text = text.strip()
             
-            # Pop stack while at same or lower indent level
             while len(stack) > 1 and stack[-1][0] >= indent:
                 stack.pop()
             
             current_dict = stack[-1][1]
             
-            # Only add if text is not empty
             if text:
                 if tag in current_dict:
                     if isinstance(current_dict[tag], list):
@@ -134,11 +109,9 @@ def parse_header_metadata(lines, submission_type):
                 else:
                     current_dict[tag] = text
             else:
-                # This is a parent node 
-                # First pop any existing stack levels at same indent
                 while len(stack) > 1 and stack[-1][0] == indent:
                     stack.pop()
-                
+                    
                 nested_dict = {}
                 if tag in current_dict:
                     if isinstance(current_dict[tag], list):
@@ -151,89 +124,72 @@ def parse_header_metadata(lines, submission_type):
                 stack.append((indent, nested_dict))
                 current_dict = nested_dict
     
-    return header_metadata
-
-        
+    return header_metadata    
 
 def detect_uu(first_line):
     """Detect if the document is uuencoded"""
-    first_line = first_line.strip()
-    if first_line.startswith('begin'):
-        return True
-    else:
-        return False
-    
-def clean_lines(lines):
-    """Clean lines by removing leading and trailing whitespace as well as special tags"""
-    # Find first non-empty line and remove prefix
-    lines = list(dropwhile(lambda x: not x.strip(), lines))
-    
-    # Handle special tags if present
-    if lines and lines[0].strip() in ['<PDF>', '<XBRL>', '<XML>']:
-        # Find matching closing tag
-        tag = lines[0].strip()[1:-1]  # Extract tag name without brackets
-        end_tag = f'</{tag}>'
+    return first_line.strip().startswith('begin')
 
-        # Remove opening tag
-        lines = lines[1:]
+def clean_lines(lines):
+    """Clean lines by removing leading/trailing whitespace and special tags"""
+    lines = list(dropwhile(lambda x: not x.strip(), lines))
+    if not lines:
+        return lines
         
-        # Keep only content up to closing tag if found
+    SPECIAL_TAGS = {'<PDF>', '<XBRL>', '<XML>'}
+    first_line = lines[0].strip()
+    if first_line in SPECIAL_TAGS:
+        tag = first_line[1:-1]  # Remove < >
+        end_tag = f'</{tag}>'
+        
+        # Find closing tag position, default to end if not found
         try:
-            last_idx = next(i for i, line in enumerate(reversed(lines)) 
-                          if line.strip() == end_tag)
-            lines = lines[:-last_idx-1]
+            end_pos = len(lines) - next(i for i, line in enumerate(reversed(lines)) 
+                        if line.strip() == end_tag) - 1
         except StopIteration:
-            pass  # No closing tag found
+            end_pos = len(lines)
+            
+        lines = lines[1:end_pos]
             
     return lines
 
 def parse_text_tag_contents(lines, output_path):
     """Write the contents of a <TEXT> tag to a file"""
     lines = clean_lines(lines)
-
     content = '\n'.join(lines)
-    # Check for UUencoded file
+    
     if detect_uu(lines[0]):
-        # handle uuencoded file
         with BytesIO(content.encode()) as input_file:
-                uu.decode(input_file, output_path, quiet=True)
+            uu.decode(input_file, output_path, quiet=True)
     else:
-        # write to file
         with open(output_path, 'w', encoding='utf-8') as f:
-            f.writelines(lines)
+            f.write(content)  # More efficient than writelines for joined content
 
 def get_documents(lines):
+    """Split content into documents between <DOCUMENT> tags"""
+    doc_marker = '<DOCUMENT>'
+    doc_end = '</DOCUMENT>'
+    
     documents = []
-    current_doc = []
-    in_document = False
+    current = []
     
     for line in lines:
-        if line.strip() == '<DOCUMENT>':
-            in_document = True
-            # Skip the DOCUMENT tag itself
-            continue
-        elif line.strip() == '</DOCUMENT>':
-            in_document = False
-            # Join and add the completed document
-            documents.append(''.join(current_doc))
-            current_doc = []
-        elif in_document:
-            current_doc.append(line)
+        line_stripped = line.strip()
+        if line_stripped == doc_marker:
+            current = []
+        elif line_stripped == doc_end:
+            documents.append(''.join(current))
+        else:
+            current.append(line)
             
     return documents
-
+            
 def parse_document_metadata(lines):
-    # parse metadata between first line and first <TEXT> tag
-    document_metadata = {}
-    for line in lines:
-        tag,text = line.split('>')
-        tag = tag[1:].lower()
-        text = text.strip()
-        document_metadata[tag] = text
-
-    return document_metadata
-
-
+    """Parse metadata between first line and first <TEXT> tag"""
+    return {
+        line.split('>')[0][1:].lower(): line.split('>')[1].strip()
+        for line in lines
+    }
 
 def parse_sgml_submission(content = None, filepath = None,output_dir = None):
     if not filepath and not content:

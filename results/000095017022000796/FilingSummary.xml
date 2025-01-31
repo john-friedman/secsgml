@@ -1,1 +1,1328 @@
-<?xml version='1.0' encoding='utf-8'?><FilingSummary>  <Version>3.22.0.1</Version>  <ProcessingTime/>  <ReportFormat>html</ReportFormat>  <ContextCount>476</ContextCount>  <ElementCount>767</ElementCount>  <EntityCount>1</EntityCount>  <FootnotesReported>true</FootnotesReported>  <SegmentCount>139</SegmentCount>  <ScenarioCount>0</ScenarioCount>  <TuplesReported>false</TuplesReported>  <UnitCount>13</UnitCount>  <MyReports>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R1.htm</HtmlFileName>      <LongName>100000 - Document - Document and Entity Information</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DocumentDocumentAndEntityInformation</Role>      <ShortName>Document and Entity Information</ShortName>      <MenuCategory>Cover</MenuCategory>      <Position>1</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R2.htm</HtmlFileName>      <LongName>100010 - Statement - Consolidated Balance Sheets</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedBalanceSheets1</Role>      <ShortName>Consolidated Balance Sheets</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>2</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R3.htm</HtmlFileName>      <LongName>100040 - Statement - Consolidated Balance Sheets (Parenthetical)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedBalanceSheetsParenthetical</Role>      <ShortName>Consolidated Balance Sheets (Parenthetical)</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>3</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R4.htm</HtmlFileName>      <LongName>100050 - Statement - Consolidated Statements of Operations</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfOperations1</Role>      <ShortName>Consolidated Statements of Operations</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>4</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R5.htm</HtmlFileName>      <LongName>100070 - Statement - Consolidated Statements of Comprehensive Income (Loss)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfComprehensiveIncomeLoss</Role>      <ShortName>Consolidated Statements of Comprehensive Income (Loss)</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>5</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R6.htm</HtmlFileName>      <LongName>100080 - Statement - Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfRedeemableNoncontrollingInterestAndStockholdersEquity1</Role>      <ShortName>Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>6</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R7.htm</HtmlFileName>      <LongName>100090 - Statement - Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity (Parenthetical)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfRedeemableNoncontrollingInterestAndStockholdersEquityParenthetical</Role>      <ShortName>Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity (Parenthetical)</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>7</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R8.htm</HtmlFileName>      <LongName>100100 - Statement - Consolidated Statements of Cash Flows (Unaudited)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_StatementConsolidatedStatementsOfCashFlowsUnaudited</Role>      <ShortName>Consolidated Statements of Cash Flows (Unaudited)</ShortName>      <MenuCategory>Statements</MenuCategory>      <Position>8</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R9.htm</HtmlFileName>      <LongName>100110 - Disclosure - Overview</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOverview</Role>      <ShortName>Overview</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>9</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R10.htm</HtmlFileName>      <LongName>100120 - Disclosure - Summary of Significant Accounting Policies</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</Role>      <ShortName>Summary of Significant Accounting Policies</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>10</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R11.htm</HtmlFileName>      <LongName>100130 - Disclosure - Digital Assets, Net</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDigitalAssetsNet</Role>      <ShortName>Digital Assets, Net</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>11</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R12.htm</HtmlFileName>      <LongName>100140 - Disclosure - Goodwill and Intangible Assets</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssets1</Role>      <ShortName>Goodwill and Intangible Assets</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>12</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R13.htm</HtmlFileName>      <LongName>100150 - Disclosure - Fair Value of Financial Instruments</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstruments</Role>      <ShortName>Fair Value of Financial Instruments</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>13</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R14.htm</HtmlFileName>      <LongName>100160 - Disclosure - Inventory</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventory</Role>      <ShortName>Inventory</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>14</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R15.htm</HtmlFileName>      <LongName>100170 - Disclosure - Solar Energy Systems, Net</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNet</Role>      <ShortName>Solar Energy Systems, Net</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>15</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R16.htm</HtmlFileName>      <LongName>100180 - Disclosure - Property, Plant and Equipment, Net</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNet</Role>      <ShortName>Property, Plant and Equipment, Net</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>16</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R17.htm</HtmlFileName>      <LongName>100190 - Disclosure - Accrued Liabilities and Other</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOther</Role>      <ShortName>Accrued Liabilities and Other</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>17</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R18.htm</HtmlFileName>      <LongName>100200 - Disclosure - Other Long-Term Liabilities</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilities</Role>      <ShortName>Other Long-Term Liabilities</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>18</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R19.htm</HtmlFileName>      <LongName>100210 - Disclosure - Debt</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebt</Role>      <ShortName>Debt</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>19</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R20.htm</HtmlFileName>      <LongName>100220 - Disclosure - Leases</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeases</Role>      <ShortName>Leases</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>20</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R21.htm</HtmlFileName>      <LongName>100230 - Disclosure - Equity Incentive Plans</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlans</Role>      <ShortName>Equity Incentive Plans</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>21</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R22.htm</HtmlFileName>      <LongName>100240 - Disclosure - Income Taxes</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxes</Role>      <ShortName>Income Taxes</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>22</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R23.htm</HtmlFileName>      <LongName>100250 - Disclosure - Commitments and Contingencies</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureCommitmentsAndContingencies</Role>      <ShortName>Commitments and Contingencies</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>23</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R24.htm</HtmlFileName>      <LongName>100260 - Disclosure - Variable Interest Entity Arrangements</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangements</Role>      <ShortName>Variable Interest Entity Arrangements</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>24</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R25.htm</HtmlFileName>      <LongName>100270 - Disclosure - Related Party Transactions</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureRelatedPartyTransactions</Role>      <ShortName>Related Party Transactions</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>25</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R26.htm</HtmlFileName>      <LongName>100280 - Disclosure - Segment Reporting and Information about Geographic Areas</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreas</Role>      <ShortName>Segment Reporting and Information about Geographic Areas</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>26</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R27.htm</HtmlFileName>      <LongName>100290 - Disclosure - Restructuring and Other</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRestructuringAndOther1</Role>      <ShortName>Restructuring and Other</ShortName>      <MenuCategory>Notes</MenuCategory>      <Position>27</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R28.htm</HtmlFileName>      <LongName>100300 - Disclosure - Summary of Significant Accounting Policies (Policies)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesPolicies</Role>      <ShortName>Summary of Significant Accounting Policies (Policies)</ShortName>      <MenuCategory>Policies</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</ParentRole>      <Position>28</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R29.htm</HtmlFileName>      <LongName>100310 - Disclosure - Summary of Significant Accounting Policies (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesTables</Role>      <ShortName>Summary of Significant Accounting Policies (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</ParentRole>      <Position>29</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R30.htm</HtmlFileName>      <LongName>100320 - Disclosure - Goodwill and Intangible Assets (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTables</Role>      <ShortName>Goodwill and Intangible Assets (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssets1</ParentRole>      <Position>30</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R31.htm</HtmlFileName>      <LongName>100330 - Disclosure - Fair Value of Financial Instruments (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsTables</Role>      <ShortName>Fair Value of Financial Instruments (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstruments</ParentRole>      <Position>31</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R32.htm</HtmlFileName>      <LongName>100340 - Disclosure - Inventory (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventoryTables</Role>      <ShortName>Inventory (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventory</ParentRole>      <Position>32</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R33.htm</HtmlFileName>      <LongName>100350 - Disclosure - Solar Energy Systems, Net (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetTables</Role>      <ShortName>Solar Energy Systems, Net (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNet</ParentRole>      <Position>33</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R34.htm</HtmlFileName>      <LongName>100360 - Disclosure - Property, Plant and Equipment, Net (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetTables</Role>      <ShortName>Property, Plant and Equipment, Net (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNet</ParentRole>      <Position>34</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R35.htm</HtmlFileName>      <LongName>100370 - Disclosure - Accrued Liabilities and Other (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOtherTables</Role>      <ShortName>Accrued Liabilities and Other (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOther</ParentRole>      <Position>35</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R36.htm</HtmlFileName>      <LongName>100380 - Disclosure - Other Long-Term Liabilities (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilitiesTables</Role>      <ShortName>Other Long-Term Liabilities (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilities</ParentRole>      <Position>36</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R37.htm</HtmlFileName>      <LongName>100390 - Disclosure - Debt (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtTables</Role>      <ShortName>Debt (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebt</ParentRole>      <Position>37</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R38.htm</HtmlFileName>      <LongName>100400 - Disclosure - Leases (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesTables</Role>      <ShortName>Leases (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeases</ParentRole>      <Position>38</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R39.htm</HtmlFileName>      <LongName>100410 - Disclosure - Equity Incentive Plans (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansTables</Role>      <ShortName>Equity Incentive Plans (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlans</ParentRole>      <Position>39</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R40.htm</HtmlFileName>      <LongName>100420 - Disclosure - Income Taxes (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesTables</Role>      <ShortName>Income Taxes (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxes</ParentRole>      <Position>40</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R41.htm</HtmlFileName>      <LongName>100430 - Disclosure - Variable Interest Entity Arrangements (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangementsTables</Role>      <ShortName>Variable Interest Entity Arrangements (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangements</ParentRole>      <Position>41</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R42.htm</HtmlFileName>      <LongName>100440 - Disclosure - Segment Reporting and Information about Geographic Areas (Tables)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasTables</Role>      <ShortName>Segment Reporting and Information about Geographic Areas (Tables)</ShortName>      <MenuCategory>Tables</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreas</ParentRole>      <Position>42</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R43.htm</HtmlFileName>      <LongName>100450 - Disclosure - Overview - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOverviewAdditionalInformationDetail</Role>      <ShortName>Overview - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>43</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R44.htm</HtmlFileName>      <LongName>100460 - Disclosure - Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDisaggregationOfRevenueByMajorSourceDetail</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>44</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R45.htm</HtmlFileName>      <LongName>100470 - Disclosure - Summary of Significant Accounting Policies - Schedule of Deferred Revenue Activity (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDeferredRevenueActivityDetails</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Deferred Revenue Activity (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>45</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R46.htm</HtmlFileName>      <LongName>100480 - Disclosure - Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Parenthetical) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDisaggregationOfRevenueByMajorSourceParentheticalDetails</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Parenthetical) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>46</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R47.htm</HtmlFileName>      <LongName>100490 - Disclosure - Summary of Significant Accounting Policies - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesAdditionalInformationDetail</Role>      <ShortName>Summary of Significant Accounting Policies - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>47</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R48.htm</HtmlFileName>      <LongName>100500 - Disclosure - Summary of Significant Accounting Policies - Additional Information (Detail1)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesAdditionalInformationDetail1</Role>      <ShortName>Summary of Significant Accounting Policies - Additional Information (Detail1)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>48</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R49.htm</HtmlFileName>      <LongName>100510 - Disclosure - Summary of Significant Accounting Policies - Schedule of Reconciliation of Net Income (Loss) Attributable to Common Stockholders to Net Income (Loss) Used in Computing Basic and Diluted Net Income (Loss) Per Share of Common Stock (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfReconciliationOfNetIncomeLossAttributableToCommonStockholdersToNetIncomeLossUse</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Reconciliation of Net Income (Loss) Attributable to Common Stockholders to Net Income (Loss) Used in Computing Basic and Diluted Net Income (Loss) Per Share of Common Stock (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>49</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R50.htm</HtmlFileName>      <LongName>100520 - Disclosure - Summary of Significant Accounting Policies - Schedule of Reconciliation of Basic to Diluted Weighted Average Shares Used in Computing Net Income Per Share of Common Stock, as Adjusted to Give Effect to Stock Split (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfReconciliationOfBasicToDilutedWeightedAverageSharesUsedInComputingNetIncomePer</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Reconciliation of Basic to Diluted Weighted Average Shares Used in Computing Net Income Per Share of Common Stock, as Adjusted to Give Effect to Stock Split (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>50</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R51.htm</HtmlFileName>      <LongName>100530 - Disclosure - Summary of Significant Accounting Policies - Schedule of Potentially Dilutive Shares that were Excluded from Computation of Diluted Net Income (Loss) per Share of Common Stock (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfPotentiallyDilutiveSharesThatWereExcludedFromComputationOfDilutedNetIncomeLossPerShareOfCommonStockDetail</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Potentially Dilutive Shares that were Excluded from Computation of Diluted Net Income (Loss) per Share of Common Stock (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>51</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R52.htm</HtmlFileName>      <LongName>100540 - Disclosure - Summary of Significant Accounting Policies - Schedule of Cash and Cash Equivalents and Restricted Cash (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfCashAndCashEquivalentsAndRestrictedCashDetail</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Cash and Cash Equivalents and Restricted Cash (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>52</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R53.htm</HtmlFileName>      <LongName>100550 - Disclosure - Summary of Significant Accounting Policies - Estimated Useful Lives of Respective Assets (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesEstimatedUsefulLivesOfRespectiveAssetsDetails</Role>      <ShortName>Summary of Significant Accounting Policies - Estimated Useful Lives of Respective Assets (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>53</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R54.htm</HtmlFileName>      <LongName>100560 - Disclosure - Summary of Significant Accounting Policies - Schedule of Estimated Useful Lives of Related Assets (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfEstimatedUsefulLivesOfRelatedAssetsDetails</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Estimated Useful Lives of Related Assets (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>54</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R55.htm</HtmlFileName>      <LongName>100570 - Disclosure - Summary of Significant Accounting Policies - Schedule of Accrued Warranty Activity (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfAccruedWarrantyActivityDetail</Role>      <ShortName>Summary of Significant Accounting Policies - Schedule of Accrued Warranty Activity (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>55</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R56.htm</HtmlFileName>      <LongName>100580 - Disclosure - Summary of Significant Accounting Policies - Cumulative Effect of Changes Made on Consolidated Balance Sheet For Adoption of ASU 2020-06 (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesCumulativeEffectOfChangesMadeOnConsolidatedBalanceSheetForAdoptionOfAsu202006Detail</Role>      <ShortName>Summary of Significant Accounting Policies - Cumulative Effect of Changes Made on Consolidated Balance Sheet For Adoption of ASU 2020-06 (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>56</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R57.htm</HtmlFileName>      <LongName>100590 - Disclosure - Digital Assets, Net - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDigitalAssetsNetAdditionalInformationDetail</Role>      <ShortName>Digital Assets, Net - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>57</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R58.htm</HtmlFileName>      <LongName>100600 - Disclosure - Goodwill and Intangible Assets - Summary of Acquired Intangible Assets (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsSummaryOfAcquiredIntangibleAssetsDetail</Role>      <ShortName>Goodwill and Intangible Assets - Summary of Acquired Intangible Assets (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>58</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R59.htm</HtmlFileName>      <LongName>100610 - Disclosure - Goodwill and Intangible Assets - Total Future Amortization Expense for Finite-lived Intangible Assets (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTotalFutureAmortizationExpenseForFinitelivedIntangibleAssetsDetail</Role>      <ShortName>Goodwill and Intangible Assets - Total Future Amortization Expense for Finite-lived Intangible Assets (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>59</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R60.htm</HtmlFileName>      <LongName>100620 - Disclosure - Goodwill and Intangible Assets (Additional Information) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsAdditionalInformationDetails</Role>      <ShortName>Goodwill and Intangible Assets (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTables</ParentRole>      <Position>60</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R61.htm</HtmlFileName>      <LongName>100630 - Disclosure - Fair Value of Financial Instruments - Schedule of Assets and Liabilities Measured at Fair Value on Recurring Basis (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfAssetsAndLiabilitiesMeasuredAtFairValueOnRecurringBasisDetail</Role>      <ShortName>Fair Value of Financial Instruments - Schedule of Assets and Liabilities Measured at Fair Value on Recurring Basis (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>61</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R62.htm</HtmlFileName>      <LongName>100640 - Disclosure - Fair Value of Financial Instruments - Schedule of Interest Rate Swaps Outstanding (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfInterestRateSwapsOutstandingDetail</Role>      <ShortName>Fair Value of Financial Instruments - Schedule of Interest Rate Swaps Outstanding (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>62</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R63.htm</HtmlFileName>      <LongName>100650 - Disclosure - Fair Value of Financial Instruments - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsAdditionalInformationDetail</Role>      <ShortName>Fair Value of Financial Instruments - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>63</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R64.htm</HtmlFileName>      <LongName>100660 - Disclosure - Fair Value of Financial Instruments - Schedule of Estimated Fair Values and Carrying Values (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfEstimatedFairValuesAndCarryingValuesDetail</Role>      <ShortName>Fair Value of Financial Instruments - Schedule of Estimated Fair Values and Carrying Values (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>64</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R65.htm</HtmlFileName>      <LongName>100670 - Disclosure - Inventory - Schedule of Inventory (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureInventoryScheduleOfInventoryDetail</Role>      <ShortName>Inventory - Schedule of Inventory (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>65</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R66.htm</HtmlFileName>      <LongName>100680 - Disclosure - Inventory - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventoryAdditionalInformationDetail</Role>      <ShortName>Inventory - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>66</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R67.htm</HtmlFileName>      <LongName>100690 - Disclosure - Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetComponentsOfSolarEnergySystemsNetDetails</Role>      <ShortName>Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>67</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R68.htm</HtmlFileName>      <LongName>100700 - Disclosure - Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Parenthetical) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetComponentsOfSolarEnergySystemsNetParentheticalDetails</Role>      <ShortName>Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Parenthetical) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>68</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R69.htm</HtmlFileName>      <LongName>100710 - Disclosure - Property, Plant and Equipment, Net - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetAdditionalInformationDetail</Role>      <ShortName>Property, Plant and Equipment, Net - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>69</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R70.htm</HtmlFileName>      <LongName>100720 - Disclosure - Property, Plant and Equipment, Net - Schedule of Property, Plant and Equipment, Net (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetScheduleOfPropertyPlantAndEquipmentNetDetail</Role>      <ShortName>Property, Plant and Equipment, Net - Schedule of Property, Plant and Equipment, Net (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>70</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R71.htm</HtmlFileName>      <LongName>100730 - Disclosure - Accrued Liabilities and Other - Schedule of Accrued Liabilities and Other Current Liabilities (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureAccruedLiabilitiesAndOtherScheduleOfAccruedLiabilitiesAndOtherCurrentLiabilitiesDetail</Role>      <ShortName>Accrued Liabilities and Other - Schedule of Accrued Liabilities and Other Current Liabilities (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>71</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R72.htm</HtmlFileName>      <LongName>100740 - Disclosure - Other Long-Term Liabilities - Schedule of Other Long-term Liabilities (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureOtherLongtermLiabilitiesScheduleOfOtherLongtermLiabilitiesDetail</Role>      <ShortName>Other Long-Term Liabilities - Schedule of Other Long-term Liabilities (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>72</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R73.htm</HtmlFileName>      <LongName>100750 - Disclosure - Debt - Summary of Debt and Finance Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtSummaryOfDebtAndFinanceLeasesDetail</Role>      <ShortName>Debt - Summary of Debt and Finance Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>73</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R74.htm</HtmlFileName>      <LongName>100760 - Disclosure - Debt - 2021 Notes, Bond Hedges and Warrant Transactions - Additional Information (Detail)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2021NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetail</Role>      <ShortName>Debt - 2021 Notes, Bond Hedges and Warrant Transactions - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>74</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R75.htm</HtmlFileName>      <LongName>100770 - Disclosure - Debt - 2022 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2022NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetails</Role>      <ShortName>Debt - 2022 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>75</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R76.htm</HtmlFileName>      <LongName>100780 - Disclosure - Debt - 2024 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2024NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetails</Role>      <ShortName>Debt - 2024 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>76</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R77.htm</HtmlFileName>      <LongName>100790 - Disclosure - Debt - 2025 Notes - Additional Information (Detail)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2025NotesAdditionalInformationDetail</Role>      <ShortName>Debt - 2025 Notes - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>77</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R78.htm</HtmlFileName>      <LongName>100800 - Disclosure - Debt - Credit Agreement (Additional Information) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtCreditAgreementAdditionalInformationDetails</Role>      <ShortName>Debt - Credit Agreement (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>78</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R79.htm</HtmlFileName>      <LongName>100810 - Disclosure - Debt - Automotive Asset-backed Notes - Additional Information (Detail)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtAutomotiveAssetbackedNotesAdditionalInformationDetail</Role>      <ShortName>Debt - Automotive Asset-backed Notes - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>79</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R80.htm</HtmlFileName>      <LongName>100820 - Disclosure - Debt - Solar Asset and Loan-backed Notes (Additional Information) (Details)</LongName>      <ReportType>Notes</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtSolarAssetAndLoanbackedNotesAdditionalInformationDetails</Role>      <ShortName>Debt - Solar Asset and Loan-backed Notes (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>80</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R81.htm</HtmlFileName>      <LongName>100830 - Disclosure - Debt - China Loan Agreements - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtChinaLoanAgreementsAdditionalInformationDetail</Role>      <ShortName>Debt - China Loan Agreements - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>81</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R82.htm</HtmlFileName>      <LongName>100840 - Disclosure - Debt - Cash Equity Debt (Additional Information) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtCashEquityDebtAdditionalInformationDetails</Role>      <ShortName>Debt - Cash Equity Debt (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>82</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R83.htm</HtmlFileName>      <LongName>100870 - Disclosure - Debt - Automotive Lease-backed Credit Facilities - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtAutomotiveLeasebackedCreditFacilitiesAdditionalInformationDetail</Role>      <ShortName>Debt - Automotive Lease-backed Credit Facilities - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>83</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R84.htm</HtmlFileName>      <LongName>100880 - Disclosure - Debt - Solar Revolving Credit Facility and other Loans - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtSolarRevolvingCreditFacilityAndOtherLoansAdditionalInformationDetail</Role>      <ShortName>Debt - Solar Revolving Credit Facility and other Loans - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>84</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R85.htm</HtmlFileName>      <LongName>100890 - Disclosure - Debt - Schedule of Interest Expense (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtScheduleOfInterestExpenseDetail</Role>      <ShortName>Debt - Schedule of Interest Expense (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>85</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R86.htm</HtmlFileName>      <LongName>100900 - Disclosure - Debt - Pledged Assets (Additional Information) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtPledgedAssetsAdditionalInformationDetails</Role>      <ShortName>Debt - Pledged Assets (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>86</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R87.htm</HtmlFileName>      <LongName>100910 - Disclosure - Debt - Schedule of Future Principal Maturities of Debt (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtScheduleOfFuturePrincipalMaturitiesOfDebtDetails</Role>      <ShortName>Debt - Schedule of Future Principal Maturities of Debt (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>87</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R88.htm</HtmlFileName>      <LongName>100920 - Disclosure - Leases (Additional Information) (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesAdditionalInformationDetail</Role>      <ShortName>Leases (Additional Information) (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesTables</ParentRole>      <Position>88</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R89.htm</HtmlFileName>      <LongName>100930 - Disclosure - Leases - Schedule of Operating and Financing Leases Presented in Balance Sheets (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfOperatingAndFinancingLeasesPresentedInBalanceSheetsDetail</Role>      <ShortName>Leases - Schedule of Operating and Financing Leases Presented in Balance Sheets (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>89</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R90.htm</HtmlFileName>      <LongName>100940 - Disclosure - Leases - Schedule of Components of Lease Expense and Other Information Related to Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfComponentsOfLeaseExpenseAndOtherInformationRelatedToLeasesDetail</Role>      <ShortName>Leases - Schedule of Components of Lease Expense and Other Information Related to Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>90</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R91.htm</HtmlFileName>      <LongName>100950 - Disclosure - Leases - Schedule of Other Information Related to Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfOtherInformationRelatedToLeasesDetail</Role>      <ShortName>Leases - Schedule of Other Information Related to Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>91</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R92.htm</HtmlFileName>      <LongName>100960 - Disclosure - Leases - Supplemental Cash Flow Information related to Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesSupplementalCashFlowInformationRelatedToLeasesDetail</Role>      <ShortName>Leases - Supplemental Cash Flow Information related to Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>92</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R93.htm</HtmlFileName>      <LongName>100970 - Disclosure - Leases - Schedule of Maturities of Operating and Finance Lease Liabilities (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfMaturitiesOfOperatingAndFinanceLeaseLiabilitiesDetail</Role>      <ShortName>Leases - Schedule of Maturities of Operating and Finance Lease Liabilities (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>93</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R94.htm</HtmlFileName>      <LongName>100980 - Disclosure - Leases - Maturities of Operating Lease and Sales-Type Lease Receivables from Customers (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesMaturitiesOfOperatingLeaseAndSalestypeLeaseReceivablesFromCustomersDetail</Role>      <ShortName>Leases - Maturities of Operating Lease and Sales-Type Lease Receivables from Customers (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>94</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R95.htm</HtmlFileName>      <LongName>100990 - Disclosure - Leases - Schedule of Lease Receivables Relating to Sales-Type Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfLeaseReceivablesRelatingToSalestypeLeasesDetail</Role>      <ShortName>Leases - Schedule of Lease Receivables Relating to Sales-Type Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>95</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R96.htm</HtmlFileName>      <LongName>101000 - Disclosure - Leases - Schedule of Future Minimum Lease Payments to be Received for Operating Leases (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfFutureMinimumLeasePaymentsToBeReceivedForOperatingLeasesDetail</Role>      <ShortName>Leases - Schedule of Future Minimum Lease Payments to be Received for Operating Leases (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>96</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R97.htm</HtmlFileName>      <LongName>101010 - Disclosure - Equity Incentive Plans - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansAdditionalInformationDetail</Role>      <ShortName>Equity Incentive Plans - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>97</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R98.htm</HtmlFileName>      <LongName>101020 - Disclosure - Equity Incentive Plans - Summary of Stock Option and RSU Activity (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureEquityIncentivePlansSummaryOfStockOptionAndRsuActivityDetail</Role>      <ShortName>Equity Incentive Plans - Summary of Stock Option and RSU Activity (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>98</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R99.htm</HtmlFileName>      <LongName>101030 - Disclosure - Equity Incentive Plans - Schedule of Fair Value of Stock Option Award and ESPP on Grant Date (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureEquityIncentivePlansScheduleOfFairValueOfStockOptionAwardAndEsppOnGrantDateDetail</Role>      <ShortName>Equity Incentive Plans - Schedule of Fair Value of Stock Option Award and ESPP on Grant Date (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>99</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R100.htm</HtmlFileName>      <LongName>101040 - Disclosure - Equity Incentive Plans - Summary of Operational Milestone Based on Revenue or Adjusted EBITDA (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansSummaryOfOperationalMilestoneBasedOnRevenueOrAdjustedEBITDADetail</Role>      <ShortName>Equity Incentive Plans - Summary of Operational Milestone Based on Revenue or Adjusted EBITDA (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>100</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R101.htm</HtmlFileName>      <LongName>101050 - Disclosure - Equity Incentive Plans - Summary of Stock-Based Compensation Expense (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansSummaryOfStockBasedCompensationExpenseDetail</Role>      <ShortName>Equity Incentive Plans - Summary of Stock-Based Compensation Expense (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>101</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R102.htm</HtmlFileName>      <LongName>101060 - Disclosure - Income Taxes (Additional Information) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesAdditionalInformationDetails</Role>      <ShortName>Income Taxes (Additional Information) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesTables</ParentRole>      <Position>102</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R103.htm</HtmlFileName>      <LongName>101070 - Disclosure - Income Taxes - Schedule of Income (Loss) Before Provision for Income Taxes (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfIncomeLossBeforeProvisionForIncomeTaxesDetails</Role>      <ShortName>Income Taxes - Schedule of Income (Loss) Before Provision for Income Taxes (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>103</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R104.htm</HtmlFileName>      <LongName>101080 - Disclosure - Income Taxes - Components of Provision for Income Taxes (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesComponentsOfProvisionForIncomeTaxesDetails</Role>      <ShortName>Income Taxes - Components of Provision for Income Taxes (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>104</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R105.htm</HtmlFileName>      <LongName>101090 - Disclosure - Income Taxes - Schedule of Deferred Tax Assets (Liabilities) (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfDeferredTaxAssetsLiabilitiesDetails</Role>      <ShortName>Income Taxes - Schedule of Deferred Tax Assets (Liabilities) (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>105</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R106.htm</HtmlFileName>      <LongName>101100 - Disclosure - Income Taxes - Schedule of Reconciliation of Taxes at Federal Statutory Rate to Provision for Income Taxes (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfReconciliationOfTaxesAtFederalStatutoryRateToProvisionForIncomeTaxesDetails</Role>      <ShortName>Income Taxes - Schedule of Reconciliation of Taxes at Federal Statutory Rate to Provision for Income Taxes (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>106</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R107.htm</HtmlFileName>      <LongName>101110 - Disclosure - Income Taxes - Schedule of Changes to Gross Unrecognized Tax Benefits (Details)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfChangesToGrossUnrecognizedTaxBenefitsDetails</Role>      <ShortName>Income Taxes - Schedule of Changes to Gross Unrecognized Tax Benefits (Details)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>107</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R108.htm</HtmlFileName>      <LongName>101120 - Disclosure - Commitments and Contingencies - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureCommitmentsAndContingenciesAdditionalInformationDetail</Role>      <ShortName>Commitments and Contingencies - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>108</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R109.htm</HtmlFileName>      <LongName>101130 - Disclosure - Variable Interest Entity Arrangements - Carrying Values of Assets and Liabilities of Subsidiary in Consolidated Balance Sheets (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangementsCarryingValuesOfAssetsAndLiabilitiesOfSubsidiaryInConsolidatedBalanceSheetsDetail</Role>      <ShortName>Variable Interest Entity Arrangements - Carrying Values of Assets and Liabilities of Subsidiary in Consolidated Balance Sheets (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>109</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R110.htm</HtmlFileName>      <LongName>101140 - Disclosure - Related Party Transactions - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRelatedPartyTransactionsAdditionalInformationDetail</Role>      <ShortName>Related Party Transactions - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>110</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R111.htm</HtmlFileName>      <LongName>101150 - Disclosure - Segment Reporting and Information about Geographic Areas - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasAdditionalInformationDetail</Role>      <ShortName>Segment Reporting and Information about Geographic Areas - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>111</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R112.htm</HtmlFileName>      <LongName>101160 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Total Revenues and Gross Profit by Reportable Segment (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfTotalRevenuesAndGrossProfitByReportableSegmentDetail</Role>      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Total Revenues and Gross Profit by Reportable Segment (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>112</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R113.htm</HtmlFileName>      <LongName>101170 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Revenues by Geographic Area (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfRevenuesByGeographicAreaDetail</Role>      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Revenues by Geographic Area (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>113</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R114.htm</HtmlFileName>      <LongName>101180 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Long-Lived Assets by Geographic Area (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfLongLivedAssetsByGeographicAreaDetail</Role>      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Long-Lived Assets by Geographic Area (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>114</Position>    </Report>    <Report instance="tsla-20211231.htm">      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <HtmlFileName>R115.htm</HtmlFileName>      <LongName>101190 - Disclosure - Restructuring and Other - Additional Information (Detail)</LongName>      <ReportType>Sheet</ReportType>      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRestructuringAndOtherAdditionalInformationDetail</Role>      <ShortName>Restructuring and Other - Additional Information (Detail)</ShortName>      <MenuCategory>Details</MenuCategory>      <Position>115</Position>    </Report>    <Report>      <IsDefault>false</IsDefault>      <HasEmbeddedReports>false</HasEmbeddedReports>      <LongName>All Reports</LongName>      <ReportType>Book</ReportType>      <ShortName>All Reports</ShortName>    </Report>  </MyReports>  <InputFiles>    <File doctype="10-K" original="tsla-20211231.htm">tsla-20211231.htm</File>    <File>tsla-20211231.xsd</File>    <File>tsla-20211231_cal.xml</File>    <File>tsla-20211231_def.xml</File>    <File>tsla-20211231_lab.xml</File>    <File>tsla-20211231_pre.xml</File>    <File>tsla-ex21_1.htm</File>    <File>tsla-ex23_1.htm</File>    <File>tsla-ex31_1.htm</File>    <File>tsla-ex31_2.htm</File>    <File>tsla-ex32_1.htm</File>  </InputFiles>  <SupplementalFiles>    <File>img96779317_0.jpg</File>  </SupplementalFiles>  <BaseTaxonomies>    <BaseTaxonomy items="1471">http://fasb.org/us-gaap/2021-01-31</BaseTaxonomy>    <BaseTaxonomy items="37">http://xbrl.sec.gov/dei/2021q4</BaseTaxonomy>  </BaseTaxonomies>  <HasPresentationLinkbase>true</HasPresentationLinkbase>  <HasCalculationLinkbase>true</HasCalculationLinkbase></FilingSummary>
+<?xml version='1.0' encoding='utf-8'?>
+<FilingSummary>
+  <Version>3.22.0.1</Version>
+  <ProcessingTime/>
+  <ReportFormat>html</ReportFormat>
+  <ContextCount>476</ContextCount>
+  <ElementCount>767</ElementCount>
+  <EntityCount>1</EntityCount>
+  <FootnotesReported>true</FootnotesReported>
+  <SegmentCount>139</SegmentCount>
+  <ScenarioCount>0</ScenarioCount>
+  <TuplesReported>false</TuplesReported>
+  <UnitCount>13</UnitCount>
+  <MyReports>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R1.htm</HtmlFileName>
+      <LongName>100000 - Document - Document and Entity Information</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DocumentDocumentAndEntityInformation</Role>
+      <ShortName>Document and Entity Information</ShortName>
+      <MenuCategory>Cover</MenuCategory>
+      <Position>1</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R2.htm</HtmlFileName>
+      <LongName>100010 - Statement - Consolidated Balance Sheets</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedBalanceSheets1</Role>
+      <ShortName>Consolidated Balance Sheets</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>2</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R3.htm</HtmlFileName>
+      <LongName>100040 - Statement - Consolidated Balance Sheets (Parenthetical)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedBalanceSheetsParenthetical</Role>
+      <ShortName>Consolidated Balance Sheets (Parenthetical)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>3</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R4.htm</HtmlFileName>
+      <LongName>100050 - Statement - Consolidated Statements of Operations</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfOperations1</Role>
+      <ShortName>Consolidated Statements of Operations</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>4</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R5.htm</HtmlFileName>
+      <LongName>100070 - Statement - Consolidated Statements of Comprehensive Income (Loss)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfComprehensiveIncomeLoss</Role>
+      <ShortName>Consolidated Statements of Comprehensive Income (Loss)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>5</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R6.htm</HtmlFileName>
+      <LongName>100080 - Statement - Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfRedeemableNoncontrollingInterestAndStockholdersEquity1</Role>
+      <ShortName>Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>6</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R7.htm</HtmlFileName>
+      <LongName>100090 - Statement - Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity (Parenthetical)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/StatementConsolidatedStatementsOfRedeemableNoncontrollingInterestAndStockholdersEquityParenthetical</Role>
+      <ShortName>Consolidated Statements of Redeemable Noncontrolling Interest and Stockholders' Equity (Parenthetical)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>7</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R8.htm</HtmlFileName>
+      <LongName>100100 - Statement - Consolidated Statements of Cash Flows (Unaudited)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_StatementConsolidatedStatementsOfCashFlowsUnaudited</Role>
+      <ShortName>Consolidated Statements of Cash Flows (Unaudited)</ShortName>
+      <MenuCategory>Statements</MenuCategory>
+      <Position>8</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R9.htm</HtmlFileName>
+      <LongName>100110 - Disclosure - Overview</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOverview</Role>
+      <ShortName>Overview</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>9</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R10.htm</HtmlFileName>
+      <LongName>100120 - Disclosure - Summary of Significant Accounting Policies</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</Role>
+      <ShortName>Summary of Significant Accounting Policies</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>10</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R11.htm</HtmlFileName>
+      <LongName>100130 - Disclosure - Digital Assets, Net</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDigitalAssetsNet</Role>
+      <ShortName>Digital Assets, Net</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>11</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R12.htm</HtmlFileName>
+      <LongName>100140 - Disclosure - Goodwill and Intangible Assets</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssets1</Role>
+      <ShortName>Goodwill and Intangible Assets</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>12</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R13.htm</HtmlFileName>
+      <LongName>100150 - Disclosure - Fair Value of Financial Instruments</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstruments</Role>
+      <ShortName>Fair Value of Financial Instruments</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>13</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R14.htm</HtmlFileName>
+      <LongName>100160 - Disclosure - Inventory</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventory</Role>
+      <ShortName>Inventory</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>14</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R15.htm</HtmlFileName>
+      <LongName>100170 - Disclosure - Solar Energy Systems, Net</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNet</Role>
+      <ShortName>Solar Energy Systems, Net</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>15</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R16.htm</HtmlFileName>
+      <LongName>100180 - Disclosure - Property, Plant and Equipment, Net</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNet</Role>
+      <ShortName>Property, Plant and Equipment, Net</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>16</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R17.htm</HtmlFileName>
+      <LongName>100190 - Disclosure - Accrued Liabilities and Other</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOther</Role>
+      <ShortName>Accrued Liabilities and Other</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>17</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R18.htm</HtmlFileName>
+      <LongName>100200 - Disclosure - Other Long-Term Liabilities</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilities</Role>
+      <ShortName>Other Long-Term Liabilities</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>18</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R19.htm</HtmlFileName>
+      <LongName>100210 - Disclosure - Debt</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebt</Role>
+      <ShortName>Debt</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>19</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R20.htm</HtmlFileName>
+      <LongName>100220 - Disclosure - Leases</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeases</Role>
+      <ShortName>Leases</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>20</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R21.htm</HtmlFileName>
+      <LongName>100230 - Disclosure - Equity Incentive Plans</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlans</Role>
+      <ShortName>Equity Incentive Plans</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>21</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R22.htm</HtmlFileName>
+      <LongName>100240 - Disclosure - Income Taxes</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxes</Role>
+      <ShortName>Income Taxes</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>22</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R23.htm</HtmlFileName>
+      <LongName>100250 - Disclosure - Commitments and Contingencies</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureCommitmentsAndContingencies</Role>
+      <ShortName>Commitments and Contingencies</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>23</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R24.htm</HtmlFileName>
+      <LongName>100260 - Disclosure - Variable Interest Entity Arrangements</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangements</Role>
+      <ShortName>Variable Interest Entity Arrangements</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>24</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R25.htm</HtmlFileName>
+      <LongName>100270 - Disclosure - Related Party Transactions</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureRelatedPartyTransactions</Role>
+      <ShortName>Related Party Transactions</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>25</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R26.htm</HtmlFileName>
+      <LongName>100280 - Disclosure - Segment Reporting and Information about Geographic Areas</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreas</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>26</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R27.htm</HtmlFileName>
+      <LongName>100290 - Disclosure - Restructuring and Other</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRestructuringAndOther1</Role>
+      <ShortName>Restructuring and Other</ShortName>
+      <MenuCategory>Notes</MenuCategory>
+      <Position>27</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R28.htm</HtmlFileName>
+      <LongName>100300 - Disclosure - Summary of Significant Accounting Policies (Policies)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesPolicies</Role>
+      <ShortName>Summary of Significant Accounting Policies (Policies)</ShortName>
+      <MenuCategory>Policies</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</ParentRole>
+      <Position>28</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R29.htm</HtmlFileName>
+      <LongName>100310 - Disclosure - Summary of Significant Accounting Policies (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesTables</Role>
+      <ShortName>Summary of Significant Accounting Policies (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPolicies</ParentRole>
+      <Position>29</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R30.htm</HtmlFileName>
+      <LongName>100320 - Disclosure - Goodwill and Intangible Assets (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTables</Role>
+      <ShortName>Goodwill and Intangible Assets (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssets1</ParentRole>
+      <Position>30</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R31.htm</HtmlFileName>
+      <LongName>100330 - Disclosure - Fair Value of Financial Instruments (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsTables</Role>
+      <ShortName>Fair Value of Financial Instruments (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstruments</ParentRole>
+      <Position>31</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R32.htm</HtmlFileName>
+      <LongName>100340 - Disclosure - Inventory (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventoryTables</Role>
+      <ShortName>Inventory (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventory</ParentRole>
+      <Position>32</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R33.htm</HtmlFileName>
+      <LongName>100350 - Disclosure - Solar Energy Systems, Net (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetTables</Role>
+      <ShortName>Solar Energy Systems, Net (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNet</ParentRole>
+      <Position>33</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R34.htm</HtmlFileName>
+      <LongName>100360 - Disclosure - Property, Plant and Equipment, Net (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetTables</Role>
+      <ShortName>Property, Plant and Equipment, Net (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNet</ParentRole>
+      <Position>34</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R35.htm</HtmlFileName>
+      <LongName>100370 - Disclosure - Accrued Liabilities and Other (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOtherTables</Role>
+      <ShortName>Accrued Liabilities and Other (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureAccruedLiabilitiesAndOther</ParentRole>
+      <Position>35</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R36.htm</HtmlFileName>
+      <LongName>100380 - Disclosure - Other Long-Term Liabilities (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilitiesTables</Role>
+      <ShortName>Other Long-Term Liabilities (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOtherLongTermLiabilities</ParentRole>
+      <Position>36</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R37.htm</HtmlFileName>
+      <LongName>100390 - Disclosure - Debt (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtTables</Role>
+      <ShortName>Debt (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebt</ParentRole>
+      <Position>37</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R38.htm</HtmlFileName>
+      <LongName>100400 - Disclosure - Leases (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesTables</Role>
+      <ShortName>Leases (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeases</ParentRole>
+      <Position>38</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R39.htm</HtmlFileName>
+      <LongName>100410 - Disclosure - Equity Incentive Plans (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansTables</Role>
+      <ShortName>Equity Incentive Plans (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlans</ParentRole>
+      <Position>39</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R40.htm</HtmlFileName>
+      <LongName>100420 - Disclosure - Income Taxes (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesTables</Role>
+      <ShortName>Income Taxes (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxes</ParentRole>
+      <Position>40</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R41.htm</HtmlFileName>
+      <LongName>100430 - Disclosure - Variable Interest Entity Arrangements (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangementsTables</Role>
+      <ShortName>Variable Interest Entity Arrangements (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangements</ParentRole>
+      <Position>41</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R42.htm</HtmlFileName>
+      <LongName>100440 - Disclosure - Segment Reporting and Information about Geographic Areas (Tables)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasTables</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas (Tables)</ShortName>
+      <MenuCategory>Tables</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreas</ParentRole>
+      <Position>42</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R43.htm</HtmlFileName>
+      <LongName>100450 - Disclosure - Overview - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureOverviewAdditionalInformationDetail</Role>
+      <ShortName>Overview - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>43</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R44.htm</HtmlFileName>
+      <LongName>100460 - Disclosure - Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDisaggregationOfRevenueByMajorSourceDetail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>44</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R45.htm</HtmlFileName>
+      <LongName>100470 - Disclosure - Summary of Significant Accounting Policies - Schedule of Deferred Revenue Activity (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDeferredRevenueActivityDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Deferred Revenue Activity (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>45</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R46.htm</HtmlFileName>
+      <LongName>100480 - Disclosure - Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Parenthetical) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfDisaggregationOfRevenueByMajorSourceParentheticalDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Disaggregation of Revenue by Major Source (Parenthetical) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>46</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R47.htm</HtmlFileName>
+      <LongName>100490 - Disclosure - Summary of Significant Accounting Policies - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesAdditionalInformationDetail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>47</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R48.htm</HtmlFileName>
+      <LongName>100500 - Disclosure - Summary of Significant Accounting Policies - Additional Information (Detail1)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesAdditionalInformationDetail1</Role>
+      <ShortName>Summary of Significant Accounting Policies - Additional Information (Detail1)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>48</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R49.htm</HtmlFileName>
+      <LongName>100510 - Disclosure - Summary of Significant Accounting Policies - Schedule of Reconciliation of Net Income (Loss) Attributable to Common Stockholders to Net Income (Loss) Used in Computing Basic and Diluted Net Income (Loss) Per Share of Common Stock (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfReconciliationOfNetIncomeLossAttributableToCommonStockholdersToNetIncomeLossUse</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Reconciliation of Net Income (Loss) Attributable to Common Stockholders to Net Income (Loss) Used in Computing Basic and Diluted Net Income (Loss) Per Share of Common Stock (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>49</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R50.htm</HtmlFileName>
+      <LongName>100520 - Disclosure - Summary of Significant Accounting Policies - Schedule of Reconciliation of Basic to Diluted Weighted Average Shares Used in Computing Net Income Per Share of Common Stock, as Adjusted to Give Effect to Stock Split (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfReconciliationOfBasicToDilutedWeightedAverageSharesUsedInComputingNetIncomePer</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Reconciliation of Basic to Diluted Weighted Average Shares Used in Computing Net Income Per Share of Common Stock, as Adjusted to Give Effect to Stock Split (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>50</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R51.htm</HtmlFileName>
+      <LongName>100530 - Disclosure - Summary of Significant Accounting Policies - Schedule of Potentially Dilutive Shares that were Excluded from Computation of Diluted Net Income (Loss) per Share of Common Stock (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfPotentiallyDilutiveSharesThatWereExcludedFromComputationOfDilutedNetIncomeLossPerShareOfCommonStockDetail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Potentially Dilutive Shares that were Excluded from Computation of Diluted Net Income (Loss) per Share of Common Stock (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>51</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R52.htm</HtmlFileName>
+      <LongName>100540 - Disclosure - Summary of Significant Accounting Policies - Schedule of Cash and Cash Equivalents and Restricted Cash (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfCashAndCashEquivalentsAndRestrictedCashDetail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Cash and Cash Equivalents and Restricted Cash (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>52</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R53.htm</HtmlFileName>
+      <LongName>100550 - Disclosure - Summary of Significant Accounting Policies - Estimated Useful Lives of Respective Assets (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesEstimatedUsefulLivesOfRespectiveAssetsDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Estimated Useful Lives of Respective Assets (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>53</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R54.htm</HtmlFileName>
+      <LongName>100560 - Disclosure - Summary of Significant Accounting Policies - Schedule of Estimated Useful Lives of Related Assets (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfEstimatedUsefulLivesOfRelatedAssetsDetails</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Estimated Useful Lives of Related Assets (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>54</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R55.htm</HtmlFileName>
+      <LongName>100570 - Disclosure - Summary of Significant Accounting Policies - Schedule of Accrued Warranty Activity (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSummaryOfSignificantAccountingPoliciesScheduleOfAccruedWarrantyActivityDetail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Schedule of Accrued Warranty Activity (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>55</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R56.htm</HtmlFileName>
+      <LongName>100580 - Disclosure - Summary of Significant Accounting Policies - Cumulative Effect of Changes Made on Consolidated Balance Sheet For Adoption of ASU 2020-06 (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSummaryOfSignificantAccountingPoliciesCumulativeEffectOfChangesMadeOnConsolidatedBalanceSheetForAdoptionOfAsu202006Detail</Role>
+      <ShortName>Summary of Significant Accounting Policies - Cumulative Effect of Changes Made on Consolidated Balance Sheet For Adoption of ASU 2020-06 (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>56</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R57.htm</HtmlFileName>
+      <LongName>100590 - Disclosure - Digital Assets, Net - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDigitalAssetsNetAdditionalInformationDetail</Role>
+      <ShortName>Digital Assets, Net - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>57</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R58.htm</HtmlFileName>
+      <LongName>100600 - Disclosure - Goodwill and Intangible Assets - Summary of Acquired Intangible Assets (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsSummaryOfAcquiredIntangibleAssetsDetail</Role>
+      <ShortName>Goodwill and Intangible Assets - Summary of Acquired Intangible Assets (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>58</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R59.htm</HtmlFileName>
+      <LongName>100610 - Disclosure - Goodwill and Intangible Assets - Total Future Amortization Expense for Finite-lived Intangible Assets (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTotalFutureAmortizationExpenseForFinitelivedIntangibleAssetsDetail</Role>
+      <ShortName>Goodwill and Intangible Assets - Total Future Amortization Expense for Finite-lived Intangible Assets (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>59</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R60.htm</HtmlFileName>
+      <LongName>100620 - Disclosure - Goodwill and Intangible Assets (Additional Information) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsAdditionalInformationDetails</Role>
+      <ShortName>Goodwill and Intangible Assets (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureGoodwillAndIntangibleAssetsTables</ParentRole>
+      <Position>60</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R61.htm</HtmlFileName>
+      <LongName>100630 - Disclosure - Fair Value of Financial Instruments - Schedule of Assets and Liabilities Measured at Fair Value on Recurring Basis (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfAssetsAndLiabilitiesMeasuredAtFairValueOnRecurringBasisDetail</Role>
+      <ShortName>Fair Value of Financial Instruments - Schedule of Assets and Liabilities Measured at Fair Value on Recurring Basis (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>61</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R62.htm</HtmlFileName>
+      <LongName>100640 - Disclosure - Fair Value of Financial Instruments - Schedule of Interest Rate Swaps Outstanding (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfInterestRateSwapsOutstandingDetail</Role>
+      <ShortName>Fair Value of Financial Instruments - Schedule of Interest Rate Swaps Outstanding (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>62</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R63.htm</HtmlFileName>
+      <LongName>100650 - Disclosure - Fair Value of Financial Instruments - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsAdditionalInformationDetail</Role>
+      <ShortName>Fair Value of Financial Instruments - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>63</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R64.htm</HtmlFileName>
+      <LongName>100660 - Disclosure - Fair Value of Financial Instruments - Schedule of Estimated Fair Values and Carrying Values (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureFairValueOfFinancialInstrumentsScheduleOfEstimatedFairValuesAndCarryingValuesDetail</Role>
+      <ShortName>Fair Value of Financial Instruments - Schedule of Estimated Fair Values and Carrying Values (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>64</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R65.htm</HtmlFileName>
+      <LongName>100670 - Disclosure - Inventory - Schedule of Inventory (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureInventoryScheduleOfInventoryDetail</Role>
+      <ShortName>Inventory - Schedule of Inventory (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>65</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R66.htm</HtmlFileName>
+      <LongName>100680 - Disclosure - Inventory - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureInventoryAdditionalInformationDetail</Role>
+      <ShortName>Inventory - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>66</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R67.htm</HtmlFileName>
+      <LongName>100690 - Disclosure - Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetComponentsOfSolarEnergySystemsNetDetails</Role>
+      <ShortName>Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>67</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R68.htm</HtmlFileName>
+      <LongName>100700 - Disclosure - Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Parenthetical) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureSolarEnergySystemsNetComponentsOfSolarEnergySystemsNetParentheticalDetails</Role>
+      <ShortName>Solar Energy Systems, Net - Components of Solar Energy Systems, Net (Parenthetical) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>68</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R69.htm</HtmlFileName>
+      <LongName>100710 - Disclosure - Property, Plant and Equipment, Net - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetAdditionalInformationDetail</Role>
+      <ShortName>Property, Plant and Equipment, Net - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>69</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R70.htm</HtmlFileName>
+      <LongName>100720 - Disclosure - Property, Plant and Equipment, Net - Schedule of Property, Plant and Equipment, Net (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosurePropertyPlantAndEquipmentNetScheduleOfPropertyPlantAndEquipmentNetDetail</Role>
+      <ShortName>Property, Plant and Equipment, Net - Schedule of Property, Plant and Equipment, Net (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>70</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R71.htm</HtmlFileName>
+      <LongName>100730 - Disclosure - Accrued Liabilities and Other - Schedule of Accrued Liabilities and Other Current Liabilities (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureAccruedLiabilitiesAndOtherScheduleOfAccruedLiabilitiesAndOtherCurrentLiabilitiesDetail</Role>
+      <ShortName>Accrued Liabilities and Other - Schedule of Accrued Liabilities and Other Current Liabilities (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>71</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R72.htm</HtmlFileName>
+      <LongName>100740 - Disclosure - Other Long-Term Liabilities - Schedule of Other Long-term Liabilities (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureOtherLongtermLiabilitiesScheduleOfOtherLongtermLiabilitiesDetail</Role>
+      <ShortName>Other Long-Term Liabilities - Schedule of Other Long-term Liabilities (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>72</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R73.htm</HtmlFileName>
+      <LongName>100750 - Disclosure - Debt - Summary of Debt and Finance Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtSummaryOfDebtAndFinanceLeasesDetail</Role>
+      <ShortName>Debt - Summary of Debt and Finance Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>73</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R74.htm</HtmlFileName>
+      <LongName>100760 - Disclosure - Debt - 2021 Notes, Bond Hedges and Warrant Transactions - Additional Information (Detail)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2021NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetail</Role>
+      <ShortName>Debt - 2021 Notes, Bond Hedges and Warrant Transactions - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>74</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R75.htm</HtmlFileName>
+      <LongName>100770 - Disclosure - Debt - 2022 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2022NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetails</Role>
+      <ShortName>Debt - 2022 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>75</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R76.htm</HtmlFileName>
+      <LongName>100780 - Disclosure - Debt - 2024 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2024NotesBondHedgesAndWarrantTransactionsAdditionalInformationDetails</Role>
+      <ShortName>Debt - 2024 Notes, Bond Hedges and Warrant Transactions (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>76</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R77.htm</HtmlFileName>
+      <LongName>100790 - Disclosure - Debt - 2025 Notes - Additional Information (Detail)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebt2025NotesAdditionalInformationDetail</Role>
+      <ShortName>Debt - 2025 Notes - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>77</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R78.htm</HtmlFileName>
+      <LongName>100800 - Disclosure - Debt - Credit Agreement (Additional Information) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtCreditAgreementAdditionalInformationDetails</Role>
+      <ShortName>Debt - Credit Agreement (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>78</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R79.htm</HtmlFileName>
+      <LongName>100810 - Disclosure - Debt - Automotive Asset-backed Notes - Additional Information (Detail)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtAutomotiveAssetbackedNotesAdditionalInformationDetail</Role>
+      <ShortName>Debt - Automotive Asset-backed Notes - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>79</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R80.htm</HtmlFileName>
+      <LongName>100820 - Disclosure - Debt - Solar Asset and Loan-backed Notes (Additional Information) (Details)</LongName>
+      <ReportType>Notes</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtSolarAssetAndLoanbackedNotesAdditionalInformationDetails</Role>
+      <ShortName>Debt - Solar Asset and Loan-backed Notes (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>80</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R81.htm</HtmlFileName>
+      <LongName>100830 - Disclosure - Debt - China Loan Agreements - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtChinaLoanAgreementsAdditionalInformationDetail</Role>
+      <ShortName>Debt - China Loan Agreements - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>81</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R82.htm</HtmlFileName>
+      <LongName>100840 - Disclosure - Debt - Cash Equity Debt (Additional Information) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtCashEquityDebtAdditionalInformationDetails</Role>
+      <ShortName>Debt - Cash Equity Debt (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>82</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R83.htm</HtmlFileName>
+      <LongName>100870 - Disclosure - Debt - Automotive Lease-backed Credit Facilities - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtAutomotiveLeasebackedCreditFacilitiesAdditionalInformationDetail</Role>
+      <ShortName>Debt - Automotive Lease-backed Credit Facilities - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>83</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R84.htm</HtmlFileName>
+      <LongName>100880 - Disclosure - Debt - Solar Revolving Credit Facility and other Loans - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtSolarRevolvingCreditFacilityAndOtherLoansAdditionalInformationDetail</Role>
+      <ShortName>Debt - Solar Revolving Credit Facility and other Loans - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>84</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R85.htm</HtmlFileName>
+      <LongName>100890 - Disclosure - Debt - Schedule of Interest Expense (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureDebtScheduleOfInterestExpenseDetail</Role>
+      <ShortName>Debt - Schedule of Interest Expense (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>85</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R86.htm</HtmlFileName>
+      <LongName>100900 - Disclosure - Debt - Pledged Assets (Additional Information) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtPledgedAssetsAdditionalInformationDetails</Role>
+      <ShortName>Debt - Pledged Assets (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>86</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R87.htm</HtmlFileName>
+      <LongName>100910 - Disclosure - Debt - Schedule of Future Principal Maturities of Debt (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureDebtScheduleOfFuturePrincipalMaturitiesOfDebtDetails</Role>
+      <ShortName>Debt - Schedule of Future Principal Maturities of Debt (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>87</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R88.htm</HtmlFileName>
+      <LongName>100920 - Disclosure - Leases (Additional Information) (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesAdditionalInformationDetail</Role>
+      <ShortName>Leases (Additional Information) (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesTables</ParentRole>
+      <Position>88</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R89.htm</HtmlFileName>
+      <LongName>100930 - Disclosure - Leases - Schedule of Operating and Financing Leases Presented in Balance Sheets (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfOperatingAndFinancingLeasesPresentedInBalanceSheetsDetail</Role>
+      <ShortName>Leases - Schedule of Operating and Financing Leases Presented in Balance Sheets (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>89</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R90.htm</HtmlFileName>
+      <LongName>100940 - Disclosure - Leases - Schedule of Components of Lease Expense and Other Information Related to Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfComponentsOfLeaseExpenseAndOtherInformationRelatedToLeasesDetail</Role>
+      <ShortName>Leases - Schedule of Components of Lease Expense and Other Information Related to Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>90</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R91.htm</HtmlFileName>
+      <LongName>100950 - Disclosure - Leases - Schedule of Other Information Related to Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfOtherInformationRelatedToLeasesDetail</Role>
+      <ShortName>Leases - Schedule of Other Information Related to Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>91</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R92.htm</HtmlFileName>
+      <LongName>100960 - Disclosure - Leases - Supplemental Cash Flow Information related to Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesSupplementalCashFlowInformationRelatedToLeasesDetail</Role>
+      <ShortName>Leases - Supplemental Cash Flow Information related to Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>92</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R93.htm</HtmlFileName>
+      <LongName>100970 - Disclosure - Leases - Schedule of Maturities of Operating and Finance Lease Liabilities (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfMaturitiesOfOperatingAndFinanceLeaseLiabilitiesDetail</Role>
+      <ShortName>Leases - Schedule of Maturities of Operating and Finance Lease Liabilities (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>93</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R94.htm</HtmlFileName>
+      <LongName>100980 - Disclosure - Leases - Maturities of Operating Lease and Sales-Type Lease Receivables from Customers (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesMaturitiesOfOperatingLeaseAndSalestypeLeaseReceivablesFromCustomersDetail</Role>
+      <ShortName>Leases - Maturities of Operating Lease and Sales-Type Lease Receivables from Customers (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>94</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R95.htm</HtmlFileName>
+      <LongName>100990 - Disclosure - Leases - Schedule of Lease Receivables Relating to Sales-Type Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfLeaseReceivablesRelatingToSalestypeLeasesDetail</Role>
+      <ShortName>Leases - Schedule of Lease Receivables Relating to Sales-Type Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>95</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R96.htm</HtmlFileName>
+      <LongName>101000 - Disclosure - Leases - Schedule of Future Minimum Lease Payments to be Received for Operating Leases (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureLeasesScheduleOfFutureMinimumLeasePaymentsToBeReceivedForOperatingLeasesDetail</Role>
+      <ShortName>Leases - Schedule of Future Minimum Lease Payments to be Received for Operating Leases (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>96</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R97.htm</HtmlFileName>
+      <LongName>101010 - Disclosure - Equity Incentive Plans - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansAdditionalInformationDetail</Role>
+      <ShortName>Equity Incentive Plans - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>97</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R98.htm</HtmlFileName>
+      <LongName>101020 - Disclosure - Equity Incentive Plans - Summary of Stock Option and RSU Activity (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureEquityIncentivePlansSummaryOfStockOptionAndRsuActivityDetail</Role>
+      <ShortName>Equity Incentive Plans - Summary of Stock Option and RSU Activity (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>98</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R99.htm</HtmlFileName>
+      <LongName>101030 - Disclosure - Equity Incentive Plans - Schedule of Fair Value of Stock Option Award and ESPP on Grant Date (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureEquityIncentivePlansScheduleOfFairValueOfStockOptionAwardAndEsppOnGrantDateDetail</Role>
+      <ShortName>Equity Incentive Plans - Schedule of Fair Value of Stock Option Award and ESPP on Grant Date (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>99</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R100.htm</HtmlFileName>
+      <LongName>101040 - Disclosure - Equity Incentive Plans - Summary of Operational Milestone Based on Revenue or Adjusted EBITDA (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansSummaryOfOperationalMilestoneBasedOnRevenueOrAdjustedEBITDADetail</Role>
+      <ShortName>Equity Incentive Plans - Summary of Operational Milestone Based on Revenue or Adjusted EBITDA (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>100</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R101.htm</HtmlFileName>
+      <LongName>101050 - Disclosure - Equity Incentive Plans - Summary of Stock-Based Compensation Expense (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureEquityIncentivePlansSummaryOfStockBasedCompensationExpenseDetail</Role>
+      <ShortName>Equity Incentive Plans - Summary of Stock-Based Compensation Expense (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>101</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R102.htm</HtmlFileName>
+      <LongName>101060 - Disclosure - Income Taxes (Additional Information) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesAdditionalInformationDetails</Role>
+      <ShortName>Income Taxes (Additional Information) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <ParentRole>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesTables</ParentRole>
+      <Position>102</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R103.htm</HtmlFileName>
+      <LongName>101070 - Disclosure - Income Taxes - Schedule of Income (Loss) Before Provision for Income Taxes (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfIncomeLossBeforeProvisionForIncomeTaxesDetails</Role>
+      <ShortName>Income Taxes - Schedule of Income (Loss) Before Provision for Income Taxes (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>103</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R104.htm</HtmlFileName>
+      <LongName>101080 - Disclosure - Income Taxes - Components of Provision for Income Taxes (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesComponentsOfProvisionForIncomeTaxesDetails</Role>
+      <ShortName>Income Taxes - Components of Provision for Income Taxes (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>104</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R105.htm</HtmlFileName>
+      <LongName>101090 - Disclosure - Income Taxes - Schedule of Deferred Tax Assets (Liabilities) (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfDeferredTaxAssetsLiabilitiesDetails</Role>
+      <ShortName>Income Taxes - Schedule of Deferred Tax Assets (Liabilities) (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>105</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R106.htm</HtmlFileName>
+      <LongName>101100 - Disclosure - Income Taxes - Schedule of Reconciliation of Taxes at Federal Statutory Rate to Provision for Income Taxes (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfReconciliationOfTaxesAtFederalStatutoryRateToProvisionForIncomeTaxesDetails</Role>
+      <ShortName>Income Taxes - Schedule of Reconciliation of Taxes at Federal Statutory Rate to Provision for Income Taxes (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>106</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R107.htm</HtmlFileName>
+      <LongName>101110 - Disclosure - Income Taxes - Schedule of Changes to Gross Unrecognized Tax Benefits (Details)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureIncomeTaxesScheduleOfChangesToGrossUnrecognizedTaxBenefitsDetails</Role>
+      <ShortName>Income Taxes - Schedule of Changes to Gross Unrecognized Tax Benefits (Details)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>107</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R108.htm</HtmlFileName>
+      <LongName>101120 - Disclosure - Commitments and Contingencies - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureCommitmentsAndContingenciesAdditionalInformationDetail</Role>
+      <ShortName>Commitments and Contingencies - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>108</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R109.htm</HtmlFileName>
+      <LongName>101130 - Disclosure - Variable Interest Entity Arrangements - Carrying Values of Assets and Liabilities of Subsidiary in Consolidated Balance Sheets (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureVariableInterestEntityArrangementsCarryingValuesOfAssetsAndLiabilitiesOfSubsidiaryInConsolidatedBalanceSheetsDetail</Role>
+      <ShortName>Variable Interest Entity Arrangements - Carrying Values of Assets and Liabilities of Subsidiary in Consolidated Balance Sheets (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>109</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R110.htm</HtmlFileName>
+      <LongName>101140 - Disclosure - Related Party Transactions - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRelatedPartyTransactionsAdditionalInformationDetail</Role>
+      <ShortName>Related Party Transactions - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>110</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R111.htm</HtmlFileName>
+      <LongName>101150 - Disclosure - Segment Reporting and Information about Geographic Areas - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasAdditionalInformationDetail</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>111</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R112.htm</HtmlFileName>
+      <LongName>101160 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Total Revenues and Gross Profit by Reportable Segment (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfTotalRevenuesAndGrossProfitByReportableSegmentDetail</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Total Revenues and Gross Profit by Reportable Segment (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>112</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R113.htm</HtmlFileName>
+      <LongName>101170 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Revenues by Geographic Area (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfRevenuesByGeographicAreaDetail</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Revenues by Geographic Area (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>113</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R114.htm</HtmlFileName>
+      <LongName>101180 - Disclosure - Segment Reporting and Information about Geographic Areas - Schedule of Long-Lived Assets by Geographic Area (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/Role_DisclosureSegmentReportingAndInformationAboutGeographicAreasScheduleOfLongLivedAssetsByGeographicAreaDetail</Role>
+      <ShortName>Segment Reporting and Information about Geographic Areas - Schedule of Long-Lived Assets by Geographic Area (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>114</Position>
+    </Report>
+    <Report instance="tsla-20211231.htm">
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <HtmlFileName>R115.htm</HtmlFileName>
+      <LongName>101190 - Disclosure - Restructuring and Other - Additional Information (Detail)</LongName>
+      <ReportType>Sheet</ReportType>
+      <Role>http://www.tesla.com/20211231/taxonomy/role/DisclosureRestructuringAndOtherAdditionalInformationDetail</Role>
+      <ShortName>Restructuring and Other - Additional Information (Detail)</ShortName>
+      <MenuCategory>Details</MenuCategory>
+      <Position>115</Position>
+    </Report>
+    <Report>
+      <IsDefault>false</IsDefault>
+      <HasEmbeddedReports>false</HasEmbeddedReports>
+      <LongName>All Reports</LongName>
+      <ReportType>Book</ReportType>
+      <ShortName>All Reports</ShortName>
+    </Report>
+  </MyReports>
+  <InputFiles>
+    <File doctype="10-K" original="tsla-20211231.htm">tsla-20211231.htm</File>
+    <File>tsla-20211231.xsd</File>
+    <File>tsla-20211231_cal.xml</File>
+    <File>tsla-20211231_def.xml</File>
+    <File>tsla-20211231_lab.xml</File>
+    <File>tsla-20211231_pre.xml</File>
+    <File>tsla-ex21_1.htm</File>
+    <File>tsla-ex23_1.htm</File>
+    <File>tsla-ex31_1.htm</File>
+    <File>tsla-ex31_2.htm</File>
+    <File>tsla-ex32_1.htm</File>
+  </InputFiles>
+  <SupplementalFiles>
+    <File>img96779317_0.jpg</File>
+  </SupplementalFiles>
+  <BaseTaxonomies>
+    <BaseTaxonomy items="1471">http://fasb.org/us-gaap/2021-01-31</BaseTaxonomy>
+    <BaseTaxonomy items="37">http://xbrl.sec.gov/dei/2021q4</BaseTaxonomy>
+  </BaseTaxonomies>
+  <HasPresentationLinkbase>true</HasPresentationLinkbase>
+  <HasCalculationLinkbase>true</HasCalculationLinkbase>
+</FilingSummary>

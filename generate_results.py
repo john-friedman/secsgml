@@ -3,6 +3,7 @@ import os
 import shutil
 import filecmp
 from pathlib import Path
+from time import time
 
 def compare_folders(original_path, new_path):
     # Convert paths to Path objects for easier handling
@@ -34,9 +35,12 @@ def compare_folders(original_path, new_path):
 # delete previous results, using shutil
 shutil.rmtree('results', ignore_errors=True)
 
+s = time()
 samples = os.listdir('samples')
 samples = [os.path.join('samples', sample) for sample in samples]
 for sample in samples:
     parse_sgml_submission(filepath=sample, output_dir='results')
+
+print(f"Time taken: {time() - s}")
 
 compare_folders('results_comparison', 'results')
