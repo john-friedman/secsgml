@@ -91,7 +91,7 @@ def parse_header_metadata(lines, submission_type):
                 if tag.startswith('/'):
                     continue
             except:
-                tag, text = line.split(':')
+                tag, text = line.split(':',1)
                 tag = tag.strip().lower()
             
             text = text.strip()
@@ -180,6 +180,7 @@ class DocumentIndex:
         self.document_positions = []  # start, end positions
         self.text_positions = []      # start, end positions
         self.header_end = 0
+        self.text_leftovers = {}  
 
 def build_document_index(lines):
     """Just indexes document positions - no metadata handling"""
@@ -194,7 +195,7 @@ def build_document_index(lines):
             index.header_end = i
             break
     
-    # Index all document and text positions
+    # Index all document and text positions 
     for i, line in enumerate(lines):
         if line == '<DOCUMENT>':
             doc_start = i
@@ -204,8 +205,19 @@ def build_document_index(lines):
                 doc_start = None
         elif line == '<TEXT>':
             text_start = i
-        elif line == '</TEXT>':
-            if text_start is not None:
+        elif '</TEXT>' in line:
+            # Check if next non-empty line is </DOCUMENT>
+            next_line = None
+            j = i + 1
+            while j < len(lines) and not next_line:
+                if lines[j].strip():
+                    next_line = lines[j].strip()
+                j += 1
+            
+            if next_line == '</DOCUMENT>' and text_start is not None:
+                if '</TEXT>' != line:
+                    leftover = line.split('</TEXT>')[0]
+                    index.text_leftovers[i] = leftover
                 index.text_positions.append((text_start, i))
                 text_start = None
     
@@ -260,6 +272,10 @@ def parse_sgml_submission(content=None, filepath=None, output_dir=None):
         
         # Process text contents
         text_lines = lines[text_start+1:text_end]
+
+        # If there's leftover content at the end
+        if text_end in doc_index.text_leftovers:
+            text_lines.append(doc_index.text_leftovers[text_end])
         output_filename = doc_metadata.get('filename', doc_metadata['sequence'] + '.txt')
         document_path = os.path.join(accession_dir, output_filename)
         
