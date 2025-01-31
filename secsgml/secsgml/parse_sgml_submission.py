@@ -165,24 +165,7 @@ def parse_text_tag_contents(lines, output_path):
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(content)  # More efficient than writelines for joined content
 
-def get_documents(lines):
-    """Split content into documents between <DOCUMENT> tags"""
-    doc_marker = '<DOCUMENT>'
-    doc_end = '</DOCUMENT>'
-    
-    documents = []
-    current = []
-    
-    for line in lines:
-        line_stripped = line.strip()
-        if line_stripped == doc_marker:
-            current = []
-        elif line_stripped == doc_end:
-            documents.append(''.join(current))
-        else:
-            current.append(line)
-            
-    return documents
+
             
 def parse_document_metadata(lines):
     """Parse metadata between first line and first <TEXT> tag"""
@@ -190,8 +173,24 @@ def parse_document_metadata(lines):
         line.split('>')[0][1:].lower(): line.split('>')[1].strip()
         for line in lines
     }
+def get_documents(lines):
+    """Returns list of tuples containing start and end indices for each document"""
+    doc_marker = '<DOCUMENT>\n'  # Include newline to avoid string operations
+    doc_end = '</DOCUMENT>\n'
+    
+    doc_ranges = []
+    start_idx = None
+    
+    for i, line in enumerate(lines):
+        if line == doc_marker:
+            start_idx = i + 1  # Start after the marker
+        elif line == doc_end and start_idx is not None:
+            doc_ranges.append((start_idx, i))
+            start_idx = None
+            
+    return doc_ranges
 
-def parse_sgml_submission(content = None, filepath = None,output_dir = None):
+def parse_sgml_submission(content=None, filepath=None, output_dir=None):
     if not filepath and not content:
         raise ValueError("Either filepath or content must be provided")
     
@@ -202,54 +201,61 @@ def parse_sgml_submission(content = None, filepath = None,output_dir = None):
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
 
-    # Split into Lines
-    lines = content.splitlines(keepends=True)
+    # Split into Lines - strip newlines here since we'll add them back when needed
+    lines = [line.rstrip('\n') for line in content.splitlines()]
 
     # Detect submission type
     submission_type = detect_submission_type(lines[0])
 
     # grab header metadata lines
-    first_document_idx = next(i for i, line in enumerate(lines) if line.strip() == '<DOCUMENT>')
+    first_document_idx = next(i for i, line in enumerate(lines) if line == '<DOCUMENT>')
     header_lines = lines[:first_document_idx]
     lines = lines[first_document_idx:]
 
     # Parse header metadata
     header_metadata = parse_header_metadata(header_lines, submission_type)
 
-    # we will read the accession_number, remove the dashes and use it to create the folder
+    # Get accession number and create directory
     if submission_type == 'dashed-default':
         accession_number = header_metadata['accession-number'].replace('-','')
     elif submission_type == 'tab-default' or submission_type == 'tab-privacy':
         accession_number = header_metadata['accession number'].replace('-','')
 
-    os.makedirs(os.path.join(output_dir, accession_number), exist_ok=True)
+    accession_dir = os.path.join(output_dir, accession_number)
+    os.makedirs(accession_dir, exist_ok=True)
 
-    # we now process the documents, by grabbing text between <DOCUMENT> tags
-
-    # declare documents key for header metadata
+    # Process documents using the new range-based approach
     metadata = header_metadata
     metadata['documents'] = []
-    documents = get_documents(lines)
-    for document in documents:
-        # get lines before first <TEXT> tag
-        text_tag_idx = next(i for i, line in enumerate(document.splitlines()) if line.strip() == '<TEXT>')
-        document_metadata_lines = document.splitlines()[:text_tag_idx]
-
-        # detect next <TEXT> tag
-        text_tag_end_idx = next(i for i, line in enumerate(document.splitlines()) if line.strip() == '</TEXT>')
-        document_lines = document.splitlines()[text_tag_idx+1:text_tag_end_idx]
-
-        # parse document metadata
+    doc_ranges = get_documents([line + '\n' for line in lines])  # Add newlines just for finding ranges
+    
+    for start_idx, end_idx in doc_ranges:
+        document_lines = lines[start_idx:end_idx]
+        
+        # Find TEXT tags - match without newlines now
+        text_tag_idx = next(i for i, line in enumerate(document_lines) if line == '<TEXT>')
+        text_tag_end_idx = next(i for i, line in enumerate(document_lines[text_tag_idx:], text_tag_idx) 
+                               if line == '</TEXT>')
+        
+        # Split document sections
+        document_metadata_lines = document_lines[:text_tag_idx]
+        text_lines = document_lines[text_tag_idx+1:text_tag_end_idx]
+        
+        # Parse document metadata
         document_metadata = parse_document_metadata(document_metadata_lines)
-
-        # add metadata to header metadata
+        
+        # Add to main metadata
         metadata['documents'].append(document_metadata)
+        
+        # Process text contents - add newlines between lines but not at end
+        text_content = '\n'.join(text_lines)
+        output_filename = document_metadata.get('filename', document_metadata['sequence'] + '.txt')
+        document_path = os.path.join(accession_dir, output_filename)
+        
+        # Use original parse_text_tag_contents with properly formatted content
+        parse_text_tag_contents(text_content.splitlines(), document_path)
 
-        # define output path as output dir, accession number and document 'filename' use 'sequence' if no filename
-        document_path = os.path.join(output_dir, accession_number, document_metadata.get('filename', document_metadata['sequence']+'.txt'))
-        parse_text_tag_contents(document_lines,document_path)
-
-    # write metadata to output dir/accession_number/metadata.json
-    metadata_path = os.path.join(output_dir, accession_number, 'metadata.json')
+    # Write metadata
+    metadata_path = os.path.join(accession_dir, 'metadata.json')
     with open(metadata_path, 'w', encoding='utf-8') as f:
         json.dump(metadata, f, indent=4)

@@ -40,7 +40,8 @@ samples = os.listdir('samples')
 samples = [os.path.join('samples', sample) for sample in samples]
 for sample in samples:
     parse_sgml_submission(filepath=sample, output_dir='results')
+e= time()
 
-print(f"Time taken: {time() - s}")
 
 compare_folders('results_comparison', 'results')
+print(f"Time taken: {e-s}")
