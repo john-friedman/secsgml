@@ -1,4 +1,4 @@
-import uu
+from .uu_decode import decode as uu_decode
 from io import BytesIO
 from itertools import dropwhile
 import json
@@ -161,7 +161,7 @@ def process_text_content(lines):
         # For uuencoded content, decode to bytes
         output = BytesIO()
         with BytesIO(content.encode()) as input_file:
-            uu.decode(input_file, output, quiet=True)
+            uu_decode(input_file, output, quiet=True)
         return output.getvalue()
     else:
         # For regular text content, encode to bytes

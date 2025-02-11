@@ -7,7 +7,7 @@ with open(os.path.join(os.path.dirname(__file__), '../readme.md'), encoding='utf
 
 setup(
     name="secsgml",
-    version="0.0.2",
+    version="0.0.3",
     packages=find_packages(),
     install_requires=[
     ],

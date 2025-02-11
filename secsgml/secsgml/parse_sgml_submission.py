@@ -1,5 +1,6 @@
 import os
-import uu
+#from uu import decode as uu_decode
+from .uu_decode import decode as uu_decode
 from io import BytesIO
 from itertools import dropwhile
 import json
@@ -161,7 +162,7 @@ def parse_text_tag_contents(lines, output_path):
     
     if detect_uu(lines[0]):
         with BytesIO(content.encode()) as input_file:
-            uu.decode(input_file, output_path, quiet=True)
+            uu_decode(input_file, output_path, quiet=True)
     else:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(content)  # More efficient than writelines for joined content
