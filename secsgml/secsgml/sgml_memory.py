@@ -155,8 +155,9 @@ def process_text_content(lines):
     """Process the contents of a <TEXT> tag and return as bytes"""
     lines = clean_lines(lines)
     content = '\n'.join(lines)
-    
-    if detect_uu(lines[0]):
+    if not lines:
+        return b''
+    elif detect_uu(lines[0]):
         # For uuencoded content, decode to bytes
         output = BytesIO()
         with BytesIO(content.encode()) as input_file:
