@@ -168,10 +168,18 @@ def process_text_content(lines):
 
 def parse_document_metadata(lines):
     """Parse metadata between first line and first <TEXT> tag"""
-    return {
-        line.split('>')[0][1:].lower(): line.split('>')[1].strip()
-        for line in lines
-    }
+    metadata = {}
+    current_key = None
+    
+    for line in lines:
+        if line.startswith('<'):
+            if '>' in line:
+                current_key, value = line.split('>', 1)
+                metadata[current_key[1:].lower()] = value.strip()
+        elif current_key:  # Continuation of previous value
+            metadata[current_key[1:].lower()] += ' ' + line.strip()
+            
+    return metadata
 
 class DocumentIndex:
     def __init__(self):
