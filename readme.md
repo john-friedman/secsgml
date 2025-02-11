@@ -15,6 +15,14 @@ Will be expanded to also parse SGML Tables.
 pip install secsgml
 ```
 ## Quickstart
+
+### Parse into memory
+```
+from secsgml import parse_sgml_submission_into_memory
+metadata,results = parse_sgml_submission_into_memory(filepath="000000443897000001.sgml")
+```
+
+### Parse to file
 ```
 from secsgml import parse_sgml_submission
 # from file
@@ -23,6 +31,9 @@ parse_sgml_submission(filepath='samples/0000891618-94-000021.txt',output_dir='re
 # from content
 parse_sgml_submission(content=sgml_content,output_dir='results')
 ```
+
+## Note
+Will be giving parse_sgml_submission_into_memory more love, will have to refactor parse_sgml_submission afterwards. 
 
 ## Future
 * SGML Table parsing
