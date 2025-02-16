@@ -1,1 +1,2 @@
 from .sgml_memory_cy import parse_sgml_submission_into_memory
+from .parse_sgml_submission import parse_sgml_submission
