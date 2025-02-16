@@ -1,4 +1,4 @@
-from .uu_decode import decode as uu_decode
+from .uu_decode_cy import decode as uu_decode
 from io import BytesIO
 from itertools import dropwhile
 import json
@@ -154,18 +154,14 @@ def clean_lines(lines):
 def process_text_content(lines):
     """Process the contents of a <TEXT> tag and return as bytes"""
     lines = clean_lines(lines)
-    content = '\n'.join(lines)
     if not lines:
         return b''
     elif detect_uu(lines[0]):
-        # For uuencoded content, decode to bytes
-        output = BytesIO()
-        with BytesIO(content.encode()) as input_file:
-            uu_decode(input_file, output, quiet=True)
-        return output.getvalue()
+        # Pass lines directly to decoder
+        return uu_decode(lines)  # uu_decode would take list of strings
     else:
         # For regular text content, encode to bytes
-        return content.encode('utf-8')
+        return '\n'.join(lines).encode('utf-8')
 
 def parse_document_metadata(lines):
     """Parse metadata between first line and first <TEXT> tag"""
