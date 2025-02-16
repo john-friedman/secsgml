@@ -34,7 +34,13 @@ extensions = [
         ["secsgml/uu_decode_cy.pyx"],
         include_dirs=include_dirs,
         library_dirs=library_dirs,
-    )
+    ),
+    Extension(
+        "secsgml.sgml_memory_cy",
+        ["secsgml/sgml_memory_cy.pyx"],
+        include_dirs=include_dirs,
+        library_dirs=library_dirs,
+    ),
 ]
 
 # Cython compiler directives

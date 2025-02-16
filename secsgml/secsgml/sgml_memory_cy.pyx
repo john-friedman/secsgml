@@ -1,26 +1,50 @@
-import os
-#from uu import decode as uu_decode
-from .uu_decode import decode as uu_decode
-from io import BytesIO
+# cython: language_level=3
+# cython: wraparound=True
+from cpython.unicode cimport PyUnicode_Contains
+from libc.string cimport memcpy
 from itertools import dropwhile
-import json
-from enum import Enum
 
-SUBMISSION_TYPES = {
+ctypedef dict metadata_dict_t
+
+cdef dict SUBMISSION_TYPES = {
     '<SUBMISSION>': 'dashed-default',
     '-----BEGIN PRIVACY-ENHANCED MESSAGE-----': 'tab-privacy', 
     '<SEC-DOCUMENT>': 'tab-default'
 }
 
-def detect_submission_type(first_line):
+cdef str detect_submission_type(str first_line):
+    cdef:
+        str marker, type_
+    
     for marker, type_ in SUBMISSION_TYPES.items():
         if first_line.startswith(marker):
             return type_
     raise ValueError('Unknown submission type')
-    
-def parse_header_metadata(lines, submission_type):
+
+cdef class DocumentIndex:
+    cdef public:
+        list document_positions
+        list text_positions
+        Py_ssize_t header_end  # Changed from int to Py_ssize_t
+        dict text_leftovers
+
+    def __init__(self):
+        self.document_positions = []  # start, end positions
+        self.text_positions = []      # start, end positions
+        self.header_end = 0
+        self.text_leftovers = {}
+
+cdef metadata_dict_t parse_header_metadata(list lines, str submission_type):
     """We pass in first line to line before first <DOCUMENT> tag"""
-    header_metadata = {}
+    cdef:
+        metadata_dict_t header_metadata = {}
+        metadata_dict_t current_dict
+        list stack
+        str tag, text
+        list next_lines
+        metadata_dict_t nested_dict
+        list privacy_msg
+        Py_ssize_t indent, i, j  # Changed from int to Py_ssize_t
     
     if submission_type == 'dashed-default':
         current_dict = header_metadata
@@ -41,9 +65,7 @@ def parse_header_metadata(lines, submission_type):
                 
             # Look ahead to check if this tag has a closing tag
             next_lines = lines[i+1:]
-            is_paired = any(l.strip().lower().startswith(f'</{tag}>') for l in next_lines)
-            
-            if is_paired:
+            if any(l.strip().lower().startswith(f'</{tag}>') for l in next_lines):
                 nested_dict = {}
                 if tag in current_dict:
                     if isinstance(current_dict[tag], list):
@@ -128,17 +150,21 @@ def parse_header_metadata(lines, submission_type):
     
     return header_metadata    
 
-def detect_uu(first_line):
+cdef bint detect_uu(str first_line):
     """Detect if the document is uuencoded"""
     return first_line.strip().startswith('begin')
 
-def clean_lines(lines):
+cdef list clean_lines(list lines):
     """Clean lines by removing leading/trailing whitespace and special tags"""
+    cdef:
+        str first_line, tag, end_tag
+        Py_ssize_t end_pos  # Changed from int to Py_ssize_t
+        set SPECIAL_TAGS = {'<PDF>', '<XBRL>', '<XML>'}
+    
     lines = list(dropwhile(lambda x: not x.strip(), lines))
     if not lines:
         return lines
         
-    SPECIAL_TAGS = {'<PDF>', '<XBRL>', '<XML>'}
     first_line = lines[0].strip()
     if first_line in SPECIAL_TAGS:
         tag = first_line[1:-1]  # Remove < >
@@ -155,40 +181,49 @@ def clean_lines(lines):
             
     return lines
 
-def parse_text_tag_contents(lines, output_path):
-    """Write the contents of a <TEXT> tag to a file"""
-    lines = clean_lines(lines)
-    content = '\n'.join(lines)
+cpdef bytes process_text_content(list lines):
+    """Process the contents of a <TEXT> tag and return as bytes"""
+    cdef:
+        list cleaned_lines
+        str joined_text
     
-    if detect_uu(lines[0]):
-        with BytesIO(content.encode()) as input_file:
-            uu_decode(input_file, output_path, quiet=True)
+    cleaned_lines = clean_lines(lines)
+    if not cleaned_lines:
+        return b''
+    elif detect_uu(cleaned_lines[0]):
+        # Pass lines directly to decoder
+        from .uu_decode_cy import decode as uu_decode
+        return uu_decode(cleaned_lines)  # uu_decode would take list of strings
     else:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(content)  # More efficient than writelines for joined content
+        # For regular text content, encode to bytes
+        joined_text = '\n'.join(cleaned_lines)
+        return joined_text.encode('utf-8')
 
-
-            
-def parse_document_metadata(lines):
+cdef metadata_dict_t parse_document_metadata(list lines):
     """Parse metadata between first line and first <TEXT> tag"""
-    return {
-        line.split('>')[0][1:].lower(): line.split('>')[1].strip()
-        for line in lines
-    }
-
-class DocumentIndex:
-    def __init__(self):
-        self.document_positions = []  # start, end positions
-        self.text_positions = []      # start, end positions
-        self.header_end = 0
-        self.text_leftovers = {}  
-
-def build_document_index(lines):
-    """Just indexes document positions - no metadata handling"""
-    index = DocumentIndex()
+    cdef:
+        metadata_dict_t metadata = {}
+        str current_key = None
+        str line, value
     
-    doc_start = None
-    text_start = None
+    for line in lines:
+        if line.startswith('<'):
+            if '>' in line:
+                current_key, value = line.split('>', 1)
+                metadata[current_key[1:].lower()] = value.strip()
+        elif current_key:  # Continuation of previous value
+            metadata[current_key[1:].lower()] += ' ' + line.strip()
+            
+    return metadata
+
+cdef DocumentIndex build_document_index(list lines):
+    """Just indexes document positions - no metadata handling"""
+    cdef:
+        DocumentIndex index = DocumentIndex()
+        Py_ssize_t doc_start = -1  # Changed from int to Py_ssize_t
+        Py_ssize_t text_start = -1  # Changed from int to Py_ssize_t
+        Py_ssize_t i, j  # Changed from int to Py_ssize_t
+        str next_line, leftover
     
     # Find first document to mark header end
     for i, line in enumerate(lines):
@@ -201,9 +236,9 @@ def build_document_index(lines):
         if line == '<DOCUMENT>':
             doc_start = i
         elif line == '</DOCUMENT>':
-            if doc_start is not None:
+            if doc_start >= 0:  # Changed from != -1 to >= 0
                 index.document_positions.append((doc_start, i))
-                doc_start = None
+                doc_start = -1
         elif line == '<TEXT>':
             text_start = i
         elif '</TEXT>' in line:
@@ -215,20 +250,36 @@ def build_document_index(lines):
                     next_line = lines[j].strip()
                 j += 1
             
-            if next_line == '</DOCUMENT>' and text_start is not None:
+            if next_line == '</DOCUMENT>' and text_start >= 0:  # Changed from != -1 to >= 0
                 if '</TEXT>' != line:
                     leftover = line.split('</TEXT>')[0]
                     index.text_leftovers[i] = leftover
                 index.text_positions.append((text_start, i))
-                text_start = None
+                text_start = -1
     
     return index
 
-def parse_sgml_submission(content=None, filepath=None, output_dir=None):
+def parse_sgml_submission_into_memory(str content=None, str filepath=None):
+    """Parse SGML submission and return (metadata, documents)
+    
+    Returns:
+        tuple: (metadata dict, list of document contents)
+        The document contents are all bytes objects
+    """
+    cdef:
+        list lines
+        str submission_type
+        DocumentIndex doc_index
+        list header_lines
+        metadata_dict_t metadata
+        list documents = []
+        Py_ssize_t doc_start, doc_end, text_start, text_end  # Changed from int to Py_ssize_t
+        metadata_dict_t doc_metadata
+        list text_lines
+        bytes content_bytes
+    
     if not filepath and not content:
         raise ValueError("Either filepath or content must be provided")
-    
-    os.makedirs(output_dir, exist_ok=True)
 
     # Read content if not provided
     if content is None:
@@ -243,46 +294,35 @@ def parse_sgml_submission(content=None, filepath=None, output_dir=None):
     # Get document structure index
     doc_index = build_document_index(lines)
     
-    # Use existing header metadata parsing with the correct lines
+    # Parse header metadata
     header_lines = lines[:doc_index.header_end]
-    header_metadata = parse_header_metadata(header_lines, submission_type)
-    
-    # Set up output directory using existing logic
-    if submission_type == 'dashed-default':
-        accession_number = header_metadata['accession-number'].replace('-','')
-    else:  # tab-default or tab-privacy
-        accession_number = header_metadata['accession number'].replace('-','')
-        
-    accession_dir = os.path.join(output_dir, accession_number)
-    os.makedirs(accession_dir, exist_ok=True)
+    metadata = parse_header_metadata(header_lines, submission_type)
     
     # Process documents using indexed positions
-    metadata = header_metadata
-    metadata['documents'] = []
-    
     for doc_start, doc_end in doc_index.document_positions:
         # Find corresponding text section for this document
-        text_start, text_end = next(
-            (start, end) for start, end in doc_index.text_positions 
-            if start > doc_start and end < doc_end
-        )
+        for start, end in doc_index.text_positions:
+            if start > doc_start and end < doc_end:
+                text_start, text_end = start, end
+                break
         
-        # Extract document metadata using existing function
+        # Extract document metadata and add to header metadata
         doc_metadata = parse_document_metadata(lines[doc_start+1:text_start])
-        metadata['documents'].append(doc_metadata)
         
         # Process text contents
         text_lines = lines[text_start+1:text_end]
-
+        
         # If there's leftover content at the end
         if text_end in doc_index.text_leftovers:
             text_lines.append(doc_index.text_leftovers[text_end])
-        output_filename = doc_metadata.get('filename', doc_metadata['sequence'] + '.txt')
-        document_path = os.path.join(accession_dir, output_filename)
-        
-        parse_text_tag_contents(text_lines, document_path)
+            
+        # Process content and add to documents list
+        content_bytes = process_text_content(text_lines)
+        documents.append(content_bytes)
+
+        # Add document metadata to the metadata dictionary
+        if 'documents' not in metadata:
+            metadata['documents'] = []
+        metadata['documents'].append(doc_metadata)
     
-    # Write metadata
-    metadata_path = os.path.join(accession_dir, 'metadata.json')
-    with open(metadata_path, 'w', encoding='utf-8') as f:
-        json.dump(metadata, f, indent=4)
+    return metadata, documents

@@ -21,14 +21,14 @@ def profile_parser():
         except:
             accn = header_metadata['accession number']
 
-        # os.makedirs(f'results/{accn}', exist_ok=True)
-        # for idx,_ in enumerate(header_metadata['documents']):
-        #     try:
-        #         filename = header_metadata['documents'][idx]['filename']
-        #     except:
-        #         filename = header_metadata['documents'][idx]['sequence'] + '.txt'
-        #     with open(f'results/{accn}/{filename}', 'wb') as f:
-        #         f.write(documents[idx])
+        os.makedirs(f'results/{accn}', exist_ok=True)
+        for idx,_ in enumerate(header_metadata['documents']):
+            try:
+                filename = header_metadata['documents'][idx]['filename']
+            except:
+                filename = header_metadata['documents'][idx]['sequence'] + '.txt'
+            with open(f'results/{accn}/{filename}', 'wb') as f:
+                f.write(documents[idx])
 
         # write the header metadata to a file in results folder as json
         with open(f'results/{accn}/header_metadata.json', 'w') as f:

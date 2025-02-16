@@ -1,7 +1,5 @@
 from .uu_decode_cy import decode as uu_decode
-from io import BytesIO
 from itertools import dropwhile
-import json
 
 def detect_submission_type(first_line):
     SUBMISSION_TYPES = {
