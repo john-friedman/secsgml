@@ -21,15 +21,19 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     
-    - name: Install dependencies
+    - name: Install build dependencies
       working-directory: ./secsgml
       run: |
         python -m pip install --upgrade pip
-        pip install setuptools wheel twine cython build
+        # Install Cython first since it's needed for build dependencies
+        pip install cython
+        pip install setuptools wheel twine build
     
     - name: Build package
       working-directory: ./secsgml
       run: |
+        # Ensure Cython is available for build
+        python -m pip list
         python -m build --wheel
         python -m build --sdist
     
