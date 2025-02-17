@@ -6,11 +6,12 @@ on:
       - 'v*'
 
 jobs:
-  deploy:
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.11', '3.12', '3.13']
 
     steps:
@@ -21,27 +22,74 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     
-    - name: Install build dependencies
-      working-directory: ./secsgml
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Install Cython first since it's needed for build dependencies
-        pip install cython
-        pip install setuptools wheel twine build
+        python -m pip install --upgrade setuptools wheel
+        python -m pip install cython --no-build-isolation
+        pip install twine
     
-    - name: Build package
+    - name: Build wheel
       working-directory: ./secsgml
       run: |
-        # Ensure Cython is available for build
-        python -m pip list
-        python -m build --wheel
-        python -m build --sdist
+        echo "Current directory contents:"
+        ls -R
+        python setup.py bdist_wheel
+        echo "Wheel contents:"
+        unzip -l dist/*.whl
+    
+    - name: Store wheels
+      uses: actions/upload-artifact@v3
+      with:
+        name: wheels
+        path: secsgml/dist/*.whl
+
+  upload_pypi:
+    needs: build_wheels
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install auditwheel wheel setuptools cython twine
+    
+    - name: Download all wheels
+      uses: actions/download-artifact@v3
+      with:
+        name: wheels
+        path: secsgml/dist
+    
+    - name: Fix Linux wheels
+      if: runner.os == 'Linux'
+      working-directory: ./secsgml
+      run: |
+        for whl in dist/*linux*.whl; do
+          if [ -f "$whl" ]; then
+            auditwheel repair "$whl" --plat manylinux2014_x86_64
+            rm "$whl"
+          fi
+        done
+        if [ -d "wheelhouse" ]; then
+          mv wheelhouse/* dist/
+          rmdir wheelhouse
+        fi
+    
+    - name: Build source distribution
+      working-directory: ./secsgml
+      run: python setup.py sdist
     
     - name: Upload to PyPI
-      if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       working-directory: ./secsgml
       run: |
-        twine upload dist/*
+        twine upload --verbose dist/*
