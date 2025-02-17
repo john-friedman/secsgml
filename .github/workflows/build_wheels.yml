@@ -39,7 +39,7 @@ jobs:
         unzip -l dist/*.whl
     
     - name: Store wheels
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: wheels
         path: secsgml/dist/*.whl
@@ -62,7 +62,7 @@ jobs:
         python -m pip install auditwheel wheel setuptools cython twine
     
     - name: Download all wheels
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: wheels
         path: secsgml/dist
