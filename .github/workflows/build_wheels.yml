@@ -41,7 +41,7 @@ jobs:
     - name: Store wheels
       uses: actions/upload-artifact@v4
       with:
-        name: wheels
+        name: wheels-${{ matrix.os }}-py${{ matrix.python-version }}
         path: secsgml/dist/*.whl
 
   upload_pypi:
@@ -64,8 +64,9 @@ jobs:
     - name: Download all wheels
       uses: actions/download-artifact@v4
       with:
-        name: wheels
+        pattern: wheels-*
         path: secsgml/dist
+        merge-multiple: true
     
     - name: Fix Linux wheels
       if: runner.os == 'Linux'
