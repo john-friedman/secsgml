@@ -24,8 +24,12 @@ if platform.system() == "Windows":
     library_dirs = [path for path in lib_paths if os.path.exists(path)]
 
 # Read the contents of your README file
-with open(os.path.join(os.path.dirname(__file__), '../readme.md'), encoding='utf-8') as f:
-    long_description = f.read()
+try:
+    readme_path = Path(__file__).parent.parent / "readme.md"
+    with open(readme_path, encoding='utf-8') as f:
+        long_description = f.read()
+except FileNotFoundError:
+    long_description = "# secsgml\nParse Securities and Exchange Commission Standard Generalized Markup Language (SEC SGML) files"
 
 # Define Cython extension with compiler directives
 extensions = [
@@ -54,7 +58,7 @@ cython_directives = {
 
 setup(
     name="secsgml",
-    version="0.0.6",
+    version="0.0.7",
     packages=find_packages(),
     install_requires=[
     ],
