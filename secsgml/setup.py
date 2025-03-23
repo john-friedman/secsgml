@@ -51,13 +51,13 @@ except FileNotFoundError:
 extensions = [
     Extension(
         "secsgml.uu_decode_cy",
-        ["uu_decode_cy.pyx"],
+        ["secsgml/uu_decode_cy.pyx"],  # Updated path
         include_dirs=include_dirs,
         library_dirs=library_dirs,
     ),
     Extension(
         "secsgml.sgml_memory_cy",
-        ["sgml_memory_cy.pyx"],
+        ["secsgml/sgml_memory_cy.pyx"],  # Updated path
         include_dirs=include_dirs,
         library_dirs=library_dirs,
     ),
