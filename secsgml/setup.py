@@ -81,7 +81,7 @@ extensions = cythonize(
 
 setup(
     name="secsgml",
-    version="0.0.9",
+    version="0.1.0",
     packages=find_packages(),
     install_requires=[],
     setup_requires=[
@@ -94,4 +94,7 @@ setup(
     description="Parse Securities and Exchange Commission Standard Generalized Markup Language (SEC SGML) files",
     long_description=long_description,
     long_description_content_type='text/markdown',
+    license="MIT",
+    author="John Friedman",
+    author_email="johnfriedman@datamule.xyz"
 )
