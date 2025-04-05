@@ -10,6 +10,8 @@ Will be expanded to also parse SGML Tables.
 
 [All Variations](submission_variations.md)
 
+secsgml also attempts to standardize the metadata between formats. e.g. 'CENTRAL INDEX KEY' will be mapped to 'cik'.
+
 ## Installation
 ```
 pip install secsgml
@@ -19,7 +21,7 @@ pip install secsgml
 ### Parse into memory
 ```
 from secsgml import parse_sgml_submission_into_memory
-metadata,results = parse_sgml_submission_into_memory(filepath="000000443897000001.sgml")
+metadata,documents = parse_sgml_submission_into_memory(filepath="000000443897000001.sgml")
 ```
 
 ### Parse to file
@@ -38,6 +40,3 @@ Will be giving parse_sgml_submission_into_memory more love, will have to refacto
 ## Future
 * SGML Table parsing
 * Optimization + refactor in Cython/ C bindings.
-* Standardize metadata for different file types. Keys and values vary across variations, e.g. 'CIK' vs 'CENTRAL INDEX KEY' as well as values such as '34' vs '1934'
-
-
