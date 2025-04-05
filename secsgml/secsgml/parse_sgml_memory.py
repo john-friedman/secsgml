@@ -1,6 +1,6 @@
 # File to implement metadata mapping after parsing SGML files
 
-from .sgml_memory_cy import parse_sgml_submission_into_memory
+from .sgml_memory_cy import parse_sgml_submission_into_memory as parse_sgml_memory_cy
 import re
 sec_format_mappings = {
     "accession number": "accession-number",
@@ -78,7 +78,7 @@ def transform_metadata(metadata):
     return result
 
 def parse_sgml_submission_into_memory(content=None, filepath=None):
-    metadata, documents = parse_sgml_submission_into_memory(content, filepath)
+    metadata, documents = parse_sgml_memory_cy(content, filepath)
     
     transformed_metadata = transform_metadata(metadata)
     
