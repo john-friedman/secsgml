@@ -81,7 +81,7 @@ extensions = cythonize(
 
 setup(
     name="secsgml",
-    version="0.1.4",
+    version="0.1.5",
     packages=find_packages(),
     install_requires=[],
     setup_requires=[

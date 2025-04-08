@@ -55,7 +55,7 @@ def transform_metadata(metadata):
             continue
         
         # Apply mapping if exists, otherwise remove dashes
-        new_key = sec_format_mappings.get(key, re.sub(r'\s+', '-', key))
+        new_key = sec_format_mappings.get(key.lower(), re.sub(r'\s+', '-', key))
         
         # Special handling for SIC and Act fields
         if new_key == "assigned-sic" and isinstance(value, str):
@@ -69,8 +69,16 @@ def transform_metadata(metadata):
             if act_match:
                 value = act_match.group(2)
         
+        # Handle lists of dictionaries
+        if isinstance(value, list):
+            result[new_key] = []
+            for item in value:
+                if isinstance(item, dict):
+                    result[new_key].append(transform_metadata(item))
+                else:
+                    result[new_key].append(item)
         # Recursively transform nested dictionaries
-        if isinstance(value, dict):
+        elif isinstance(value, dict):
             result[new_key] = transform_metadata(value)
         else:
             result[new_key] = value
