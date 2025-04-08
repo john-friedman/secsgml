@@ -55,7 +55,7 @@ def transform_metadata(metadata):
             continue
         
         # Apply mapping if exists, otherwise remove dashes
-        new_key = sec_format_mappings.get(key, key.replace(" ", "-"))
+        new_key = sec_format_mappings.get(key, re.sub(r'\s+', '-', key))
         
         # Special handling for SIC and Act fields
         if new_key == "assigned-sic" and isinstance(value, str):
