@@ -38,3 +38,6 @@ write_sgml_file_to_tar(output_path, bytes_content, input_path)
 Using [500mb of SGML files](https://www.sec.gov/Archives/edgar/Feed/2009/QTR1/20090108.nc.tar.gz)
 * write_sgml_file_to_tar - 3,960 ms
 * parse_sgml_content_into_memory - 1,940 ms
+
+pre v0.2.0 benchmark
+* parse_sgml_content_into_memory (equivalent) - 5,750 ms
