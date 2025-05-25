@@ -20,23 +20,21 @@ pip install secsgml
 
 ### Parse into memory
 ```
-from secsgml import parse_sgml_submission_into_memory
-metadata,documents = parse_sgml_submission_into_memory(filepath="000000443897000001.sgml")
+from secsgml import parse_sgml_content_into_memory
+
+# Takes either bytes_content or filepath
+parse_sgml_content_into_memory(bytes_content=None, filepath=None)
 ```
 
-### Parse to file
+### Write to tar
 ```
-from secsgml import parse_sgml_submission
-# from file
-parse_sgml_submission(filepath='samples/0000891618-94-000021.txt',output_dir='results')
+from secsgml import write_sgml_file_to_tar
 
-# from content
-parse_sgml_submission(content=sgml_content,output_dir='results')
+# Takes either bytes_content or input_path
+write_sgml_file_to_tar(output_path, bytes_content, input_path)
 ```
 
-## Note
-Will be giving parse_sgml_submission_into_memory more love, will have to refactor parse_sgml_submission afterwards. 
-
-## Future
-* SGML Table parsing
-* Optimization + refactor in Cython/ C bindings.
+## Benchmarks
+Using [500mb of SGML files](https://www.sec.gov/Archives/edgar/Feed/2009/QTR1/20090108.nc.tar.gz)
+* write_sgml_file_to_tar - 3,960 ms
+* parse_sgml_content_into_memory - 1,940 ms

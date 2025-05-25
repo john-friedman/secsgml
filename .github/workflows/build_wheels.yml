@@ -1,4 +1,4 @@
-name: Build and Upload to PyPI
+name: PyPI Release
 
 on:
   push:
@@ -6,46 +6,7 @@ on:
       - 'v*'
 
 jobs:
-  build_wheels:
-    name: Build wheels on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.11', '3.12', '3.13']
-
-    steps:
-    - uses: actions/checkout@v4
-    
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install --upgrade setuptools wheel
-        python -m pip install cython --no-build-isolation
-        pip install twine
-    
-    - name: Build wheel
-      working-directory: ./secsgml
-      run: |
-        echo "Current directory contents:"
-        ls -R
-        python setup.py bdist_wheel
-        echo "Wheel contents:"
-        unzip -l dist/*.whl
-    
-    - name: Store wheels
-      uses: actions/upload-artifact@v4
-      with:
-        name: wheels-${{ matrix.os }}-py${{ matrix.python-version }}
-        path: secsgml/dist/*.whl
-
-  upload_pypi:
-    needs: build_wheels
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -58,34 +19,12 @@ jobs:
     
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        python -m pip install auditwheel wheel setuptools cython twine
+        pip install --upgrade pip setuptools wheel twine
     
-    - name: Download all wheels
-      uses: actions/download-artifact@v4
-      with:
-        pattern: wheels-*
-        path: secsgml/dist
-        merge-multiple: true
-    
-    - name: Fix Linux wheels
-      if: runner.os == 'Linux'
+    - name: Build package
       working-directory: ./secsgml
       run: |
-        for whl in dist/*linux*.whl; do
-          if [ -f "$whl" ]; then
-            auditwheel repair "$whl" --plat manylinux2014_x86_64
-            rm "$whl"
-          fi
-        done
-        if [ -d "wheelhouse" ]; then
-          mv wheelhouse/* dist/
-          rmdir wheelhouse
-        fi
-    
-    - name: Build source distribution
-      working-directory: ./secsgml
-      run: python setup.py sdist
+        python setup.py sdist bdist_wheel
     
     - name: Upload to PyPI
       env:
@@ -93,4 +32,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       working-directory: ./secsgml
       run: |
-        twine upload --verbose dist/*
+        twine upload dist/*
