@@ -35,13 +35,13 @@ def transform_metadata(metadata):
     items = list(metadata.items())
     for key, value in items:
         
-        cleaned_key = key.lower()
-        standardized_key = sec_format_mappings.get(cleaned_key)
+        key_lower = key.lower()
+        standardized_key = sec_format_mappings.get(key_lower)
 
         if standardized_key is not None:
             cleaned_key = standardized_key
         else:
-            cleaned_key = re.sub(rb'\s+',b'-',cleaned_key)
+            cleaned_key = re.sub(rb'\s+',b'-',key_lower)
 
         # check is dict
         if isinstance(value,dict):
@@ -68,11 +68,11 @@ def transform_metadata(metadata):
             # delete previous key
             metadata.pop(key)
 
-            # special handling:
-            if cleaned_key == b"assigned-sic":
+            # special handling (need to check original key)
+            if key_lower == b"standard industrial classification":
                 sic_match = re.search(rb'\[(\d+)\]', value)
                 value = sic_match.group(1)
-            elif cleaned_key == b"act" and isinstance(value, bytes) and b"Act" in value:
+            elif key_lower == b"act" and isinstance(value, bytes) and b"Act" in value:
                 # Extract just the last two digits from "1934 Act"
                 act_match = re.search(rb'(\d{2})(\d{2})\s+Act', value)
                 if act_match:
@@ -169,7 +169,7 @@ def clean_document_content(content):
 
 # pass non empty line
 def parse_keyval_line_archive(line):
-    match = re.search(rb'[A-Z]>', line)
+    match = re.search(rb'[A-Z0-9]>', line)
     key = b''
     val = b''
     if match:
@@ -193,6 +193,10 @@ def parse_archive_submission_metadata(content):
         current_dict = stack[-1]
         
         key, value = parse_keyval_line_archive(line)
+        # skip submission
+        if key == b'SUBMISSION':
+            continue
+        
         if key:
             # Handle closing tags - pop from stack
             if key.startswith(b'/'):
@@ -244,9 +248,30 @@ def parse_tab_submission_metadata(content):
         current_dict = stack[-1]
         
         if b':' in line:
-            key, value = line.strip().split(b':', 1)
-            key = key.strip()
-            value = value.strip()
+            # Special handling for SEC-DOCUMENT and SEC-HEADER lines
+            if line.strip().startswith(b'<SEC-DOCUMENT>') or line.strip().startswith(b'<SEC-HEADER>'):
+                # Parse: <SEC-DOCUMENT>filename.txt : date
+                tag_end = line.find(b'>')
+                colon_pos = line.rfind(b' : ')
+                
+                if tag_end != -1 and colon_pos != -1:
+                    tag_name = line[1:tag_end]  # Extract SEC-DOCUMENT or SEC-HEADER
+                    filename = line[tag_end + 1:colon_pos].strip()
+                    date = line[colon_pos + 3:].strip()
+                    
+                    # Transform key: SEC-DOCUMENT -> sec-document
+                    key = tag_name.lower().replace(b'_', b'-')
+                    value = filename + b' : ' + date
+                else:
+                    # Fallback to normal parsing if format is unexpected
+                    key, value = line.strip().split(b':', 1)
+                    key = key.strip()
+                    value = value.strip()
+            else:
+                # Normal key:value parsing
+                key, value = line.strip().split(b':', 1)
+                key = key.strip()
+                value = value.strip()
             
             if value:
                 # Handle duplicate keys by converting to list

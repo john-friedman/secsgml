@@ -22,7 +22,9 @@ def convert_bytes_keys(obj):
 
 s = time()
 for file in files:
-    file  = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\multiplefilers.txt"
+    #file  = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\multiplefilers.txt"
+    file = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\archive.txt"
+    #file = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\sgml\tab-privacy.txt"
     with open(f'{file}','rb') as f:
         content = f.read()
     metadata,docs = parse_sgml_file_into_memory(content)
