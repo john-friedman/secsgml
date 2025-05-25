@@ -410,7 +410,7 @@ def _parse_sgml_data(data):
         content = data[document_metadata_end+len(b'<TEXT>'):document_content_end]
 
         # Check if this file should be UU-decoded
-        filename_bytes = document_metadata[-1][b'FILENAME']
+        filename_bytes = document_metadata[-1].get(b'FILENAME',False)
         if filename_bytes and should_decode_file(filename_bytes):
             content = decode_uuencoded_content(content)
 
