@@ -63,7 +63,8 @@ def transform_metadata(metadata):
             # assign new key
             metadata[cleaned_key] = value
             for val in value:
-                transform_metadata(val)
+                if isinstance(val,dict):
+                    transform_metadata(val)
         else:
             # delete previous key
             metadata.pop(key)

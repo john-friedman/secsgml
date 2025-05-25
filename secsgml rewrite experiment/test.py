@@ -1,5 +1,4 @@
 from parse_sgml import parse_sgml_file_into_memory,write_sgml_file_to_tar
-from secsgml import parse_sgml_submission_into_memory
 from time import time
 import os
 import json
@@ -22,18 +21,10 @@ def convert_bytes_keys(obj):
 
 s = time()
 for file in files:
-    #file  = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\multiplefilers.txt"
-    file = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\archive.txt"
-    #file = r"C:\Users\jgfri\OneDrive\Desktop\secsgml\sgml\tab-privacy.txt"
-    with open(f'{file}','rb') as f:
+    filepath = f"{mydir}/{file}"
+
+    with open(filepath,'rb') as f:
         content = f.read()
     metadata,docs = parse_sgml_file_into_memory(content)
-    # save metadata to test.json from bytes
-    with open('test.json', 'w') as f:
-        json.dump(convert_bytes_keys(metadata), f, indent=4)
-    break
-print(time()-s)
 
-metadata,_ = parse_sgml_submission_into_memory(content=content.decode('utf-8'))
-with open('compare.json', 'w') as f:
-    json.dump(metadata,f,indent=4)
+print(time()-s)
