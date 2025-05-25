@@ -218,9 +218,7 @@ def parse_document_metadata(content):
    return doc_metadata_dict
 
 
-def extract_documents(data):
-    s = time()
-    """Extract all document contents from mmap data"""
+def parse_sgml_file_into_memory(data):
     
     documents = []
     submission_metadata = ""
@@ -262,29 +260,24 @@ def extract_documents(data):
 
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
-    
-    elapsed_ms = (time() - s) * 1000
-    print(f"Extracted {len(documents)} documents in {elapsed_ms:.2f} ms")
 
     submission_metadata['documents'] = document_metadata
     return submission_metadata,documents
 
-def parse_sgml_file(filepath):
-    if not os.path.exists(filepath):
-        print(f"Error: File '{filepath}' not found")
-        return
+def write_sgml_file_to_tar(input_path,output_path):
+    if not os.path.exists(input_path):
+        raise ValueError("Filepath not found")
     
     # Ensure output directory exists
     os.makedirs('output', exist_ok=True)
     
-    with open(filepath, 'rb') as f:
+    with open(input_path, 'rb') as f:
         with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
             # Extract all documents
-            metadata,documents = extract_documents(data)
-            s = time()
+            metadata,documents = parse_sgml_file_into_memory(data)
             
             # Write tar directly to disk
-            with tarfile.open('output/documents.tar', 'w') as tar:
+            with tarfile.open(output_path, 'w') as tar:
                 for file_num, content in enumerate(documents, 0):
                     document_name = metadata['documents'][file_num][b'FILENAME'] if metadata['documents'][file_num].get(b'FILENAME') else metadata['documents'][file_num][b'SEQUENCE'] + b'.txt'
                     document_name = document_name.decode('utf-8')
@@ -292,10 +285,12 @@ def parse_sgml_file(filepath):
                     tarinfo.size = len(content)
                     tar.addfile(tarinfo, io.BytesIO(content))
             
-            elapsed_ms = (time() - s) * 1000
-            print(f"Saved {len(documents)} documents to tar in {elapsed_ms:.2f} ms")
+
+
 
 # Main execution
 if __name__ == "__main__":
-    parse_sgml_file(r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\tabdefault.txt")
+    s = time()
+    write_sgml_file_to_tar(r"C:\Users\jgfri\OneDrive\Desktop\secsgml\secsgml rewrite experiment\sgml\tabdefault.txt",r'output/test.tar')
+    print(time()-s)
     #parse_sgml_file(r"C:\Users\jgfri\OneDrive\Desktop\secsgml\sgml\tab-privacy.txt")
