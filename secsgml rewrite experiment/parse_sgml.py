@@ -5,6 +5,54 @@ import tarfile
 import io
 import os
 import re
+import binascii
+
+#TODO ADD UUDECODING HERE
+# UUencoded document text is 64 characters wide
+# Note: *.pdf, *.gif, *.jpg, *.png,*.xlsx and *.zip files are uuencoded.
+def should_decode_file(filename_bytes):
+    filename = filename_bytes.lower()
+    uuencoded_extensions = [b'.pdf', b'.gif', b'.jpg', b'.png', b'.xlsx', b'.zip']
+    return any(filename.endswith(ext) for ext in uuencoded_extensions)
+  
+    
+def decode_uuencoded_content(content):
+    # Convert bytes to string lines for processing
+    text_content = content.decode('utf-8', errors='replace')
+    lines = text_content.splitlines()
+    
+    # Find begin line
+    start_idx = None
+    for i, line in enumerate(lines):
+        if line.startswith('begin'):
+            start_idx = i + 1
+            break
+    
+    if start_idx is None:
+        return content  # Not UU-encoded, return original
+    
+    # Process content
+    result = bytearray()
+    
+    for line in lines[start_idx:]:
+        stripped = line.strip()
+        if not stripped or stripped == 'end':
+            break
+            
+        try:
+            data = binascii.a2b_uu(stripped.encode())
+        except binascii.Error:
+            # Workaround for broken uuencoders
+            if stripped:
+                nbytes = (((ord(stripped[0])-32) & 63) * 4 + 5) // 3
+                data = binascii.a2b_uu(stripped[:nbytes].encode())
+            else:
+                continue
+        
+        result.extend(data)
+    
+    return bytes(result)
+    
 
 # this adds like 3ms
 # there are ways to optimize this
@@ -203,7 +251,14 @@ def extract_documents(data):
         
         content = data[document_metadata_end+len(b'<TEXT>'):document_content_end]
 
+        # Check if this file should be UU-decoded
+        filename_bytes = document_metadata[-1].get(b'FILENAME')
+        if filename_bytes and should_decode_file(filename_bytes):
+            content = decode_uuencoded_content(content)
+
         documents.append(clean_document_content(content))
+
+
 
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
