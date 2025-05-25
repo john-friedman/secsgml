@@ -8,88 +8,80 @@ import binascii
 
 ## REVISIT ##
 sec_format_mappings = {
-    b"accession number": b"accession-number",
     b"conformed submission type": b"type",
-    b"public document count": b"public-document-count",
     b"conformed period of report": b"period",
     b"filed as of date": b"filing-date",
     b"date as of change": b"date-of-filing-date-change",
     
     # Filer section - company data
-    b"company data": b"company-data",
     b"company conformed name": b"conformed-name",
     b"central index key": b"cik",
     b"standard industrial classification": b"assigned-sic",
-    b"irs number": b"irs-number",
-    b"state of incorporation": b"state-of-incorporation",
-    b"fiscal year end": b"fiscal-year-end",
     
     # Filer section - filing values
-    b"filing values": b"filing-values",
-    b"form type": b"form-type",
     b"sec act": b"act",
     b"sec file number": b"file-number",
-    b"film number": b"film-number",
     
     # Filer section - business address
-    b"business address": b"business-address",
-    b"street 1": b"street1",
-    b"city": b"city",
-    b"state": b"state",
-    b"zip": b"zip",
     b"business phone": b"phone",
-    
-    # Filer section - mail address
-    b"mail address": b"mail-address",
-    
+
     # Filer section - former company
-    b"former company": b"former-company",
-    b"former conformed name": b"former-conformed-name",
     b"date of name change": b"date-changed",    
 }
 
+# lets go for mutation approach
 def transform_metadata(metadata):
-    if not isinstance(metadata, dict):
-        return metadata
     
-    result = {}
-    
-    for key, value in metadata.items():
-        if key == b"documents":
-            result[key] = value
-            continue
+    items = list(metadata.items())
+    for key, value in items:
         
-        # Apply mapping if exists, otherwise remove dashes
-        new_key = sec_format_mappings.get(key.lower(), re.sub(rb'\s+', b'-', key))
-        print(new_key)
-        
-        # Special handling for SIC and Act fields
-        if new_key == b"assigned-sic" and isinstance(value, bytes):
-            # Extract just the numeric portion from SIC like "MOTOR VEHICLES & PASSENGER CAR BODIES [3711]"
-            sic_match = re.search(rb'\[(\d+)\]', value)
-            if sic_match:
-                value = sic_match.group(1)
-        elif new_key == b"act" and isinstance(value, bytes) and b"Act" in value:
-            # Extract just the last two digits from "1934 Act"
-            act_match = re.search(rb'(\d{2})(\d{2})\s+Act', value)
-            if act_match:
-                value = act_match.group(2)
-        
-        # Handle lists of dictionaries
-        if isinstance(value, list):
-            result[new_key] = []
-            for item in value:
-                if isinstance(item, dict):
-                    result[new_key].append(transform_metadata(item))
-                else:
-                    result[new_key].append(item)
-        # Recursively transform nested dictionaries
-        elif isinstance(value, dict):
-            result[new_key] = transform_metadata(value)
-        else:
-            result[new_key] = value
+        cleaned_key = key.lower()
+        standardized_key = sec_format_mappings.get(cleaned_key)
 
-    return result
+        if standardized_key is not None:
+            cleaned_key = standardized_key
+        else:
+            cleaned_key = re.sub(rb'\s+',b'-',cleaned_key)
+
+        # check is dict
+        if isinstance(value,dict):
+            # delete previous key
+            metadata.pop(key)
+
+            # check if not empty
+            if value == {}:
+                continue
+
+            # assign new key
+            metadata[cleaned_key] = value
+            # clean value
+            transform_metadata(value)
+        # TODO check this works for multiple reporting owners
+        elif isinstance(value,list):
+            # delete previous key
+            metadata.pop(key)
+            # assign new key
+            metadata[cleaned_key] = value
+            for val in value:
+                transform_metadata(val)
+        else:
+            # delete previous key
+            metadata.pop(key)
+
+            # special handling:
+            if cleaned_key == b"assigned-sic":
+                sic_match = re.search(rb'\[(\d+)\]', value)
+                value = sic_match.group(1)
+            elif cleaned_key == b"act" and isinstance(value, bytes) and b"Act" in value:
+                # Extract just the last two digits from "1934 Act"
+                act_match = re.search(rb'(\d{2})(\d{2})\s+Act', value)
+                if act_match:
+                    value = act_match.group(2)
+            # assign new key
+            metadata[cleaned_key] = value
+    
+
+    return metadata
 
 ## REVISIT ##
 
@@ -209,53 +201,89 @@ def parse_archive_submission_metadata(content):
                 continue
                 
             if value:
-                current_dict[key] = value
+                # Handle duplicate keys by converting to list
+                if key in current_dict:
+                    if not isinstance(current_dict[key], list):
+                        # Convert existing value to list
+                        current_dict[key] = [current_dict[key]]
+                    current_dict[key].append(value)
+                else:
+                    current_dict[key] = value
             else:
                 # Opening tag - create new dict and push to stack
-                current_dict[key] = {}
-                stack.append(current_dict[key])
+                # Handle duplicate section keys
+                new_section = {}
+                if key in current_dict:
+                    if not isinstance(current_dict[key], list):
+                        # Convert existing section to list
+                        current_dict[key] = [current_dict[key]]
+                    current_dict[key].append(new_section)
+                else:
+                    current_dict[key] = new_section
+                stack.append(new_section)
     
     return submission_metadata_dict
 
 # I think this is fine for tab delim?
 def parse_tab_submission_metadata(content):
-   lines = content.strip().split(b'\n')
-   submission_metadata_dict = {}
-   current_dict = submission_metadata_dict
-   stack = [submission_metadata_dict]
-   
-   for line in lines:
-       line = line.rstrip()
-       if not line:
-           continue
-           
-       indent_level = (len(line) - len(line.lstrip(b'\t')))
-       
-       while len(stack) > indent_level + 1:
-           stack.pop()
-           
-       current_dict = stack[-1]
-       
-       if b':' in line:
-           key, value = line.strip().split(b':', 1)
-           key = key.strip()
-           value = value.strip()
-           
-           if value:
-               current_dict[key] = value
-           else:
-               current_dict[key] = {}
-               stack.append(current_dict[key])
-       elif b'>' in line:
+    lines = content.strip().split(b'\n')
+    submission_metadata_dict = {}
+    current_dict = submission_metadata_dict
+    stack = [submission_metadata_dict]
+    
+    for line in lines:
+        line = line.rstrip()
+        if not line:
+            continue
+            
+        indent_level = (len(line) - len(line.lstrip(b'\t')))
+        
+        while len(stack) > indent_level + 1:
+            stack.pop()
+            
+        current_dict = stack[-1]
+        
+        if b':' in line:
+            key, value = line.strip().split(b':', 1)
+            key = key.strip()
+            value = value.strip()
+            
+            if value:
+                # Handle duplicate keys by converting to list
+                if key in current_dict:
+                    if not isinstance(current_dict[key], list):
+                        # Convert existing value to list
+                        current_dict[key] = [current_dict[key]]
+                    current_dict[key].append(value)
+                else:
+                    current_dict[key] = value
+            else:
+                # Handle duplicate section keys
+                new_section = {}
+                if key in current_dict:
+                    if not isinstance(current_dict[key], list):
+                        # Convert existing section to list
+                        current_dict[key] = [current_dict[key]]
+                    current_dict[key].append(new_section)
+                else:
+                    current_dict[key] = new_section
+                stack.append(new_section)
+                
+        elif b'>' in line:
             key, value = parse_keyval_line(line, b'>', b'<')
             # check that key is not "/SEC-HEADER"
             if key == b'/SEC-HEADER':
                 continue
             if key:
-                current_dict[key] = value
+                # Handle duplicate keys here too
+                if key in current_dict:
+                    if not isinstance(current_dict[key], list):
+                        current_dict[key] = [current_dict[key]]
+                    current_dict[key].append(value)
+                else:
+                    current_dict[key] = value
 
-
-   return submission_metadata_dict
+    return submission_metadata_dict
 
 def parse_submission_metadata(content):
     submission_metadata = {}
@@ -270,11 +298,17 @@ def parse_submission_metadata(content):
 
 
     if submission_format == 'tab-privacy':
-        privacy_msg = ''
         # find first empty line
         privacy_msg_end = content.find(b'\n\n',0)
+        privacy_msg_dict = {b'privacy-enhanced-message': content[0:privacy_msg_end]}
         content = content[privacy_msg_end+len(b'\n\n'):]
+
+
         submission_metadata = parse_tab_submission_metadata(content)
+
+        submission_metadata = privacy_msg_dict |submission_metadata
+
+        
     elif submission_format=='tab-default':
         submission_metadata  = parse_tab_submission_metadata(content)
     else:
@@ -339,7 +373,7 @@ def parse_sgml_file_into_memory(data):
         content = data[document_metadata_end+len(b'<TEXT>'):document_content_end]
 
         # Check if this file should be UU-decoded
-        filename_bytes = document_metadata[-1][b'filename']
+        filename_bytes = document_metadata[-1][b'FILENAME']
         if filename_bytes and should_decode_file(filename_bytes):
             content = decode_uuencoded_content(content)
 
@@ -372,7 +406,7 @@ def write_sgml_file_to_tar(input_path,output_path):
             # Write tar directly to disk
             with tarfile.open(output_path, 'w') as tar:
                 for file_num, content in enumerate(documents, 0):
-                    document_name = metadata[b'documents'][file_num][b'filename'] if metadata[b'documents'][file_num].get(b'filename') else metadata[b'documents'][file_num][b'sequence'] + b'.txt'
+                    document_name = metadata[b'documents'][file_num][b'FILENAME'] if metadata[b'documents'][file_num].get(b'FILENAME') else metadata[b'documents'][file_num][b'SEQUENCE'] + b'.txt'
                     document_name = document_name.decode('utf-8')
                     tarinfo = tarfile.TarInfo(name=f'{document_name}')
                     tarinfo.size = len(content)

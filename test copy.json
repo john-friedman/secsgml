@@ -1,0 +1,42 @@
+{
+    "SUBMISSION": {
+        "TIMESTAMP": "20090108:141331",
+        "PRIVATE-TO-PUBLIC": {
+            "ACCESSION-NUMBER": "0000000000-07-021149",
+            "TYPE": "UPLOAD",
+            "PUBLIC-DOCUMENT-COUNT": "1",
+            "FILING-DATE": "20070427",
+            "FILED-FOR": {
+                "COMPANY-DATA": {
+                    "CONFORMED-NAME": "New York Residential, Inc.",
+                    "CIK": "0001392573",
+                    "ASSIGNED-SIC": "6500",
+                    "IRS-NUMBER": "204267378",
+                    "STATE-OF-INCORPORATION": "DE",
+                    "FISCAL-YEAR-END": "1231"
+                },
+                "FILING-VALUES": {
+                    "FORM-TYPE": "UPLOAD"
+                },
+                "BUSINESS-ADDRESS": {
+                    "CITY": "NEW YORK",
+                    "STATE": "NY",
+                    "ZIP": "10023",
+                    "PHONE": "917-439-3838"
+                },
+                "MAIL-ADDRESS": {
+                    "CITY": "NEW YORK",
+                    "STATE": "NY",
+                    "ZIP": "10023"
+                }
+            }
+        }
+    },
+    "documents": [
+        {
+            "type": "letter",
+            "sequence": "1",
+            "filename": "filename1.pdf"
+        }
+    ]
+}
