@@ -1,5 +1,8 @@
 # We're trying to speed things up
 
+So new benchmark - have to test it actually worked tho
+1gb in 3.4seconds. seems good
+
 Goal: under 50ms.
 We will save to tar -> probably will switch architecture of datamule towards tar?
 hmm does tar let us do database ops?
