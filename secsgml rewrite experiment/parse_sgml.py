@@ -210,7 +210,9 @@ def extract_documents(data):
     
     elapsed_ms = (time() - s) * 1000
     print(f"Extracted {len(documents)} documents in {elapsed_ms:.2f} ms")
-    return documents
+
+    submission_metadata['documents'] = document_metadata
+    return submission_metadata,documents
 
 def parse_sgml_file(filepath):
     if not os.path.exists(filepath):
@@ -223,17 +225,15 @@ def parse_sgml_file(filepath):
     with open(filepath, 'rb') as f:
         with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
             # Extract all documents
-            documents = extract_documents(data)
+            metadata,documents = extract_documents(data)
             s = time()
-            
-            if not documents:
-                print("No documents found in the file")
-                return
             
             # Write tar directly to disk
             with tarfile.open('output/documents.tar', 'w') as tar:
-                for file_num, content in enumerate(documents, 1):
-                    tarinfo = tarfile.TarInfo(name=f'{file_num}.txt')
+                for file_num, content in enumerate(documents, 0):
+                    document_name = metadata['documents'][file_num][b'FILENAME'] if metadata['documents'][file_num].get(b'FILENAME') else metadata['documents'][file_num][b'SEQUENCE'] + b'.txt'
+                    document_name = document_name.decode('utf-8')
+                    tarinfo = tarfile.TarInfo(name=f'{document_name}')
                     tarinfo.size = len(content)
                     tar.addfile(tarinfo, io.BytesIO(content))
             
