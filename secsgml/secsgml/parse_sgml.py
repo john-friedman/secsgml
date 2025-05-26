@@ -4,6 +4,8 @@ import io
 import os
 import re
 import binascii
+from .utils import bytes_to_str
+import json
 
 ## REVISIT ##
 sec_format_mappings = {
@@ -225,7 +227,8 @@ def parse_archive_submission_metadata(content):
                 else:
                     current_dict[key] = new_section
                 stack.append(new_section)
-    
+
+
     return submission_metadata_dict
 
 # I think this is fine for tab delim?
@@ -397,6 +400,7 @@ def _parse_sgml_data(data):
             submission_metadata = parse_submission_metadata(data[0:start_pos])
             # standardize metadata
             submission_metadata = transform_metadata(submission_metadata)
+
         
         document_metadata_start = start_pos + len(b'<DOCUMENT>')
         document_metadata_end = data.find(b'<TEXT>', document_metadata_start)
@@ -421,6 +425,7 @@ def _parse_sgml_data(data):
 
     submission_metadata[b'documents'] = document_metadata
     
+
     return submission_metadata, documents
 
 def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None):
@@ -453,6 +458,14 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None):
     
     # Write tar directly to disk
     with tarfile.open(output_path, 'w') as tar:
+        # serialize metadata
+        metadata_str  = bytes_to_str(metadata)
+        metadata_json = json.dumps(metadata_str, indent=2).encode('utf-8')
+        # save metadata
+        tarinfo = tarfile.TarInfo(name='metadata.json')
+        tarinfo.size = len(metadata_json)
+        tar.addfile(tarinfo, io.BytesIO(metadata_json))
+
         for file_num, content in enumerate(documents, 0):
             document_name = metadata[b'documents'][file_num][b'FILENAME'] if metadata[b'documents'][file_num].get(b'FILENAME') else metadata[b'documents'][file_num][b'SEQUENCE'] + b'.txt'
             document_name = document_name.decode('utf-8')

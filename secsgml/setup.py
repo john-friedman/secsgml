@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="secsgml",
-    version="0.2.0",
+    version="0.2.1",
     author="John Friedman",
     author_email="johnfriedman@datamule.xyz",
     description="Parse Securities and Exchange Commission Standard Generalized Markup Language (SEC SGML) files",
