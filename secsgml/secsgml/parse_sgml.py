@@ -1,11 +1,7 @@
 import mmap
-import tarfile
-import io
-import os
 import re
 import binascii
-from .utils import bytes_to_str
-import json
+
 
 ## REVISIT ##
 sec_format_mappings = {
@@ -367,7 +363,7 @@ def parse_document_metadata(content):
    return doc_metadata_dict
 
 
-def parse_sgml_content_into_memory(bytes_content=None, filepath=None):
+def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[]):
     # Validate input arguments
     if bytes_content is None and filepath is None:
         raise ValueError("Either bytes_content or filepath must be provided")
@@ -375,15 +371,18 @@ def parse_sgml_content_into_memory(bytes_content=None, filepath=None):
     if bytes_content is not None and filepath is not None:
         raise ValueError("Cannot provide both bytes_content and filepath - choose one")
     
+    if isinstance(filter_document_types,str):
+        filter_document_types = [filter_document_types]
+    
     # Read data from file if filepath is provided
     if filepath is not None:
         with open(filepath, 'rb') as f:
             with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
-                return _parse_sgml_data(data)
+                return _parse_sgml_data(data,filter_document_types)
     else:
-        return _parse_sgml_data(bytes_content)
+        return _parse_sgml_data(bytes_content,filter_document_types)
 
-def _parse_sgml_data(data):
+def _parse_sgml_data(data,filter_document_types):
     documents = []
     submission_metadata = ""
     document_metadata = []
@@ -423,54 +422,16 @@ def _parse_sgml_data(data):
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
 
+    # apply filter_document_types
+    if len(filter_document_types) == 0:
+        pass
+    else:
+        indices = [i for i, item in enumerate(document_metadata) if item[b'TYPE'].decode('utf-8') in filter_document_types]
+        document_metadata = [document_metadata[i] for i in indices]
+        documents = [documents[i] for i in indices]
+
+    document_metadata = [{key.lower(): value for key, value in doc_meta.items()} for doc_meta in document_metadata]
     submission_metadata[b'documents'] = document_metadata
-    
+
 
     return submission_metadata, documents
-
-def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None):
-    # Validate input arguments
-    if bytes_content is None and input_path is None:
-        raise ValueError("Either bytes_content or input_path must be provided")
-    
-    if bytes_content is not None and input_path is not None:
-        raise ValueError("Cannot provide both bytes_content and input_path - choose one")
-    
-    # Validate output_path is provided
-    if output_path is None:
-        raise ValueError("output_path is required")
-    
-    # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else 'output', exist_ok=True)
-    
-    # Get data either from file or direct content
-    if input_path is not None:
-        if not os.path.exists(input_path):
-            raise ValueError("Filepath not found")
-        
-        with open(input_path, 'rb') as f:
-            with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
-                # Extract all documents
-                metadata, documents = parse_sgml_content_into_memory(bytes_content=data)
-    else:
-        # Use content directly
-        metadata, documents = parse_sgml_content_into_memory(bytes_content=bytes_content)
-    
-    # Write tar directly to disk
-    with tarfile.open(output_path, 'w') as tar:
-        # serialize metadata
-        metadata_str  = bytes_to_str(metadata)
-        metadata_json = json.dumps(metadata_str, indent=2).encode('utf-8')
-        # save metadata
-        tarinfo = tarfile.TarInfo(name='metadata.json')
-        tarinfo.size = len(metadata_json)
-        tar.addfile(tarinfo, io.BytesIO(metadata_json))
-
-        for file_num, content in enumerate(documents, 0):
-            document_name = metadata[b'documents'][file_num][b'FILENAME'] if metadata[b'documents'][file_num].get(b'FILENAME') else metadata[b'documents'][file_num][b'SEQUENCE'] + b'.txt'
-            document_name = document_name.decode('utf-8')
-            tarinfo = tarfile.TarInfo(name=f'{document_name}')
-            tarinfo.size = len(content)
-            tar.addfile(tarinfo, io.BytesIO(content))
-
-
