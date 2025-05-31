@@ -26,6 +26,7 @@ from secsgml import parse_sgml_content_into_memory
 # filter_document_types returns only document types in the list, and modifies metadata 'documents' key to reflect this.
 parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[])
 ```
+There is also an optional argument `keep_filtered_metadata` which keeps the metadata for documents that are not in the filter.
 
 ### Write to tar
 ```
@@ -34,6 +35,8 @@ from secsgml import write_sgml_file_to_tar
 # Takes either bytes_content or input_path
 write_sgml_file_to_tar(output_path, bytes_content, input_path,filter_document_types=[])
 ```
+
+There is also an optional argument `keep_filtered_metadata` which keeps the metadata for documents that are not in the filter.
 
 ## Benchmarks
 Using [500mb of SGML files](https://www.sec.gov/Archives/edgar/Feed/2009/QTR1/20090108.nc.tar.gz)
