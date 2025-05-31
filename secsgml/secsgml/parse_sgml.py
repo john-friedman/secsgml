@@ -363,7 +363,7 @@ def parse_document_metadata(content):
    return doc_metadata_dict
 
 
-def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[]):
+def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[],keep_filtered_metadata=False):
     # Validate input arguments
     if bytes_content is None and filepath is None:
         raise ValueError("Either bytes_content or filepath must be provided")
@@ -378,11 +378,11 @@ def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_docu
     if filepath is not None:
         with open(filepath, 'rb') as f:
             with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
-                return _parse_sgml_data(data,filter_document_types)
+                return _parse_sgml_data(data,filter_document_types,keep_filtered_metadata)
     else:
-        return _parse_sgml_data(bytes_content,filter_document_types)
+        return _parse_sgml_data(bytes_content,filter_document_types,keep_filtered_metadata)
 
-def _parse_sgml_data(data,filter_document_types):
+def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata):
     documents = []
     submission_metadata = ""
     document_metadata = []
@@ -425,6 +425,9 @@ def _parse_sgml_data(data,filter_document_types):
     # apply filter_document_types
     if len(filter_document_types) == 0:
         pass
+    elif keep_filtered_metadata:
+        indices = [i for i, item in enumerate(document_metadata) if item[b'TYPE'].decode('utf-8') in filter_document_types]
+        documents = [documents[i] for i in indices]
     else:
         indices = [i for i, item in enumerate(document_metadata) if item[b'TYPE'].decode('utf-8') in filter_document_types]
         document_metadata = [document_metadata[i] for i in indices]
