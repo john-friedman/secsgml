@@ -163,37 +163,58 @@ def clean_document_content(content):
     
     return content.strip()
 
-# have to be careful here, as some of the archive files have weird stuff like '>' in vars
-
 # pass non empty line
-def parse_keyval_line_archive(line):
-    match = re.search(rb'[A-Z0-9]>', line)
-    key = b''
-    val = b''
-    if match:
-        split_pos = match.start()
-        key = line[1:split_pos+1]
-        val = line[split_pos+2:]
-        
-    return key, val
-
-def parse_archive_submission_metadata(content):
+def parse_keyval_archive(content):
+    """Precompute all key-value pairs from archive content"""
     lines = content.strip().split(b'\n')
-    submission_metadata_dict = {}
-    current_dict = submission_metadata_dict
-    stack = [submission_metadata_dict]
+    keyvals = []
     
     for line in lines:
         line = line.lstrip()
         if not line:
             continue
             
-        current_dict = stack[-1]
-        
-        key, value = parse_keyval_line_archive(line)
+        match = re.search(rb'[A-Z0-9]>', line)
+        key = b''
+        val = b''
+        if match:
+            split_pos = match.start()
+            # Check if this is a closing tag
+            if line.startswith(b'</'):
+                # Closing tag: include the '/' in the key
+                key = line[1:split_pos+1]  # starts from position 1, includes the '/'
+            else:
+                # Opening tag: strip the '<'
+                key = line[1:split_pos+1]
+            val = line[split_pos+2:]
+            
+            keyvals.append((key, val))
+    
+    return keyvals
+
+def parse_archive_submission_metadata(content):
+    # Precompute all key-value pairs
+    keyvals = parse_keyval_archive(content)
+    
+    # FIRST PASS: Identify which tags are actual sections (have closing tags)
+    section_tags = set()
+    for key, value in keyvals:
+        if key.startswith(b'/'):
+            # This is a closing tag, so the corresponding opening tag is a section
+            section_name = key[1:]  # Remove the '/'
+            section_tags.add(section_name)
+    
+    # SECOND PASS: Build the nested structure
+    submission_metadata_dict = {}
+    current_dict = submission_metadata_dict
+    stack = [submission_metadata_dict]
+    
+    for key, value in keyvals:
         # skip submission
         if key == b'SUBMISSION':
             continue
+            
+        current_dict = stack[-1]
         
         if key:
             # Handle closing tags - pop from stack
@@ -203,30 +224,35 @@ def parse_archive_submission_metadata(content):
                 continue
                 
             if value:
-                # Handle duplicate keys by converting to list
+                # Has a value - it's a field
                 if key in current_dict:
                     if not isinstance(current_dict[key], list):
-                        # Convert existing value to list
                         current_dict[key] = [current_dict[key]]
                     current_dict[key].append(value)
                 else:
                     current_dict[key] = value
             else:
-                # Opening tag - create new dict and push to stack
-                # Handle duplicate section keys
-                new_section = {}
-                if key in current_dict:
-                    if not isinstance(current_dict[key], list):
-                        # Convert existing section to list
-                        current_dict[key] = [current_dict[key]]
-                    current_dict[key].append(new_section)
+                # No value - check if it's a section or empty field
+                if key in section_tags:
+                    # It's a section - create new dict and push to stack
+                    new_section = {}
+                    if key in current_dict:
+                        if not isinstance(current_dict[key], list):
+                            current_dict[key] = [current_dict[key]]
+                        current_dict[key].append(new_section)
+                    else:
+                        current_dict[key] = new_section
+                    stack.append(new_section)
                 else:
-                    current_dict[key] = new_section
-                stack.append(new_section)
-
+                    # It's an empty field - just set to empty
+                    if key in current_dict:
+                        if not isinstance(current_dict[key], list):
+                            current_dict[key] = [current_dict[key]]
+                        current_dict[key].append(b'')
+                    else:
+                        current_dict[key] = b''
 
     return submission_metadata_dict
-
 # I think this is fine for tab delim?
 def parse_tab_submission_metadata(content):
     lines = content.strip().split(b'\n')
@@ -259,7 +285,7 @@ def parse_tab_submission_metadata(content):
                     date = line[colon_pos + 3:].strip()
                     
                     # Transform key: SEC-DOCUMENT -> sec-document
-                    key = tag_name.lower().replace(b'_', b'-')
+                    key = tag_name.replace(b'_', b'-')
                     value = filename + b' : ' + date
                 else:
                     # Fallback to normal parsing if format is unexpected
@@ -324,7 +350,7 @@ def parse_submission_metadata(content):
     if submission_format == 'tab-privacy':
         # find first empty line
         privacy_msg_end = content.find(b'\n\n',0)
-        privacy_msg_dict = {b'privacy-enhanced-message': content[0:privacy_msg_end]}
+        privacy_msg_dict = {b'PRIVACY-ENHANCED-MESSAGE': content[0:privacy_msg_end]}
         content = content[privacy_msg_end+len(b'\n\n'):]
 
 
@@ -363,7 +389,7 @@ def parse_document_metadata(content):
    return doc_metadata_dict
 
 
-def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[],keep_filtered_metadata=False):
+def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_document_types=[],keep_filtered_metadata=False,standardize_metadata=True):
     # Validate input arguments
     if bytes_content is None and filepath is None:
         raise ValueError("Either bytes_content or filepath must be provided")
@@ -378,11 +404,11 @@ def parse_sgml_content_into_memory(bytes_content=None, filepath=None,filter_docu
     if filepath is not None:
         with open(filepath, 'rb') as f:
             with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
-                return _parse_sgml_data(data,filter_document_types,keep_filtered_metadata)
+                return _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardize_metadata=standardize_metadata)
     else:
-        return _parse_sgml_data(bytes_content,filter_document_types,keep_filtered_metadata)
+        return _parse_sgml_data(bytes_content,filter_document_types,keep_filtered_metadata,standardize_metadata=standardize_metadata)
 
-def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata):
+def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardize_metadata=True):
     documents = []
     submission_metadata = ""
     document_metadata = []
@@ -398,7 +424,8 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata):
         if pos == 0:
             submission_metadata = parse_submission_metadata(data[0:start_pos])
             # standardize metadata
-            submission_metadata = transform_metadata(submission_metadata)
+            if standardize_metadata:
+                submission_metadata = transform_metadata(submission_metadata)
 
         
         document_metadata_start = start_pos + len(b'<DOCUMENT>')
@@ -433,8 +460,11 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata):
         document_metadata = [document_metadata[i] for i in indices]
         documents = [documents[i] for i in indices]
 
-    document_metadata = [{key.lower(): value for key, value in doc_meta.items()} for doc_meta in document_metadata]
-    submission_metadata[b'documents'] = document_metadata
+    if standardize_metadata:
+        document_metadata = [{key.lower(): value for key, value in doc_meta.items()} for doc_meta in document_metadata]
+        submission_metadata[b'documents'] = document_metadata
+    else:
+        submission_metadata[b'DOCUMENTS'] = document_metadata
 
 
     return submission_metadata, documents
