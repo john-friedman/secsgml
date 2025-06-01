@@ -6,7 +6,7 @@ import io
 from .parse_sgml import parse_sgml_content_into_memory
 from .utils import bytes_to_str
 
-def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filter_document_types=[],keep_filtered_metadata=False):
+def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filter_document_types=[],keep_filtered_metadata=False,standardize_metadata=True):
     # Validate input arguments
     if bytes_content is None and input_path is None:
         raise ValueError("Either bytes_content or input_path must be provided")
@@ -29,10 +29,10 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filt
         with open(input_path, 'rb') as f:
             with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as data:
                 # Extract all documents
-                metadata, documents = parse_sgml_content_into_memory(bytes_content=data,filter_document_types=filter_document_types,keep_filtered_metadata=keep_filtered_metadata)
+                metadata, documents = parse_sgml_content_into_memory(bytes_content=data,filter_document_types=filter_document_types,keep_filtered_metadata=keep_filtered_metadata,standardize_metadata=standardize_metadata)
     else:
         # Use content directly
-        metadata, documents = parse_sgml_content_into_memory(bytes_content=bytes_content, filter_document_types=filter_document_types,keep_filtered_metadata=keep_filtered_metadata)
+        metadata, documents = parse_sgml_content_into_memory(bytes_content=bytes_content, filter_document_types=filter_document_types,keep_filtered_metadata=keep_filtered_metadata,standardize_metadata=standardize_metadata)
     
     # Write tar directly to disk
     with tarfile.open(output_path, 'w') as tar:
@@ -46,7 +46,11 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filt
         tar.addfile(tarinfo, io.BytesIO(metadata_json))
 
         for file_num, content in enumerate(documents, 0):
-            document_name = metadata[b'documents'][file_num][b'filename'] if metadata[b'documents'][file_num].get(b'filename') else metadata[b'documents'][file_num][b'sequence'] + b'.txt'
+            if standardize_metadata:
+                document_name = metadata[b'documents'][file_num][b'filename'] if metadata[b'documents'][file_num].get(b'filename') else metadata[b'documents'][file_num][b'sequence'] + b'.txt'
+            # else use original uppercase name
+            else:
+                document_name = metadata[b'DOCUMENTS'][file_num][b'FILENAME'] if metadata[b'DOCUMENTS'][file_num].get(b'FILENAME') else metadata[b'DOCUMENTS'][file_num][b'SEQUENCE'] + b'.txt'
             document_name = document_name.decode('utf-8')
             tarinfo = tarfile.TarInfo(name=f'{document_name}')
             tarinfo.size = len(content)
