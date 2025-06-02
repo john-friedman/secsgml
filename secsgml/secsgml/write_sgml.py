@@ -2,10 +2,10 @@ import os
 import mmap
 import tarfile
 import json
+import copy
 import io
 from .parse_sgml import parse_sgml_content_into_memory
 from .utils import bytes_to_str
-import copy
 
 
 def calculate_documents_locations_in_tar(metadata, documents):
@@ -47,6 +47,33 @@ def calculate_documents_locations_in_tar(metadata, documents):
     
     return metadata
 
+
+def write_submission_to_tar(output_path,metadata,documents,standardize_metadata):
+     # Write tar directly to disk
+    with tarfile.open(output_path, 'w') as tar:
+
+        # calculate document locations in tar
+        metadata = calculate_documents_locations_in_tar(metadata, documents)
+        
+        # serialize metadata
+        metadata_str  = bytes_to_str(metadata,lower=False)
+        metadata_json = json.dumps(metadata_str).encode('utf-8')
+        # save metadata
+        tarinfo = tarfile.TarInfo(name='metadata.json')
+        tarinfo.size = len(metadata_json)
+        tar.addfile(tarinfo, io.BytesIO(metadata_json))
+
+        for file_num, content in enumerate(documents, 0):
+            if standardize_metadata:
+                document_name = metadata[b'documents'][file_num][b'filename'] if metadata[b'documents'][file_num].get(b'filename') else metadata[b'documents'][file_num][b'sequence'] + b'.txt'
+            # else use original uppercase name
+            else:
+                document_name = metadata[b'DOCUMENTS'][file_num][b'FILENAME'] if metadata[b'DOCUMENTS'][file_num].get(b'FILENAME') else metadata[b'DOCUMENTS'][file_num][b'SEQUENCE'] + b'.txt'
+            document_name = document_name.decode('utf-8')
+            tarinfo = tarfile.TarInfo(name=f'{document_name}')
+            tarinfo.size = len(content)
+            tar.addfile(tarinfo, io.BytesIO(content))
+
 def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filter_document_types=[],keep_filtered_metadata=False,standardize_metadata=True):
     # Validate input arguments
     if bytes_content is None and input_path is None:
@@ -75,30 +102,7 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filt
         # Use content directly
         metadata, documents = parse_sgml_content_into_memory(bytes_content=bytes_content, filter_document_types=filter_document_types,keep_filtered_metadata=keep_filtered_metadata,standardize_metadata=standardize_metadata)
     
-    # Write tar directly to disk
-    with tarfile.open(output_path, 'w') as tar:
-
-        # calculate document locations in tar
-        metadata = calculate_documents_locations_in_tar(metadata, documents)
-        
-        # serialize metadata
-        metadata_str  = bytes_to_str(metadata,lower=False)
-        metadata_json = json.dumps(metadata_str).encode('utf-8')
-        # save metadata
-        tarinfo = tarfile.TarInfo(name='metadata.json')
-        tarinfo.size = len(metadata_json)
-        tar.addfile(tarinfo, io.BytesIO(metadata_json))
-
-        for file_num, content in enumerate(documents, 0):
-            if standardize_metadata:
-                document_name = metadata[b'documents'][file_num][b'filename'] if metadata[b'documents'][file_num].get(b'filename') else metadata[b'documents'][file_num][b'sequence'] + b'.txt'
-            # else use original uppercase name
-            else:
-                document_name = metadata[b'DOCUMENTS'][file_num][b'FILENAME'] if metadata[b'DOCUMENTS'][file_num].get(b'FILENAME') else metadata[b'DOCUMENTS'][file_num][b'SEQUENCE'] + b'.txt'
-            document_name = document_name.decode('utf-8')
-            tarinfo = tarfile.TarInfo(name=f'{document_name}')
-            tarinfo.size = len(content)
-            tar.addfile(tarinfo, io.BytesIO(content))
+    write_submission_to_tar(output_path,metadata,documents,standardize_metadata)
 
 
     
