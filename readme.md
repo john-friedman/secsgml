@@ -38,6 +38,18 @@ write_sgml_file_to_tar(output_path, bytes_content, input_path,filter_document_ty
 
 There is also an optional argument `keep_filtered_metadata` which keeps the metadata for documents that are not in the filter.
 
+Note: as of v0.2.4 secsgml saves byte locations of files written to tar. See:
+``
+{
+    "TYPE": "ZIP",
+    "SEQUENCE": "42",
+    "FILENAME": "0001640334-23-000027-xbrl.zip",
+    "DESCRIPTION": "IDEA: XBRL DOCUMENT",
+    "SECSGML_START_BYTE": 1966080,
+    "SECSGML_END_BYTE": 2050511
+}
+```
+
 ## Benchmarks
 Using [500mb of SGML files](https://www.sec.gov/Archives/edgar/Feed/2009/QTR1/20090108.nc.tar.gz)
 * write_sgml_file_to_tar - 3,960 ms
