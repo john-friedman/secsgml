@@ -2,7 +2,6 @@ import mmap
 import re
 import binascii
 
-
 ## REVISIT ##
 sec_format_mappings = {
     b"conformed submission type": b"type",
@@ -448,6 +447,14 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
 
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
+
+    # get size of documents
+    for file_num, content in enumerate(documents):
+        if standardize_metadata:
+            # use lowercase keys
+            document_metadata[file_num][b'secsgml_size_bytes'] = len(content)
+        else:
+            document_metadata[file_num][b'SECSGML_SIZE_BYTES'] = len(content)
 
     # apply filter_document_types
     if len(filter_document_types) == 0:

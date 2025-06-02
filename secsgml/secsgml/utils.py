@@ -1,3 +1,5 @@
+
+
 def safe_decode_bytes(data,lower):
     """Decode bytes trying multiple encodings."""
     if not isinstance(data, bytes):
