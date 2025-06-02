@@ -5,6 +5,47 @@ import json
 import io
 from .parse_sgml import parse_sgml_content_into_memory
 from .utils import bytes_to_str
+import copy
+
+
+def calculate_documents_locations_in_tar(metadata, documents):
+    # Step 1: Add placeholder byte positions to get accurate size
+    placeholder_metadata = copy.deepcopy(metadata)
+    
+    for file_num in range(len(documents)):
+        if b'documents' in placeholder_metadata:
+            placeholder_metadata[b'documents'][file_num][b'secsgml_start_byte'] = 999999999
+            placeholder_metadata[b'documents'][file_num][b'secsgml_end_byte'] = 999999999
+        else:
+            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = 999999999
+            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = 999999999
+    
+    # Step 2: Calculate size with placeholders
+    placeholder_str = bytes_to_str(placeholder_metadata, lower=False)
+    placeholder_json = json.dumps(placeholder_str).encode('utf-8')
+    metadata_size = len(placeholder_json)
+    
+    # Step 3: Now calculate actual positions using this size
+    current_pos = 512 + metadata_size
+    current_pos += (512 - (current_pos % 512)) % 512
+    
+    # Step 4: Calculate real positions and update original metadata
+    for file_num, content in enumerate(documents):
+        start_byte = current_pos + 512
+        end_byte = start_byte + len(content)
+        
+        if b'documents' in metadata:
+            metadata[b'documents'][file_num][b'secsgml_start_byte'] = start_byte
+            metadata[b'documents'][file_num][b'secsgml_end_byte'] = end_byte
+        else:
+            metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = start_byte
+            metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = end_byte
+        
+        file_total_size = 512 + len(content)
+        padded_size = file_total_size + (512 - (file_total_size % 512)) % 512
+        current_pos += padded_size
+    
+    return metadata
 
 def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filter_document_types=[],keep_filtered_metadata=False,standardize_metadata=True):
     # Validate input arguments
@@ -36,10 +77,13 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filt
     
     # Write tar directly to disk
     with tarfile.open(output_path, 'w') as tar:
+
+        # calculate document locations in tar
+        metadata = calculate_documents_locations_in_tar(metadata, documents)
         
         # serialize metadata
         metadata_str  = bytes_to_str(metadata,lower=False)
-        metadata_json = json.dumps(metadata_str, indent=2).encode('utf-8')
+        metadata_json = json.dumps(metadata_str).encode('utf-8')
         # save metadata
         tarinfo = tarfile.TarInfo(name='metadata.json')
         tarinfo.size = len(metadata_json)
@@ -55,5 +99,8 @@ def write_sgml_file_to_tar(output_path, bytes_content=None, input_path=None,filt
             tarinfo = tarfile.TarInfo(name=f'{document_name}')
             tarinfo.size = len(content)
             tar.addfile(tarinfo, io.BytesIO(content))
+
+
+    
 
 
