@@ -9,16 +9,16 @@ import copy
 
 
 def calculate_documents_locations_in_tar(metadata, documents):
-    # Step 1: Add placeholder byte positions to get accurate size
+    # Step 1: Add placeholder byte positions to get accurate size (10-digit padded)
     placeholder_metadata = copy.deepcopy(metadata)
     
     for file_num in range(len(documents)):
         if b'documents' in placeholder_metadata:
-            placeholder_metadata[b'documents'][file_num][b'secsgml_start_byte'] = 999999999
-            placeholder_metadata[b'documents'][file_num][b'secsgml_end_byte'] = 999999999
+            placeholder_metadata[b'documents'][file_num][b'secsgml_start_byte'] = "9999999999"  # 10 digits
+            placeholder_metadata[b'documents'][file_num][b'secsgml_end_byte'] = "9999999999"    # 10 digits
         else:
-            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = 999999999
-            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = 999999999
+            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = "9999999999"  # 10 digits
+            placeholder_metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = "9999999999"    # 10 digits
     
     # Step 2: Calculate size with placeholders
     placeholder_str = bytes_to_str(placeholder_metadata, lower=False)
@@ -29,17 +29,17 @@ def calculate_documents_locations_in_tar(metadata, documents):
     current_pos = 512 + metadata_size
     current_pos += (512 - (current_pos % 512)) % 512
     
-    # Step 4: Calculate real positions and update original metadata
+    # Step 4: Calculate real positions and update original metadata (10-digit padded)
     for file_num, content in enumerate(documents):
         start_byte = current_pos + 512
         end_byte = start_byte + len(content)
         
         if b'documents' in metadata:
-            metadata[b'documents'][file_num][b'secsgml_start_byte'] = start_byte
-            metadata[b'documents'][file_num][b'secsgml_end_byte'] = end_byte
+            metadata[b'documents'][file_num][b'secsgml_start_byte'] = f"{start_byte:010d}"  # 10-digit padding
+            metadata[b'documents'][file_num][b'secsgml_end_byte'] = f"{end_byte:010d}"      # 10-digit padding
         else:
-            metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = start_byte
-            metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = end_byte
+            metadata[b'DOCUMENTS'][file_num][b'SECSGML_START_BYTE'] = f"{start_byte:010d}"  # 10-digit padding
+            metadata[b'DOCUMENTS'][file_num][b'SECSGML_END_BYTE'] = f"{end_byte:010d}"      # 10-digit padding
         
         file_total_size = 512 + len(content)
         padded_size = file_total_size + (512 - (file_total_size % 512)) % 512
