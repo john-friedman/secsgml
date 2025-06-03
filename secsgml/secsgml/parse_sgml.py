@@ -417,6 +417,13 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
     while True:
         start_pos = data.find(b'<DOCUMENT>', pos)
         if start_pos == -1:
+            # if no documents are found, process submission metadata
+            if pos == 0:
+                submission_metadata = parse_submission_metadata(data[0:start_pos])
+                # standardize metadata
+                if standardize_metadata:
+                    submission_metadata = transform_metadata(submission_metadata)
+            # return
             break
 
         # set submission metadata if at start
