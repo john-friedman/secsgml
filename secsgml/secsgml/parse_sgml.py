@@ -25,6 +25,28 @@ sec_format_mappings = {
     b"date of name change": b"date-changed",    
 }
 
+sec_format_mappings_string = {
+    "conformed submission type": "type",
+    "conformed period of report": "period",
+    "filed as of date": "filing-date",
+    "date as of change": "date-of-filing-date-change",
+    
+    # Filer section - company data
+    "company conformed name": "conformed-name",
+    "central index key": "cik",
+    "standard industrial classification": "assigned-sic",
+    
+    # Filer section - filing values
+    "sec act": "act",
+    "sec file number": "file-number",
+    
+    # Filer section - business address
+    "business phone": "phone",
+
+    # Filer section - former company
+    "date of name change": "date-changed",    
+}
+
 # lets go for mutation approach
 def transform_metadata(metadata):
     
@@ -80,7 +102,59 @@ def transform_metadata(metadata):
 
     return metadata
 
-## REVISIT ##
+def transform_metadata_string(metadata):
+    items = list(metadata.items())
+    for key, value in items:
+        
+        key_lower = key.lower()
+        standardized_key = sec_format_mappings_string.get(key_lower)
+
+        if standardized_key is not None:
+            cleaned_key = standardized_key
+        else:
+            cleaned_key = re.sub(r'\s+','-',key_lower)
+
+        # check is dict
+        if isinstance(value,dict):
+            # delete previous key
+            metadata.pop(key)
+
+            # check if not empty
+            if value == {}:
+                continue
+
+            # assign new key
+            metadata[cleaned_key] = value
+            # clean value
+            transform_metadata_string(value)
+        # TODO check this works for multiple reporting owners
+        elif isinstance(value,list):
+            # delete previous key
+            metadata.pop(key)
+            # assign new key
+            metadata[cleaned_key] = value
+            for val in value:
+                if isinstance(val,dict):
+                    transform_metadata_string(val)
+        else:
+            # delete previous key
+            metadata.pop(key)
+
+            # special handling (need to check original key)
+            if key_lower == "standard industrial classification":
+                sic_match = re.search(r'\[(\d+)\]', value)
+                value = sic_match.group(1)
+            elif key_lower == "act" and isinstance(value, str) and "Act" in value:
+                # Extract just the last two digits from "1934 Act"
+                act_match = re.search(r'(\d{2})(\d{2})\s+Act', value)
+                if act_match:
+                    value = act_match.group(2)
+            # assign new key
+            metadata[cleaned_key] = value
+    
+
+    return metadata
+
 
 
 # Note: *.pdf, *.gif, *.jpg, *.png,*.xlsx and *.zip files are uuencoded.
@@ -118,10 +192,13 @@ def decode_uuencoded_content(content):
         try:
             data = binascii.a2b_uu(stripped.encode())
         except binascii.Error:
-            # Workaround for broken uuencoders
-            if stripped:
-                nbytes = (((ord(stripped[0])-32) & 63) * 4 + 5) // 3
-                data = binascii.a2b_uu(stripped[:nbytes].encode())
+            clean_line = ''.join(c for c in stripped if 32 <= ord(c) <= 95)
+            if clean_line:
+                try:
+                    nbytes = (((ord(clean_line[0])-32) & 63) * 4 + 5) // 3
+                    data = binascii.a2b_uu(clean_line[:nbytes].encode())
+                except (binascii.Error, IndexError):
+                    continue
             else:
                 continue
         
@@ -165,7 +242,7 @@ def clean_document_content(content):
 # pass non empty line
 def parse_keyval_archive(content):
     """Precompute all key-value pairs from archive content"""
-    lines = content.strip().split(b'\n')
+    lines = content.strip().splitlines()
     keyvals = []
     
     for line in lines:
@@ -254,7 +331,7 @@ def parse_archive_submission_metadata(content):
     return submission_metadata_dict
 # I think this is fine for tab delim?
 def parse_tab_submission_metadata(content):
-    lines = content.strip().split(b'\n')
+    lines = content.strip().splitlines()
     submission_metadata_dict = {}
     current_dict = submission_metadata_dict
     stack = [submission_metadata_dict]
@@ -376,7 +453,7 @@ def parse_keyval_line(line, delimiter=b'>', strip_prefix=b'<'):
 
 def parse_document_metadata(content):
    content = content.strip()
-   keyvals = content.split(b'\n')
+   keyvals = content.splitlines()
    
    doc_metadata_dict = {
        key: value
