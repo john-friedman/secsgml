@@ -12,6 +12,8 @@ Will be expanded to also parse SGML Tables.
 
 secsgml also attempts to standardize the metadata between formats. e.g. 'CENTRAL INDEX KEY' will be mapped to 'cik'. You can see the standardization ruleset [here](secsgml/secsgml/header_standardization.py)
 
+Note: secsgml has been tested on the entire [SEC Corpus](https://github.com/john-friedman/SEC-Census).
+
 ## Installation
 ```
 pip install secsgml
