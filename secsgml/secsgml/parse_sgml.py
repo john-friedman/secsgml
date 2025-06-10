@@ -1,73 +1,24 @@
 import mmap
 import re
 import binascii
+from .header_standardization import header_metadata_mappings_string,header_metadata_mappings_bytes
 
-# new format #
-# {'date as of change':{'to':date-of...,regex:}}
+import re
 
-# end new format #
-
-## REVISIT ##
-sec_format_mappings = {
-    b"conformed submission type": b"type",
-    b"conformed period of report": b"period",
-    b"filed as of date": b"filing-date",
-    b"date as of change": b"date-of-filing-date-change",
-    
-    # Filer section - company data
-    b"company conformed name": b"conformed-name",
-    b"central index key": b"cik",
-    b"standard industrial classification": b"assigned-sic",
-    
-    # Filer section - filing values
-    b"sec act": b"act",
-    b"sec file number": b"file-number",
-    
-    # Filer section - business address
-    b"business phone": b"phone",
-
-    # Filer section - former company
-    b"date of name change": b"date-changed",    
-}
-
-sec_format_mappings_string = {
-    "conformed submission type": "type",
-    "conformed period of report": "period",
-    "filed as of date": "filing-date",
-    "date as of change": "date-of-filing-date-change",
-    
-    # Filer section - company data
-    "company conformed name": "conformed-name",
-    "central index key": "cik",
-    "standard industrial classification": "assigned-sic",
-    
-    # Filer section - filing values
-    "sec act": "act",
-    "sec file number": "file-number",
-    
-    # Filer section - business address
-    "business phone": "phone",
-
-    # Filer section - former company
-    "date of name change": "date-changed",    
-}
-
-# lets go for mutation approach
 def transform_metadata(metadata):
-    
     items = list(metadata.items())
     for key, value in items:
         
         key_lower = key.lower()
-        standardized_key = sec_format_mappings.get(key_lower)
+        mapping = header_metadata_mappings_bytes.get(key_lower)
 
-        if standardized_key is not None:
-            cleaned_key = standardized_key
+        if mapping is not None:
+            cleaned_key = mapping[b"to"]
         else:
-            cleaned_key = re.sub(rb'\s+',b'-',key_lower)
+            cleaned_key = re.sub(rb'\s+', b'-', key_lower)
 
         # check is dict
-        if isinstance(value,dict):
+        if isinstance(value, dict):
             # delete previous key
             metadata.pop(key)
 
@@ -80,31 +31,29 @@ def transform_metadata(metadata):
             # clean value
             transform_metadata(value)
         # TODO check this works for multiple reporting owners
-        elif isinstance(value,list):
+        elif isinstance(value, list):
             # delete previous key
             metadata.pop(key)
             # assign new key
             metadata[cleaned_key] = value
             for val in value:
-                if isinstance(val,dict):
+                if isinstance(val, dict):
                     transform_metadata(val)
         else:
             # delete previous key
             metadata.pop(key)
 
-            # special handling (need to check original key)
-            if key_lower == b"standard industrial classification":
-                sic_match = re.search(rb'\[(\d+)\]', value)
-                value = sic_match.group(1)
-            elif key_lower == b"act" and isinstance(value, bytes) and b"Act" in value:
-                # Extract just the last two digits from "1934 Act"
-                act_match = re.search(rb'(\d{2})(\d{2})\s+Act', value)
-                if act_match:
-                    value = act_match.group(2)
+            # Apply regex transformation if available
+            if mapping is not None and b"regex" in mapping:
+                regex_pattern = mapping[b"regex"]
+                if isinstance(regex_pattern, bytes):
+                    regex_match = re.search(regex_pattern, value)
+                    if regex_match:
+                        value = regex_match.group(1)
+            
             # assign new key
             metadata[cleaned_key] = value
     
-
     return metadata
 
 def transform_metadata_string(metadata):
@@ -112,15 +61,15 @@ def transform_metadata_string(metadata):
     for key, value in items:
         
         key_lower = key.lower()
-        standardized_key = sec_format_mappings_string.get(key_lower)
+        mapping = header_metadata_mappings_string.get(key_lower.upper())  # Convert to upper for lookup
 
-        if standardized_key is not None:
-            cleaned_key = standardized_key
+        if mapping is not None:
+            cleaned_key = mapping["to"]
         else:
-            cleaned_key = re.sub(r'\s+','-',key_lower)
+            cleaned_key = re.sub(r'\s+', '-', key_lower)
 
         # check is dict
-        if isinstance(value,dict):
+        if isinstance(value, dict):
             # delete previous key
             metadata.pop(key)
 
@@ -133,31 +82,28 @@ def transform_metadata_string(metadata):
             # clean value
             transform_metadata_string(value)
         # TODO check this works for multiple reporting owners
-        elif isinstance(value,list):
+        elif isinstance(value, list):
             # delete previous key
             metadata.pop(key)
             # assign new key
             metadata[cleaned_key] = value
             for val in value:
-                if isinstance(val,dict):
+                if isinstance(val, dict):
                     transform_metadata_string(val)
         else:
             # delete previous key
             metadata.pop(key)
 
-            # special handling (need to check original key)
-            if key_lower == "standard industrial classification":
-                sic_match = re.search(r'\[(\d+)\]', value)
-                value = sic_match.group(1)
-            elif key_lower == "act" and isinstance(value, str) and "Act" in value:
-                # Extract just the last two digits from "1934 Act"
-                act_match = re.search(r'(\d{2})(\d{2})\s+Act', value)
-                if act_match:
-                    value = act_match.group(2)
+            # Apply regex transformation if available
+            if mapping is not None and "regex" in mapping:
+                regex_pattern = mapping["regex"]
+                regex_match = re.search(regex_pattern, value)
+                if regex_match:
+                    value = regex_match.group(1)
+            
             # assign new key
             metadata[cleaned_key] = value
     
-
     return metadata
 
 
