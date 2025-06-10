@@ -10,7 +10,7 @@ Will be expanded to also parse SGML Tables.
 
 [All Variations](submission_variations.md)
 
-secsgml also attempts to standardize the metadata between formats. e.g. 'CENTRAL INDEX KEY' will be mapped to 'cik'. You can see the standardization ruleset [here](secsgml/secsgml/header_metadata_standardization.json)
+secsgml also attempts to standardize the metadata between formats. e.g. 'CENTRAL INDEX KEY' will be mapped to 'cik'. You can see the standardization ruleset [here](secsgml/secsgml/header_standardization.py)
 
 ## Installation
 ```
