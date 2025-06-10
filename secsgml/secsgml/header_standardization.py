@@ -1,4 +1,5 @@
-{
+
+header_metadata_mappings = {
     "PAPER": {"to": "PAPER"},
     "ACCESSION NUMBER": {"to": "ACCESSION-NUMBER"},
     "CONFORMED SUBMISSION TYPE": {"to": "TYPE"},
@@ -16,7 +17,7 @@
     "FISCAL YEAR END": {"to": "FISCAL-YEAR-END"},
     "FILING VALUES": {"to": "FILING-VALUES"},
     "FORM TYPE": {"to": "FORM-TYPE"},
-    "SEC ACT": {"to": "ACT","regex":"(?:\\d{2})(\\d{2})\\s+Act"},
+    "SEC ACT": {"to": "ACT","regex":r"(?:\d{2})(\d{2})\s+Act"},
     "SEC FILE NUMBER": {"to": "FILE-NUMBER"},
     "FILM NUMBER": {"to": "FILM-NUMBER"},
     "BUSINESS ADDRESS": {"to": "BUSINESS-ADDRESS"},
@@ -31,7 +32,7 @@
     "DATE OF NAME CHANGE": {"to": "DATE-CHANGED"},
     "SROS": {"to": "SROS"},
     "SUBJECT COMPANY": {"to": "SUBJECT-COMPANY"},
-    "STANDARD INDUSTRIAL CLASSIFICATION": {"to": "ASSIGNED-SIC","regex":"\\[(\\d+)\\]"},
+    "STANDARD INDUSTRIAL CLASSIFICATION": {"to": "ASSIGNED-SIC","regex":r"\[(\d+)\]"},
     "IRS NUMBER": {"to": "IRS-NUMBER"},
     "FILED BY": {"to": "FILED-BY"},
     "STREET 2": {"to": "STREET2"},
