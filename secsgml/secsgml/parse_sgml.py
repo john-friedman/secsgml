@@ -2,6 +2,11 @@ import mmap
 import re
 import binascii
 
+# new format #
+# {'date as of change':{'to':date-of...,regex:}}
+
+# end new format #
+
 ## REVISIT ##
 sec_format_mappings = {
     b"conformed submission type": b"type",
