@@ -61,7 +61,7 @@ def transform_metadata_string(metadata):
     for key, value in items:
         
         key_lower = key.lower()
-        mapping = header_metadata_mappings_string.get(key_lower.upper())  # Convert to upper for lookup
+        mapping = header_metadata_mappings_string.get(key_lower)  # Convert to upper for lookup
 
         if mapping is not None:
             cleaned_key = mapping["to"]
