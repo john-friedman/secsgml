@@ -3,3 +3,4 @@ Contributors
 * Mike Meyers
 * Jeff Meyers
 * fmmoret
+* Jerry Bard
