@@ -5,6 +5,16 @@ from .header_standardization import header_metadata_mappings_string,header_metad
 
 import re
 
+
+# AI slop
+def fix_broken_xml_tags(content):
+    """Fix XML tags split across lines"""
+    # Simple regex to join lines where XML tags are split
+    # Matches: </tagname\nrest> or <tagname\nrest>
+    import re
+    content = re.sub(rb'(</?[^>]*)\n([^<\n]*>)', rb'\1\2', content)
+    return content
+
 def transform_metadata(metadata):
     items = list(metadata.items())
     for key, value in items:
@@ -161,6 +171,7 @@ def decode_uuencoded_content(content):
 # this adds like 3ms
 # there are ways to optimize this
 def clean_document_content(content):
+    document_type = 'default'
     # Find first non-whitespace position
     start = 0
     while start < len(content) and content[start:start+1] in b' \t\n\r':
@@ -171,8 +182,10 @@ def clean_document_content(content):
         content = content[start+5:]
     elif content[start:start+6] == b'<XBRL>':
         content = content[start+6:]
+        document_type = 'xbrl' 
     elif content[start:start+5] == b'<XML>':
         content = content[start+5:]
+        document_type = 'xml'
     
     # Find last non-whitespace position
     end = len(content) - 1
@@ -187,6 +200,9 @@ def clean_document_content(content):
         content = content[:end-7]
     elif content[:end].endswith(b'</XML>'):
         content = content[:end-6]
+
+    if document_type in ['xml','xbrl']:
+        content = fix_broken_xml_tags(content) 
     
     return content.strip()
 
