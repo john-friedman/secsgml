@@ -3,17 +3,17 @@ import re
 import binascii
 from .header_standardization import header_metadata_mappings_string,header_metadata_mappings_bytes
 
-import re
+def fix_tab_delim_content_wraparound(lines):
+    """Tab delim have 1023 chars maximum to a line, else new line required. Archives don't have this limitation"""
+    result = []
+    for line in lines:
+        if result and len(result[-1]) % 1023 == 0:
+            result[-1] += line
+        else:
+            result.append(line)
+    
+    return result
 
-
-# AI slop
-def fix_broken_xml_tags(content):
-    """Fix XML tags split across lines"""
-    # Simple regex to join lines where XML tags are split
-    # Matches: </tagname\nrest> or <tagname\nrest>
-    import re
-    content = re.sub(rb'(</?[^>]*)\n([^<\n]*>)', rb'\1\2', content)
-    return content
 
 def transform_metadata(metadata):
     items = list(metadata.items())
@@ -170,8 +170,7 @@ def decode_uuencoded_content(content):
 
 # this adds like 3ms
 # there are ways to optimize this
-def clean_document_content(content):
-    document_type = 'default'
+def clean_document_content(content,submission_format):
     # Find first non-whitespace position
     start = 0
     while start < len(content) and content[start:start+1] in b' \t\n\r':
@@ -182,10 +181,8 @@ def clean_document_content(content):
         content = content[start+5:]
     elif content[start:start+6] == b'<XBRL>':
         content = content[start+6:]
-        document_type = 'xbrl' 
     elif content[start:start+5] == b'<XML>':
         content = content[start+5:]
-        document_type = 'xml'
     
     # Find last non-whitespace position
     end = len(content) - 1
@@ -200,9 +197,14 @@ def clean_document_content(content):
         content = content[:end-7]
     elif content[:end].endswith(b'</XML>'):
         content = content[:end-6]
+    
+    # adjust for content length. if 1023, means wrap around?
+    # but only for tab delim, archives dont have this.
+    if submission_format in ['tab-privacy','tab-default']:
+        lines = content.split(b'\n')
+        results = fix_tab_delim_content_wraparound(lines)
+        content = b'\n'.join(results)
 
-    if document_type in ['xml','xbrl']:
-        content = fix_broken_xml_tags(content) 
     
     return content.strip()
 
@@ -299,6 +301,9 @@ def parse_archive_submission_metadata(content):
 # I think this is fine for tab delim?
 def parse_tab_submission_metadata(content):
     lines = content.strip().splitlines()
+
+    # merge lines where number of chars is 1023. (max limit for tab default files)
+
     submission_metadata_dict = {}
     current_dict = submission_metadata_dict
     stack = [submission_metadata_dict]
@@ -407,7 +412,7 @@ def parse_submission_metadata(content):
     else:
         submission_metadata = parse_archive_submission_metadata(content)
 
-    return submission_metadata
+    return submission_metadata, submission_format
 
 
 def parse_keyval_line(line, delimiter=b'>', strip_prefix=b'<'):
@@ -463,7 +468,7 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
         if start_pos == -1:
             # if no documents are found, process submission metadata
             if pos == 0:
-                submission_metadata = parse_submission_metadata(data[0:start_pos])
+                submission_metadata,submission_format = parse_submission_metadata(data[0:start_pos])
                 # standardize metadata
                 if standardize_metadata:
                     submission_metadata = transform_metadata(submission_metadata)
@@ -472,7 +477,7 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
 
         # set submission metadata if at start
         if pos == 0:
-            submission_metadata = parse_submission_metadata(data[0:start_pos])
+            submission_metadata,submission_format = parse_submission_metadata(data[0:start_pos])
             # standardize metadata
             if standardize_metadata:
                 submission_metadata = transform_metadata(submission_metadata)
@@ -494,7 +499,7 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
         if filename_bytes and should_decode_file(filename_bytes):
             content = decode_uuencoded_content(content)
 
-        documents.append(clean_document_content(content))
+        documents.append(clean_document_content(content,submission_format))
 
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
