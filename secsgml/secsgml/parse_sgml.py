@@ -119,10 +119,19 @@ def transform_metadata_string(metadata):
 
 
 # Note: *.pdf, *.gif, *.jpg, *.png,*.xlsx and *.zip files are uuencoded.
+# DEPRECATED #
 def should_decode_file(filename_bytes):
     filename = filename_bytes.lower()
     uuencoded_extensions = [b'.pdf', b'.gif', b'.jpg', b'.png', b'.xlsx', b'.zip']
     return any(filename.endswith(ext) for ext in uuencoded_extensions)
+
+def should_decode_file_from_content(content):
+    stripped = content.lstrip()
+    if stripped.startswith(b'begin '):
+        # Verify it's followed by 3 digits (UU-encode permissions)
+        parts = stripped.split(b' ', 2)
+        return len(parts) >= 2 and len(parts[1]) == 3 and parts[1].isdigit()
+    return False
   
 # I think we can get performance gains here
 # UUencoded document text is 64 characters wide havent used that info
@@ -170,7 +179,7 @@ def decode_uuencoded_content(content):
 
 # this adds like 3ms
 # there are ways to optimize this
-def clean_document_content(content,submission_format):
+def clean_document_content(content,submission_format, is_binary=False):
     # Find first non-whitespace position
     start = 0
     while start < len(content) and content[start:start+1] in b' \t\n\r':
@@ -200,7 +209,8 @@ def clean_document_content(content,submission_format):
     
     # adjust for content length. if 1023, means wrap around?
     # but only for tab delim, archives dont have this.
-    if submission_format in ['tab-privacy','tab-default']:
+    
+    if submission_format in ['tab-privacy','tab-default'] and not is_binary:
         lines = content.split(b'\n')
         results = fix_tab_delim_content_wraparound(lines)
         content = b'\n'.join(results)
@@ -493,13 +503,13 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
         document_content_end = data.find(b'</TEXT>', document_metadata_end)
         
         content = data[document_metadata_end+len(b'<TEXT>'):document_content_end]
+        is_uuencoded = should_decode_file_from_content(content)
 
         # Check if this file should be UU-decoded
-        filename_bytes = document_metadata[-1].get(b'FILENAME',False)
-        if filename_bytes and should_decode_file(filename_bytes):
+        if is_uuencoded:
             content = decode_uuencoded_content(content)
 
-        documents.append(clean_document_content(content,submission_format))
+        documents.append(clean_document_content(content,submission_format, is_uuencoded))
 
         # find end of document
         pos = data.find(b'</DOCUMENT>', document_content_end)
