@@ -4,13 +4,17 @@ import binascii
 from .header_standardization import header_metadata_mappings_string,header_metadata_mappings_bytes
 
 def fix_tab_delim_content_wraparound(lines):
-    """Tab delim have 1023 chars maximum to a line, else new line required. Archives don't have this limitation"""
+    """Tab delim have 1023 chars maximum to a line, else new line required."""
     result = []
+    last_line_was_continuation = False
+    
     for line in lines:
-        if result and len(result[-1]) % 1023 == 0:
+        if result and last_line_was_continuation:
             result[-1] += line
         else:
             result.append(line)
+        
+        last_line_was_continuation = len(line) >= 1023
     
     return result
 
