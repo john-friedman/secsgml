@@ -130,11 +130,20 @@ def should_decode_file(filename_bytes):
     return any(filename.endswith(ext) for ext in uuencoded_extensions)
 
 def should_decode_file_from_content(content):
-    stripped = content.lstrip()
-    if stripped.startswith(b'begin '):
-        # Verify it's followed by 3 digits (UU-encode permissions)
-        parts = stripped.split(b' ', 2)
-        return len(parts) >= 2 and len(parts[1]) == 3 and parts[1].isdigit()
+    lines = content.lstrip().split(b'\n', 2)  # Split into max 3 parts (first 2 lines)
+    
+    # Check first line
+    if lines[0].startswith(b'begin '):
+        parts = lines[0].split(b' ', 2)
+        if len(parts) >= 2 and len(parts[1]) == 3 and parts[1].isdigit():
+            return True
+    
+    # Check second line if it exists
+    if len(lines) > 1 and lines[1].startswith(b'begin '):
+        parts = lines[1].split(b' ', 2)
+        if len(parts) >= 2 and len(parts[1]) == 3 and parts[1].isdigit():
+            return True
+    
     return False
   
 # I think we can get performance gains here
@@ -512,6 +521,8 @@ def _parse_sgml_data(data,filter_document_types,keep_filtered_metadata,standardi
         # Check if this file should be UU-decoded
         if is_uuencoded:
             content = decode_uuencoded_content(content)
+
+            
 
         documents.append(clean_document_content(content,submission_format, is_uuencoded))
 
