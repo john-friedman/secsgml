@@ -1,6 +1,6 @@
 # SEC SGML
 
-A python library to parse Securities and Exchange Commission [Standardized Generalized Markup Language](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language). Used to power the open-source [datamule](https://github.com/john-friedman/datamule-python) project.
+A python library to parse Securities and Exchange Commission [Standardized Generalized Markup Language](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language). Used to power the open-source [datamule](https://github.com/john-friedman/datamule-python) project. You may want to use the newer [secsgml2](https://github.com/john-friedman/secsgml2/), written in C.
 
 Currently parses two types of files:
 1. [Daily Archives](https://www.sec.gov/Archives/edgar/Feed/)
